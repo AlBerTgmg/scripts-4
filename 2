@@ -1,0 +1,316 @@
+LCM autoupdate is not in progress
+Ongoing upgrades in current batch:
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.105) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.170) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.165) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.104) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.166) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.168) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.106) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.167) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.163) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.118) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Queued.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.117) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Running.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.162) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.164) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.169) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.119) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Queued.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.160) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.161) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+========================================
+Finished upgrades:
+Up to 4 previously finished upgrade batches listed in descending order of upgrade start time:
+---------------------------------
+Upgrade of entity Core Cluster(NCC), on host (180.38.54.161) from version [5.3.1] to version [5.3.1.1] started on 2026-07-25-23:20:56, finished on 2026-07-25-23:24:08
+---------------------------------
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.160) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-22:48:17, finished on 2026-07-25-23:00:36
+---------------------------------
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.167) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-21:31:27, finished on 2026-07-25-21:44:15
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.104) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-21:16:30, finished on 2026-07-25-21:29:19
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.170) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-21:00:45, finished on 2026-07-25-21:15:18
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ lcm_leader
+Lcm leader is at 180.38.54.242
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ echo "=== CL1CP2 - LCM timeline $(date '+%F %T') ==="
+=== CL1CP2 - LCM timeline 2026-08-08 16:45:33 ===
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ echo "--- LCM leader (si no es este CVM, repite alli) ---"
+--- LCM leader (si no es este CVM, repite alli) ---
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ lcm_leader
+Lcm leader is at 180.38.54.242
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ LOG=~/data/logs/lcm/lcm_ops.out; [ -f "$LOG" ] || LOG=~/data/logs/lcm_ops.out
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ echo "--- Log: $LOG ($(ls -lh $LOG 2>/dev/null | awk '{print $5}')) ---"
+--- Log: /home/nutanix/data/logs/lcm_ops.out (62) ---
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ echo ""
+
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ echo "=== TIMELINE: transiciones por host (ultimas 80) ==="
+=== TIMELINE: transiciones por host (ultimas 80) ===
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ grep -iE "kLcmUpdateOperation|enter.*maintenance|exit.*maintenance|phoenix|reboot|post.?action|update.*(started|completed|succeeded|finished)" "$LOG" 2>/dev/null | tail -80
+2026-08-08 00:36:06,125Z INFO 28850816 lcm_ops_by_phoenix.py:1084 Executing pre-actions (task_list: odict_values(['fa9c6e03-8b5c-4a8f-47c1-acc573be3b2f']))
+2026-08-08 00:36:06,129Z INFO 28850816 actions.py:1677 De-duplicated PreActions list for de-duplicated flag list ['boot_into_pem'] of 1 tasks: [('get_shutdown_token', 'getting shutdown token', 1), ('forward_storage_traffic_esx', 'forwarding storage traffic for ESX', 2), ('forward_storage_traffic_hyperv', 'forwarding storage traffic for HyperV', 2), ('enter_host_mm', 'entering host into maintenance mode', 8), ('forward_storage_traffic_ahv', 'forwarding storage traffic for AHV', 2), ('enter_cvm_mm', 'entering CVM into maintenance mode', 4), ('wait_for_services_shutdown', 'waiting for all services to shutdown on CVM', 2), ('stop_zookeeper', 'stop zookeeper service on CVM', 4), ('reboot_to_pem', 're-booting from CVM to phoenix Environment Module', 5)]
+2026-08-08 00:36:06,129Z INFO 28850816 lcm_actions_helper.py:472 List of actions fetched based on flags for task_list ['fa9c6e03-8b5c-4a8f-47c1-acc573be3b2f']: [('get_shutdown_token', 'getting shutdown token', 1), ('forward_storage_traffic_esx', 'forwarding storage traffic for ESX', 2), ('forward_storage_traffic_hyperv', 'forwarding storage traffic for HyperV', 2), ('enter_host_mm', 'entering host into maintenance mode', 8), ('forward_storage_traffic_ahv', 'forwarding storage traffic for AHV', 2), ('enter_cvm_mm', 'entering CVM into maintenance mode', 4), ('wait_for_services_shutdown', 'waiting for all services to shutdown on CVM', 2), ('stop_zookeeper', 'stop zookeeper service on CVM', 4), ('reboot_to_pem', 're-booting from CVM to phoenix Environment Module', 5)]
+2026-08-08 00:36:06,133Z INFO 28850816 lcm_actions_helper.py:508 ('enter_host_mm', 'entering host into maintenance mode', 8)
+2026-08-08 00:36:06,133Z INFO 28850816 lcm_actions_helper.py:508 ('enter_cvm_mm', 'entering CVM into maintenance mode', 4)
+2026-08-08 00:36:06,133Z INFO 28850816 lcm_actions_helper.py:508 ('reboot_to_pem', 're-booting from CVM to phoenix Environment Module', 5)
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+2026-08-08 00:36:06,538Z INFO 28850816 lcm_actions_helper.py:867 [PreActions] [f6901356-a92e-4332-660e-b758d210e259] Finding action handler for enter_host_mm (Executing pre-actions: entering host into maintenance mode)
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+2026-08-08 00:36:06,573Z INFO 28850816 lcm_ergon.py:1375 Got 1 subtasks of type kLcmUpdateOperation for task 6e773ea7-e3d4-4028-6745-c8f490eb8124: 982777a0-5ff0-4bd7-66a6-1516abcc7027
+2026-08-08 00:36:06,585Z INFO 28850816 lcm_ergon.py:1375 Got 1 subtasks of type kLcmUpdateOperation for task 6e773ea7-e3d4-4028-6745-c8f490eb8124: 982777a0-5ff0-4bd7-66a6-1516abcc7027
+  description: "pre-actions: entering host into maintenance mode"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+2026-08-08 00:36:36,244Z INFO 28850816 lcm_actions_helper.py:867 [PreActions] [f6901356-a92e-4332-660e-b758d210e259] Finding action handler for enter_cvm_mm (Executing pre-actions: entering CVM into maintenance mode)
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  description: "pre-actions: entering CVM into maintenance mode"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+  name: "reboot_to_pem"
+  description: "pre-actions: re-booting from CVM to phoenix Environment Module"
+2026-08-08 00:36:49,808Z INFO 03101088 lcm_ops_by_phoenix.py:2885 Leadership change event detected
+2026-08-08 00:36:49,809Z WARNING 03101088 lcm_ops_by_phoenix.py:2880 Leadership is changed SVM IP 180.38.54.181 current leader 180.38.54.188. Aborting
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ echo ""
+
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ echo "=== ESPERAS: resiliencia / estabilidad entre hosts (ultimas 40) ==="
+=== ESPERAS: resiliencia / estabilidad entre hosts (ultimas 40) ===
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ grep -iE "waiting|resilien|under.?replicat|stability|rebuild|self.?heal" "$LOG" 2>/dev/null | tail -40
+2026-08-08 00:29:22,732 - phoenix_lib_logger - INFO - [Phoenix Lib] [30/360.0] Waiting for CVM to come up after reboot.
+2026-08-08 00:29:35,532 - phoenix_lib_logger - INFO - [Phoenix Lib] [31/360.0] Waiting for CVM to come up after reboot.
+2026-08-08 00:29:48,652 - phoenix_lib_logger - INFO - [Phoenix Lib] [33/360.0] Waiting for CVM to come up after reboot.
+2026-08-08 00:29:59,277 - phoenix_lib_logger - INFO - [Phoenix Lib] [34/360.0] Waiting for CVM to come up after reboot.
+2026-08-08 00:30:09,708 - phoenix_lib_logger - INFO - [Phoenix Lib] [35/360.0] Waiting for CVM to come up after reboot.
+2026-08-08 00:30:22,764 - phoenix_lib_logger - INFO - [Phoenix Lib] [36/360.0] Waiting for CVM to come up after reboot.
+2026-08-08 00:30:35,436 - phoenix_lib_logger - INFO - [Phoenix Lib] [37/360.0] Waiting for CVM to come up after reboot.
+2026-08-08 00:30:45,611 - phoenix_lib_logger - INFO - [Phoenix Lib] [38/360.0] Waiting for CVM to come up after reboot.
+  description: "post-actions: waiting for all services to startup on CVM"
+  description: "post-actions: waiting for all services to startup on CVM"
+  description: "post-actions: waiting for all services to startup on CVM"
+2026-08-08 00:30:57,258Z INFO 59574080 lcm_actions_helper.py:867 [PostActions] [88cc882f-641f-41e9-639b-be8e3868a552] Finding action handler for wait_for_services_startup (Executing post-actions: waiting for all services to startup on CVM)
+  description: "post-actions: waiting for all services to startup on CVM"
+  description: "post-actions: waiting for all services to startup on CVM"
+2026-08-08 00:35:27,836Z INFO 59574080 actions.py:2919 Waiting for libvirt connection before taking AHV host 180.38.54.160 out of maintenance mode
+2026-08-08 00:35:29,467Z INFO 59574080 update_utils.py:398 Waiting 0 seconds for apps after starting pinned vms
+2026-08-08 00:36:05,759Z INFO 03101088 lcm_ops_by_phoenix.py:2883 Waiting for leadership change event
+2026-08-08 00:36:06,129Z INFO 28850816 actions.py:1677 De-duplicated PreActions list for de-duplicated flag list ['boot_into_pem'] of 1 tasks: [('get_shutdown_token', 'getting shutdown token', 1), ('forward_storage_traffic_esx', 'forwarding storage traffic for ESX', 2), ('forward_storage_traffic_hyperv', 'forwarding storage traffic for HyperV', 2), ('enter_host_mm', 'entering host into maintenance mode', 8), ('forward_storage_traffic_ahv', 'forwarding storage traffic for AHV', 2), ('enter_cvm_mm', 'entering CVM into maintenance mode', 4), ('wait_for_services_shutdown', 'waiting for all services to shutdown on CVM', 2), ('stop_zookeeper', 'stop zookeeper service on CVM', 4), ('reboot_to_pem', 're-booting from CVM to phoenix Environment Module', 5)]
+2026-08-08 00:36:06,129Z INFO 28850816 lcm_actions_helper.py:472 List of actions fetched based on flags for task_list ['fa9c6e03-8b5c-4a8f-47c1-acc573be3b2f']: [('get_shutdown_token', 'getting shutdown token', 1), ('forward_storage_traffic_esx', 'forwarding storage traffic for ESX', 2), ('forward_storage_traffic_hyperv', 'forwarding storage traffic for HyperV', 2), ('enter_host_mm', 'entering host into maintenance mode', 8), ('forward_storage_traffic_ahv', 'forwarding storage traffic for AHV', 2), ('enter_cvm_mm', 'entering CVM into maintenance mode', 4), ('wait_for_services_shutdown', 'waiting for all services to shutdown on CVM', 2), ('stop_zookeeper', 'stop zookeeper service on CVM', 4), ('reboot_to_pem', 're-booting from CVM to phoenix Environment Module', 5)]
+2026-08-08 00:36:06,133Z INFO 28850816 lcm_actions_helper.py:508 ('wait_for_services_shutdown', 'waiting for all services to shutdown on CVM', 2)
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+2026-08-08 00:36:36,406Z INFO 28850816 lcm_actions_helper.py:867 [PreActions] [f6901356-a92e-4332-660e-b758d210e259] Finding action handler for wait_for_services_shutdown (Executing pre-actions: waiting for all services to shutdown on CVM)
+  description: "pre-actions: waiting for all services to shutdown on CVM"
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ echo ""
+
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$ echo "=== CL1CP2 - fin ==="
+=== CL1CP2 - fin ===
+
+
+
+
+Running python version - Python 3.9.25
+LCM autoupdate is not in progress
+Ongoing upgrades in current batch:
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.205) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.142) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.139) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.156) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Queued.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.136) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.157) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Queued.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.210) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Queued.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.140) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.158) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Queued.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.137) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.138) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.209) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Queued.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.211) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Queued.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.208) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Queued.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.141) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.207) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Queued.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.206) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Running.
+Upgrade of entity SPP(DX380 GEN10 PLUS), on host (180.38.54.135) from version [2025.09.00.00.01]  to version [2025.09.00.00.02] : Succeeded.
+========================================
+Finished upgrades:
+Up to 4 previously finished upgrade batches listed in descending order of upgrade start time:
+---------------------------------
+Upgrade of entity Core Cluster(NCC), on host (180.38.54.205) from version [5.3.1] to version [5.3.1.1] started on 2026-07-25-09:35:16, finished on 2026-07-25-09:38:32
+---------------------------------
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.207) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-07:07:54, finished on 2026-07-25-07:24:58
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.208) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-06:47:33, finished on 2026-07-25-07:06:43
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.158) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-06:29:27, finished on 2026-07-25-06:46:16
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.156) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-06:11:34, finished on 2026-07-25-06:28:16
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.210) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-05:52:20, finished on 2026-07-25-06:09:59
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.135) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-05:33:36, finished on 2026-07-25-05:51:06
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.206) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-05:14:55, finished on 2026-07-25-05:32:24
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.141) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-04:56:09, finished on 2026-07-25-05:13:43
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.138) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-04:37:07, finished on 2026-07-25-04:54:51
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.139) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-04:18:41, finished on 2026-07-25-04:35:56
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.137) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-03:59:23, finished on 2026-07-25-04:17:07
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.142) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-03:40:44, finished on 2026-07-25-03:58:12
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.211) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-03:22:18, finished on 2026-07-25-03:39:33
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.136) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-03:03:30, finished on 2026-07-25-03:20:46
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.140) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-02:44:23, finished on 2026-07-25-03:02:19
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.209) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-02:25:00, finished on 2026-07-25-02:43:12
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.157) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-02:06:41, finished on 2026-07-25-02:23:49
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.205) from version [11.0.0.2] to version [11.0.1.2] started on 2026-07-25-01:48:10, finished on 2026-07-25-02:05:26
+---------------------------------
+Upgrade of entity Core Cluster(AOS), on host (180.38.54.156) from version [7.5.0.6] to version [7.5.1.6] started on 2026-07-24-22:11:40, finished on 2026-07-25-01:25:08
+---------------------------------
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.141) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-10:44:30, finished on 2026-04-11-10:58:27
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.140) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-10:29:12, finished on 2026-04-11-10:42:58
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.142) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-10:11:13, finished on 2026-04-11-10:27:53
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.137) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-09:52:53, finished on 2026-04-11-10:09:55
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.211) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-09:33:55, finished on 2026-04-11-09:51:19
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.208) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-09:15:06, finished on 2026-04-11-09:32:11
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.209) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-08:56:43, finished on 2026-04-11-09:13:41
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.207) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-08:38:40, finished on 2026-04-11-08:55:26
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.136) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-08:20:50, finished on 2026-04-11-08:37:22
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.156) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-08:00:24, finished on 2026-04-11-08:19:21
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.205) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-07:42:12, finished on 2026-04-11-07:59:05
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.138) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-07:23:56, finished on 2026-04-11-07:40:53
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.206) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-07:03:27, finished on 2026-04-11-07:22:37
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.135) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-06:45:10, finished on 2026-04-11-07:02:08
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.139) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-06:27:27, finished on 2026-04-11-06:43:51
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.157) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-06:09:16, finished on 2026-04-11-06:26:10
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.210) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-05:51:26, finished on 2026-04-11-06:07:57
+Upgrade of entity Hypervisor(AHV hypervisor), on host (180.38.54.158) from version [10.3.1.2] to version [11.0.0.2] started on 2026-04-11-05:31:21, finished on 2026-04-11-05:50:07
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ echo "=== CL2CP2 - LCM timeline $(date '+%F %T') ==="
+echo ""
+echo "=== ESPERAS: resiliencia / estabilidad entre hosts (ultimas 40) ==="
+grep -iE "waiting|resilien|under.?replicat|stability|rebuild|self.?heal" "$LOG" 2>/dev/null | tail -40
+echo ""
+echo "=== CL2CP2 - fin ==="=== CL2CP2 - LCM timeline 2026-08-08 16:46:38 ===
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ echo "--- LCM leader (si no es este CVM, repite alli) ---"
+--- LCM leader (si no es este CVM, repite alli) ---
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ lcm_leader
+Lcm leader is at 180.38.54.178
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ LOG=~/data/logs/lcm/lcm_ops.out; [ -f "$LOG" ] || LOG=~/data/logs/lcm_ops.out
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ echo "--- Log: $LOG ($(ls -lh $LOG 2>/dev/null | awk '{print $5}')) ---"
+--- Log: /home/nutanix/data/logs/lcm_ops.out (62) ---
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ echo ""
+
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ echo "=== TIMELINE: transiciones por host (ultimas 80) ==="
+=== TIMELINE: transiciones por host (ultimas 80) ===
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ grep -iE "kLcmUpdateOperation|enter.*maintenance|exit.*maintenance|phoenix|reboot|post.?action|update.*(started|completed|succeeded|finished)" "$LOG" 2>/dev/null | tail -80
+2026-08-07 23:03:22,719Z INFO 30782656 lcm_ops_by_cvm.py:556 Got stage handler _execute_post_actions for state LcmOpsByCVMStates.POST_OPS_DONE for task e81768e2-f1d1-42da-4272-204cc495421a
+2026-08-07 23:03:22,731Z INFO 30782656 lcm_ops_by_cvm.py:1363 Deferring post-actions till the last task of the batch.
+2026-08-07 23:03:22,731Z INFO 30782656 lcm_ops_by_cvm.py:596 Stage handler _execute_post_actions for task e81768e2-f1d1-42da-4272-204cc495421a in state LcmOpsByCVMStates.POST_OPS_DONE returned LcmTaskHandlerResult(task_handler_name='_execute_post_actions', result=True, error_message='', error_type=0)
+2026-08-07 23:03:22,731Z INFO 30782656 ergon_utils.py:885 Updating task e81768e2-f1d1-42da-4272-204cc495421a with state LcmOpsByCVMStates.POST_OPS_DONE, message Executing post-actions on CVM 180.38.54.149 for LICENSING SERVICE (Licensing) inventory, status kRunning
+2026-08-07 23:03:22,747Z INFO 30782656 lcm_ops_by_cvm.py:644 Ran stage handler _execute_post_actions for task e81768e2-f1d1-42da-4272-204cc495421a and committed state LcmOpsByCVMStates.POST_OPS_DONE
+2026-08-07 23:03:22,779Z INFO 30782656 lcm_ergon.py:1850 Updated task: e81768e2-f1d1-42da-4272-204cc495421a with status kSucceeded (3) and percentage: 100
+2026-08-07 23:03:24,549Z INFO 30782656 lcm_ops_by_cvm.py:556 Got stage handler _execute_post_actions for state LcmOpsByCVMStates.POST_OPS_DONE for task 2703d3b0-de45-447e-66a4-5bf1798f5504
+2026-08-07 23:03:24,562Z INFO 30782656 lcm_ops_by_cvm.py:1363 Deferring post-actions till the last task of the batch.
+2026-08-07 23:03:24,562Z INFO 30782656 lcm_ops_by_cvm.py:596 Stage handler _execute_post_actions for task 2703d3b0-de45-447e-66a4-5bf1798f5504 in state LcmOpsByCVMStates.POST_OPS_DONE returned LcmTaskHandlerResult(task_handler_name='_execute_post_actions', result=True, error_message='', error_type=0)
+2026-08-07 23:03:24,567Z INFO 30782656 ergon_utils.py:885 Updating task 2703d3b0-de45-447e-66a4-5bf1798f5504 with state LcmOpsByCVMStates.POST_OPS_DONE, message Executing post-actions on CVM 180.38.54.149 for Flow (Flow Network Security PE) inventory, status kRunning
+2026-08-07 23:03:24,589Z INFO 30782656 lcm_ops_by_cvm.py:644 Ran stage handler _execute_post_actions for task 2703d3b0-de45-447e-66a4-5bf1798f5504 and committed state LcmOpsByCVMStates.POST_OPS_DONE
+2026-08-07 23:03:24,621Z INFO 30782656 lcm_ergon.py:1850 Updated task: 2703d3b0-de45-447e-66a4-5bf1798f5504 with status kSucceeded (3) and percentage: 100
+2026-08-07 23:03:26,389Z INFO 77953728 lcm_ops_by_leader.py:731 Got stage handler _execute_post_actions for state LcmOpsByLeaderStates.POST_OPS_DONE for task 93af3895-f800-4612-712c-11fe339e5f98
+2026-08-07 23:03:26,411Z INFO 30782656 lcm_ops_by_cvm.py:556 Got stage handler _execute_post_actions for state LcmOpsByCVMStates.POST_OPS_DONE for task fd3d1bd0-4ed9-442c-6b9e-0a5eb7335b00
+2026-08-07 23:03:26,411Z INFO 77953728 lcm_actions_helper.py:753 [PostActions] [93af3895-f800-4612-712c-11fe339e5f98] Executing actions with WAL
+2026-08-07 23:03:26,412Z INFO 77953728 actions.py:1602 Getting PostActions from task list ['93af3895-f800-4612-712c-11fe339e5f98']
+2026-08-07 23:03:26,415Z INFO 77953728 actions.py:1677 De-duplicated PostActions list for de-duplicated flag list [] of 1 tasks: []
+2026-08-07 23:03:26,415Z INFO 77953728 lcm_actions_helper.py:776 [PostActions] [93af3895-f800-4612-712c-11fe339e5f98] No actions found.
+2026-08-07 23:03:26,415Z INFO 77953728 lcm_ops_by_leader.py:773 Stage handler _execute_post_actions for task 93af3895-f800-4612-712c-11fe339e5f98 in state LcmOpsByLeaderStates.POST_OPS_DONE returned LcmTaskHandlerResult(task_handler_name='_execute_post_actions', result=True, error_message='No actions found', error_type=0)
+2026-08-07 23:03:26,425Z INFO 30782656 lcm_ops_by_cvm.py:1363 Deferring post-actions till the last task of the batch.
+2026-08-07 23:03:26,425Z INFO 30782656 lcm_ops_by_cvm.py:596 Stage handler _execute_post_actions for task fd3d1bd0-4ed9-442c-6b9e-0a5eb7335b00 in state LcmOpsByCVMStates.POST_OPS_DONE returned LcmTaskHandlerResult(task_handler_name='_execute_post_actions', result=True, error_message='', error_type=0)
+2026-08-07 23:03:26,425Z INFO 30782656 ergon_utils.py:885 Updating task fd3d1bd0-4ed9-442c-6b9e-0a5eb7335b00 with state LcmOpsByCVMStates.POST_OPS_DONE, message Executing post-actions on CVM 180.38.54.149 for Cluster Service (Security AOS) inventory, status kRunning
+2026-08-07 23:03:26,436Z INFO 77953728 lcm_ops_by_leader.py:824 Ran stage handler _execute_post_actions for task 93af3895-f800-4612-712c-11fe339e5f98 and committed state LcmOpsByLeaderStates.POST_OPS_DONE
+2026-08-07 23:03:26,446Z INFO 30782656 lcm_ops_by_cvm.py:644 Ran stage handler _execute_post_actions for task fd3d1bd0-4ed9-442c-6b9e-0a5eb7335b00 and committed state LcmOpsByCVMStates.POST_OPS_DONE
+2026-08-07 23:03:26,476Z INFO 77953728 lcm_ergon.py:1850 Updated task: 93af3895-f800-4612-712c-11fe339e5f98 with status kSucceeded (3) and percentage: 100
+2026-08-07 23:03:26,489Z INFO 30782656 lcm_ergon.py:1850 Updated task: fd3d1bd0-4ed9-442c-6b9e-0a5eb7335b00 with status kSucceeded (3) and percentage: 100
+2026-08-07 23:03:26,655Z INFO 57670144 catalog_staging.py:1441 Staging catalog item nutanix.env_modules.library_modules.phoenix_library
+2026-08-07 23:03:27,820Z INFO 30782656 lcm_ops_by_cvm.py:556 Got stage handler _execute_post_actions for state LcmOpsByCVMStates.POST_OPS_DONE for task 3fa01171-ac4b-400c-49bf-f1b17ee9040b
+2026-08-07 23:03:27,835Z INFO 30782656 lcm_actions_helper.py:753 [PostActions] [3fa01171-ac4b-400c-49bf-f1b17ee9040b] Executing actions with WAL
+2026-08-07 23:03:27,843Z INFO 30782656 actions.py:1602 Getting PostActions from task list ['e81768e2-f1d1-42da-4272-204cc495421a', '2703d3b0-de45-447e-66a4-5bf1798f5504', 'fd3d1bd0-4ed9-442c-6b9e-0a5eb7335b00', '3fa01171-ac4b-400c-49bf-f1b17ee9040b']
+2026-08-07 23:03:27,850Z INFO 30782656 actions.py:1677 De-duplicated PostActions list for de-duplicated flag list [] of 4 tasks: []
+2026-08-07 23:03:27,850Z INFO 30782656 lcm_actions_helper.py:776 [PostActions] [3fa01171-ac4b-400c-49bf-f1b17ee9040b] No actions found.
+2026-08-07 23:03:27,850Z INFO 30782656 lcm_ops_by_cvm.py:596 Stage handler _execute_post_actions for task 3fa01171-ac4b-400c-49bf-f1b17ee9040b in state LcmOpsByCVMStates.POST_OPS_DONE returned LcmTaskHandlerResult(task_handler_name='_execute_post_actions', result=True, error_message='No actions found', error_type=0)
+2026-08-07 23:03:27,870Z INFO 30782656 lcm_ops_by_cvm.py:644 Ran stage handler _execute_post_actions for task 3fa01171-ac4b-400c-49bf-f1b17ee9040b and committed state LcmOpsByCVMStates.POST_OPS_DONE
+2026-08-07 23:03:27,915Z INFO 30782656 lcm_ergon.py:1850 Updated task: 3fa01171-ac4b-400c-49bf-f1b17ee9040b with status kSucceeded (3) and percentage: 100
+[2026-08-07 23:04:05.161472] Parsed data from file: {'@odata.context': '/redfish/v1/$metadata#Bios.Bios', '@odata.etag': 'W/"7A37E0E099CB7B7B7B7FBCABCBFD0D9C"', '@odata.id': '/redfish/v1/systems/1/bios/settings/', '@odata.type': '#Bios.v1_0_4.Bios', 'AttributeRegistry': 'BiosAttributeRegistryU46.v1_2_50', 'Attributes': {'AccessControlService': 'Enabled', 'AcpiHpet': 'Enabled', 'AcpiRootBridgePxm': 'Enabled', 'AcpiSlit': 'Enabled', 'AdjSecPrefetch': 'Enabled', 'AdminEmail': '', 'AdminName': '', 'AdminOtherInfo': '', 'AdminPhone': '', 'AdvCrashDumpMode': 'Disabled', 'AdvancedMemProtection': 'Auto', 'AllowLoginWithIlo': 'Disabled', 'AssetTagProtection': 'Unlocked', 'AutoPowerOn': 'RestoreLastState', 'BootMode': 'Uefi', 'BootOrderPolicy': 'RetryIndefinitely', 'CollabPowerControl': 'Disabled', 'ConsistentDevNaming': 'LomsAndSlots', 'CustomPostMessage': '', 'DaylightSavingsTime': 'DaylightSavingsTimeDisabled', 'DcuIpPrefetcher': 'Enabled', 'DcuStreamPrefetcher': 'Enabled', 'DeadBlockPredictor': 'Disabled', 'Dhcpv4': 'Enabled', 'DirectToUpi': 'Auto', 'DisableDynamicLoadlineSwitch': 'NotDisableDLLSwitch', 'DramRapl': 0, 'DramRaplLimit': 'Disabled', 'DramRaplReport': 'Enabled', 'DynamicPowerCapping': 'Disabled', 'EmbVideoConnection': 'Auto', 'EmbeddedDiagnostics': 'Enabled', 'EmbeddedIpxe': 'Enabled', 'EmbeddedSata': 'Ahci', 'EmbeddedSerialPort': 'Com2Irq3', 'EmbeddedUefiShell': 'Enabled', 'EmsConsole': 'Disabled', 'EnabledCoresPerProc': 0, 'EnergyEfficientTurbo': 'Disabled', 'EnergyPerfBias': 'MaxPerf', 'EnergyPerformancePreference': 'Disabled', 'EnhancedProcPerf': 'Disabled', 'EppProfile': 'Moderate', 'EraseUserDefaults': 'No', 'ExtendedAmbientTemp': 'Disabled', 'ExtendedMemTest': 'Disabled', 'F11BootMenu': 'Enabled', 'FCScanPolicy': 'CardConfig', 'FanFailPolicy': 'Shutdown', 'FanInstallReq': 'EnableMessaging', 'FilterNonbootableDrive': 'Auto', 'HourFormat': '24Hours', 'HttpSupport': 'Auto', 'HwPrefetcher': 'Enabled', 'IODCConfiguration': 'Auto', 'IntelDmiLinkFreq': 'Auto', 'IntelNicDmaChannels': 'Enabled', 'IntelPerfMonitoring': 'Disabled', 'IntelPriorityBaseFreq': 'Disabled', 'IntelProcVtd': 'Enabled', 'IntelTxt': 'Disabled', 'IntelUpiFreq': 'Auto', 'IntelUpiLinkEn': 'Auto', 'IntelUpiPowerManagement': 'Disabled', 'IntelVmdDirectAssign': 'VmdDirectAssignEnabledAll', 'IntelVmdSupport': 'Disabled', 'IntelVrocSupport': 'None', 'IntelligentProvisioning': 'Enabled', 'IpmiWatchdogTimerAction': 'PowerCycle', 'IpmiWatchdogTimerStatus': 'IpmiWatchdogTimerOff', 'IpmiWatchdogTimerTimeout': 'Timeout30Min', 'Ipv4Address': '0.0.0.0', 'Ipv4Gateway': '0.0.0.0', 'Ipv4PrimaryDNS': '0.0.0.0', 'Ipv4SubnetMask': '0.0.0.0', 'Ipv6Address': '::', 'Ipv6ConfigPolicy': 'Automatic', 'Ipv6Duid': 'Auto', 'Ipv6Gateway': '::', 'Ipv6PrimaryDNS': '::', 'IpxeAutoStartScriptLocation': 'Auto', 'IpxeBootOrder': 'Disabled', 'IpxeScriptAutoStart': 'Disabled', 'IpxeScriptVerification': 'Disabled', 'IpxeStartupUrl': '', 'LLCDeadLineAllocation': 'Enabled', 'LlcPrefetch': 'Disabled', 'LocalRemoteThreshold': 'Auto', 'MaxMemBusFreqMHz': 'Auto', 'MaxPcieSpeed': 'PerPortCtrl', 'MemClearWarmReset': 'Disabled', 'MemFastTraining': 'Enabled', 'MemMirrorMode': 'Full', 'MemPatrolScrubbing': 'Enabled', 'MemRefreshRate': 'Refreshx1', 'MemoryConfigurationViolationReporting': 'Enabled', 'MemoryRemap': 'NoAction', 'MicrosoftSecuredCoreSupport': 'Disabled', 'MinProcIdlePkgState': 'NoState', 'MinProcIdlePower': 'NoCStates', 'MixedPowerSupplyReporting': 'Enabled', 'MkTme': 'Disabled', 'NetworkBootRetry': 'Enabled', 'NetworkBootRetryCount': 20, 'NoExecutionProtection': 'Enabled', 'Numa': 'Enabled', 'NumaGroupSizeOpt': 'Clustered', 'NvmeOptionRom': 'Enabled', 'NvmePort1': 'Nvme', 'NvmePort10': 'Nvme', 'NvmePort2': 'Nvme', 'NvmePort9': 'Nvme', 'NvmeRaid': 'Disabled', 'Ocp1AuxiliaryPower': 'Enabled', 'OmitBootDeviceEvent': 'Disabled', 'PatrolScrubDuration': 24, 'PciPeerToPeerSerialization': 'Disabled', 'PciResourcePadding': 'Normal', 'PciSlot10Aspm': 'Disabled', 'PciSlot10Bifurcation': 'Auto', 'PciSlot10Enable': 'Auto', 'PciSlot10LinkSpeed': 'Auto', 'PciSlot10OptionROM': 'Enabled', 'PciSlot12Aspm': 'Disabled', 'PciSlot12Enable': 'Auto', 'PciSlot12LinkSpeed': 'Auto', 'PciSlot12OptionROM': 'Enabled', 'PciSlot1Bifurcation': 'Auto', 'PciSlot2Aspm': 'Disabled', 'PciSlot2Bifurcation': 'Auto', 'PciSlot2Enable': 'Auto', 'PciSlot2LinkSpeed': 'Auto', 'PciSlot2OptionROM': 'Enabled', 'PciSlot3Aspm': 'Disabled', 'PciSlot3Bifurcation': 'Auto', 'PciSlot3Enable': 'Auto', 'PciSlot3LinkSpeed': 'Auto', 'PciSlot3OptionROM': 'Enabled', 'PciSlot4Bifurcation': 'Auto', 'PciSlot5Aspm': 'Disabled', 'PciSlot5Bifurcation': 'Auto', 'PciSlot5Enable': 'Auto', 'PciSlot5LinkSpeed': 'Auto', 'PciSlot5OptionROM': 'Enabled', 'PciSlot6Aspm': 'Disabled', 'PciSlot6Bifurcation': 'Auto', 'PciSlot6Enable': 'Auto', 'PciSlot6LinkSpeed': 'Auto', 'PciSlot6OptionROM': 'Enabled', 'PciSlot7Aspm': 'Disabled', 'PciSlot7Bifurcation': 'Auto', 'PciSlot7Enable': 'Auto', 'PciSlot7LinkSpeed': 'Auto', 'PciSlot7OptionROM': 'Enabled', 'PciSlot8Bifurcation': 'Auto', 'PcieHotPlugErrControl': 'HotplugSurprise', 'PcuPMax': 0, 'PlatformCertificate': 'Enabled', 'PlatformRASPolicy': 'FirmwareFirst', 'PostAsr': 'PostAsrOff', 'PostAsrDelay': 'Delay30Min', 'PostBootProgress': 'Disabled', 'PostDiscoveryMode': 'Auto', 'PostF1Prompt': 'Delayed20Sec', 'PostScreenMode': 'VerboseMode', 'PostVideoSupport': 'DisplayAll', 'PowerButton': 'Enabled', 'PowerOnDelay': 'NoDelay', 'PowerRegulator': 'StaticHighPerf', 'PreBootNetwork': 'Auto', 'PrebootNetworkEnvPolicy': 'Auto', 'PrebootNetworkProxy': '', 'ProcAes': 'Enabled', 'ProcHyperthreading': 'Enabled', 'ProcRapl': 0, 'ProcTurbo': 'Enabled', 'ProcVirtualization': 'Enabled', 'ProcX2Apic': 'Enabled', 'ProcessorConfigTDPLevel': 'Normal', 'ProcessorPhysicalAddress': 'Limited', 'ProcessorUuidControl': 'LockDisable', 'ProductId': 'P56704-B21', 'RedundantPowerSupply': 'BalancedMode', 'RemoteXptPrefetcher': 'Auto', 'RemovableFlashBootSeq': 'ExternalKeysFirst', 'RestoreDefaults': 'No', 'RestoreManufacturingDefaults': 'No', 'RomSelection': 'CurrentRom', 'SataSanitize': 'Disabled', 'SataSecureErase': 'Disabled', 'SaveUserDefaults': 'No', 'SciRasSupport': 'Ghesv1Support', 'SecStartBackupImage': 'Disabled', 'SecureBootStatus': 'Disabled', 'SerialConsoleBaudRate': 'BaudRate115200', 'SerialConsoleEmulation': 'Vt100Plus', 'SerialConsolePort': 'Auto', 'SerialNumber': 'CZ23250699', 'SerialPortDtrSupport': 'Disabled', 'ServerAssetTag': '', 'ServerConfigLockStatus': 'Disabled', 'ServerName': '', 'ServerOtherInfo': '2025.09.00.00.01', 'ServerPrimaryOs': '', 'ServiceEmail': '', 'ServiceName': '', 'ServiceOtherInfo': '', 'ServicePhone': '', 'SetupBrowserSelection': 'Auto', 'SgxAutoMpRegistrationAgent': 'Enabled', 'SgxEnable': 'Disabled', 'SgxLaunchControlPolicy': 'IntelLocked', 'SgxLePublicKeyHash0': '', 'SgxLePublicKeyHash1': '', 'SgxLePublicKeyHash2': '', 'SgxLePublicKeyHash3': '', 'SgxLePublicKeyWriteEnable': 'Enabled', 'SgxPrmrrSize': '2Gb', 'Slot10DataLinkFeatureExchange': 'Enabled', 'Slot10EoiBroadcastSupport': 'Disabled', 'Slot10MctpBroadcastSupport': 'Enabled', 'Slot10NicBoot1': 'NetworkBoot', 'Slot10NicBoot2': 'Disabled', 'Slot12StorageBoot': 'ThirtyTwoTargets', 'Slot1DataLinkFeatureExchange': 'Enabled', 'Slot1EoiBroadcastSupport': 'Disabled', 'Slot1MctpBroadcastSupport': 'Enabled', 'Slot2DataLinkFeatureExchange': 'Enabled', 'Slot2EoiBroadcastSupport': 'Disabled', 'Slot2MctpBroadcastSupport': 'Enabled', 'Slot3DataLinkFeatureExchange': 'Enabled', 'Slot3EoiBroadcastSupport': 'Disabled', 'Slot3MctpBroadcastSupport': 'Enabled', 'Slot3NicBoot1': 'NetworkBoot', 'Slot3NicBoot2': 'Disabled', 'Slot4DataLinkFeatureExchange': 'Enabled', 'Slot4EoiBroadcastSupport': 'Disabled', 'Slot4MctpBroadcastSupport': 'Enabled', 'Slot5DataLinkFeatureExchange': 'Enabled', 'Slot5EoiBroadcastSupport': 'Disabled', 'Slot5MctpBroadcastSupport': 'Enabled', 'Slot6DataLinkFeatureExchange': 'Enabled', 'Slot6EoiBroadcastSupport': 'Disabled', 'Slot6MctpBroadcastSupport': 'Enabled', 'Slot6NicBoot1': 'NetworkBoot', 'Slot6NicBoot2': 'Disabled', 'Slot7DataLinkFeatureExchange': 'Enabled', 'Slot7EoiBroadcastSupport': 'Disabled', 'Slot7MctpBroadcastSupport': 'Enabled', 'Slot8DataLinkFeatureExchange': 'Enabled', 'Slot8EoiBroadcastSupport': 'Disabled', 'Slot8MctpBroadcastSupport': 'Enabled', 'SnoopResponseHoldOff': 0, 'Sriov': 'Enabled', 'StaleAtoS': 'Disabled', 'SubNumaClustering': 'Disabled', 'TPM2EndorsementDisable': 'Enabled', 'TPM2StorageDisable': 'Enabled', 'ThermalConfig': 'OptimalCooling', 'ThermalShutdown': 'Enabled', 'TimeFormat': 'Utc', 'TimeZone': 'Unspecified', 'Tme': 'Disabled', 'TmeExclusiveBase': '', 'TmeExclusiveLen': '', 'Tpm20SoftwareInterfaceOperation': 'NoAction', 'Tpm20SoftwareInterfaceStatus': 'Fifo', 'Tpm2Operation': 'NoAction', 'TpmActivePcrs': 'Sha1Sha256', 'TpmChipId': 'STMicroGen10Plus', 'TpmFips': 'FipsMode', 'TpmFipsModeSwitch': 'NoAction', 'TpmModeSwitchOperation': 'NoAction', 'TpmState': 'PresentEnabled', 'TpmType': 'Tpm20', 'TpmUefiOpromMeasuring': 'Enabled', 'TpmVisibility': 'Visible', 'Tsx': 'Enabled', 'UefiOptimizedBoot': 'Enabled', 'UefiSerialDebugLevel': 'ErrorsOnly', 'UefiShellBootOrder': 'Disabled', 'UefiShellPhysicalPresenceKeystroke': 'Enabled', 'UefiShellScriptVerification': 'Disabled', 'UefiShellStartup': 'Disabled', 'UefiShellStartupLocation': 'Auto', 'UefiShellStartupUrl': '', 'UefiShellStartupUrlFromDhcp': 'Disabled', 'UefiVariableAccessFwControl': 'Disabled', 'UncoreFreqScaling': 'Maximum', 'UncoreFrequencyMAX': 24, 'UncoreFrequencyMIN': 8, 'UncoreFrequencyRAPL': 'Enabled', 'UpiPrefetcher': 'Enabled', 'UrlBootFile': '', 'UrlBootFile2': '', 'UrlBootFile3': '', 'UrlBootFile4': '', 'UsbBoot': 'Enabled', 'UsbControl': 'UsbEnabled', 'UserDefaultsState': 'Disabled', 'UtilityLang': 'English', 'VirtualNuma': 'Disabled', 'VirtualSerialPort': 'Com1Irq4', 'VlanControl': 'Disabled', 'VlanId': 0, 'VlanPriority': 0, 'VmProprietaryPageRetireSupport': 'Enabled', 'VmdonCpu1Stack5Port1': 'Disabled', 'VmdonCpu1Stack5Port2': 'Disabled', 'VmdonCpu1Stack5Port3': 'Disabled', 'VmdonCpu1Stack5Port4': 'Disabled', 'VmdonCpu2Stack4Port1': 'Disabled', 'VmdonCpu2Stack5Port1': 'Disabled', 'VmdonCpu2Stack5Port2': 'Disabled', 'VmdonCpu2Stack5Port3': 'Disabled', 'VmdonCpu2Stack5Port4': 'Disabled', 'WakeOnLan': 'Enabled', 'WorkloadProfile': 'Virtualization-MaxPerformance', 'XptPrefetcher': 'Auto', 'iSCSISoftwareInitiator': 'Disabled'}, 'Id': 'settings', 'Name': 'BIOS Pending Settings'}
+2026-08-07 23:04:05,718Z INFO 57670144 lcm_ops_by_host.py:623 Got stage handler _execute_post_actions for state LcmOpsByHostStates.POST_OPS_DONE for task 9ba8f269-1d3c-4018-5c08-f846f8b5c97b
+2026-08-07 23:04:05,732Z INFO 57670144 lcm_actions_helper.py:753 [PostActions] [9ba8f269-1d3c-4018-5c08-f846f8b5c97b] Executing actions with WAL
+2026-08-07 23:04:05,733Z INFO 57670144 actions.py:1602 Getting PostActions from task list ['9ba8f269-1d3c-4018-5c08-f846f8b5c97b']
+2026-08-07 23:04:05,736Z INFO 57670144 actions.py:1677 De-duplicated PostActions list for de-duplicated flag list [] of 1 tasks: []
+2026-08-07 23:04:05,736Z INFO 57670144 lcm_actions_helper.py:776 [PostActions] [9ba8f269-1d3c-4018-5c08-f846f8b5c97b] No actions found.
+2026-08-07 23:04:05,736Z INFO 57670144 lcm_ops_by_host.py:665 Stage handler _execute_post_actions for task 9ba8f269-1d3c-4018-5c08-f846f8b5c97b in state LcmOpsByHostStates.POST_OPS_DONE returned LcmTaskHandlerResult(task_handler_name='_execute_post_actions', result=True, error_message='No actions found', error_type=0)
+2026-08-07 23:04:05,756Z INFO 57670144 lcm_ops_by_host.py:715 Ran stage handler _execute_post_actions for task 9ba8f269-1d3c-4018-5c08-f846f8b5c97b and committed state LcmOpsByHostStates.POST_OPS_DONE
+2026-08-07 23:04:05,790Z INFO 57670144 lcm_ergon.py:1850 Updated task: 9ba8f269-1d3c-4018-5c08-f846f8b5c97b with status kSucceeded (3) and percentage: 100
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ echo ""
+
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ echo "=== ESPERAS: resiliencia / estabilidad entre hosts (ultimas 40) ==="
+=== ESPERAS: resiliencia / estabilidad entre hosts (ultimas 40) ===
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ grep -iE "waiting|resilien|under.?replicat|stability|rebuild|self.?heal" "$LOG" 2>/dev/null | tail -40
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ echo ""
+
+nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ echo "=== CL2CP2 - fin ==="
+
