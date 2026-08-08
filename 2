@@ -314,3 +314,25 @@ nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ echo ""
 
 nutanix@NTNX-GBPCVM231A-CVM:180.38.54.149:~$ echo "=== CL2CP2 - fin ==="
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=== CL1 leader: /home/nutanix/data/logs/lcm_ops.out ===
+2026-08-08 15:32:14,039Z INFO 57447488 lcm_ops_by_phoenix.py:1084 Executing pre-actions (task_list: odict_values(['c1142e76-5bc1-456b-54fa-db766365d9f0']))
+2026-08-08 15:32:14,043Z INFO 57447488 actions.py:1677 De-duplicated PreActions list for de-duplicated flag list ['boot_into_pem'] of 1 tasks: [('get_shutdown_token', 'getting shutdown token', 1), ('forward_storage_traffic_esx', 'forwarding storage traffic for ESX', 2), ('forward_storage_traffic_hyperv', 'forwarding storage traffic for HyperV', 2), ('enter_host_mm', 'entering host into maintenance mode', 8), ('forward_storage_traffic_ahv', 'forwarding storage traffic for AHV', 2), ('enter_cvm_mm', 'entering CVM into maintenance mode', 4), ('wait_for_services_shutdown', 'waiting for all services to shutdown on CVM', 2), ('stop_zookeeper', 'stop zookeeper service on CVM', 4), ('reboot_to_pem', 're-booting from CVM to phoenix Environment Module', 5)]
+2026-08-08 15:32:14,043Z INFO 57447488 lcm_actions_helper.py:472 List of actions fetched based on flags for task_list ['c1142e76-5bc1-456b-54fa-db766365d9f0']: [('get_shutdown_token', 'getting shutdown token', 1), ('forward_storage_traffic_esx', 'forwarding storage traffic for ESX', 2), ('forward_storage_traffic_hyperv', 'forwarding storage traffic for HyperV', 2), ('enter_host_mm', 'entering host into maintenance mode', 8), ('forward_storage_traffic_ahv', 'forwarding storage traffic for AHV', 2), ('enter_cvm_mm', 'entering CVM into maintenance mode', 4), ('wait_for_services_shutdown', 'waiting for all services to shutdown on CVM', 2), ('stop_zookeeper', 'stop zookeeper service on CVM', 4), ('reboot_to_pem', 're-booting from CVM to phoenix Environment Module', 5)]
+nutanix@NTNX-GBPCVM211A-CVM:180.38.54.181:~$
+
+
