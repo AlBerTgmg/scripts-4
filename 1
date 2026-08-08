@@ -5,3 +5,37 @@ ssh root@180.38.74.104 "ipmitool mc reset cold"
 
 
 The time is because after every host upgrade, the cluster rebuilds data resiliency before LCM moves to the next host — that's the screenshot below. The "Critical" banner is expected and transient during each rebuild, it goes back to green before the next host starts. The rebuild time depends on data per node (total data ÷ hosts), which is why each cluster runs at a different pace. Same behaviour we saw on CP1 — by design, not an issue.
+
+
+
+echo "=== CL1CP2 - LCM timeline $(date '+%F %T') ==="
+echo "--- LCM leader (si no es este CVM, repite alli) ---"
+lcm_leader
+LOG=~/data/logs/lcm/lcm_ops.out; [ -f "$LOG" ] || LOG=~/data/logs/lcm_ops.out
+echo "--- Log: $LOG ($(ls -lh $LOG 2>/dev/null | awk '{print $5}')) ---"
+echo ""
+echo "=== TIMELINE: transiciones por host (ultimas 80) ==="
+grep -iE "kLcmUpdateOperation|enter.*maintenance|exit.*maintenance|phoenix|reboot|post.?action|update.*(started|completed|succeeded|finished)" "$LOG" 2>/dev/null | tail -80
+echo ""
+echo "=== ESPERAS: resiliencia / estabilidad entre hosts (ultimas 40) ==="
+grep -iE "waiting|resilien|under.?replicat|stability|rebuild|self.?heal" "$LOG" 2>/dev/null | tail -40
+echo ""
+echo "=== CL1CP2 - fin ==="
+
+
+
+
+
+echo "=== CL2CP2 - LCM timeline $(date '+%F %T') ==="
+echo "--- LCM leader (si no es este CVM, repite alli) ---"
+lcm_leader
+LOG=~/data/logs/lcm/lcm_ops.out; [ -f "$LOG" ] || LOG=~/data/logs/lcm_ops.out
+echo "--- Log: $LOG ($(ls -lh $LOG 2>/dev/null | awk '{print $5}')) ---"
+echo ""
+echo "=== TIMELINE: transiciones por host (ultimas 80) ==="
+grep -iE "kLcmUpdateOperation|enter.*maintenance|exit.*maintenance|phoenix|reboot|post.?action|update.*(started|completed|succeeded|finished)" "$LOG" 2>/dev/null | tail -80
+echo ""
+echo "=== ESPERAS: resiliencia / estabilidad entre hosts (ultimas 40) ==="
+grep -iE "waiting|resilien|under.?replicat|stability|rebuild|self.?heal" "$LOG" 2>/dev/null | tail -40
+echo ""
+echo "=== CL2CP2 - fin ==="
