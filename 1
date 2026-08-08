@@ -1,3 +1,7 @@
 ssh root@180.38.74.104 "ipmitool mc info"
 
 ssh root@180.38.74.104 "ipmitool mc reset cold"
+
+
+
+The time is because after every host upgrade, the cluster rebuilds data resiliency before LCM moves to the next host — that's the screenshot below. The "Critical" banner is expected and transient during each rebuild, it goes back to green before the next host starts. The rebuild time depends on data per node (total data ÷ hosts), which is why each cluster runs at a different pace. Same behaviour we saw on CP1 — by design, not an issue.
