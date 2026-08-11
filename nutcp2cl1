@@ -1,0 +1,62 @@
+ncc health_checks hypervisor_checks ahv_crash_file_check
+
+HOSTS=(180.38.54.119 180.38.54.161 180.38.54.118)
+
+for HOST in "${HOSTS[@]}"; do
+  echo
+  echo "======================================================"
+  echo "AHV: $HOST"
+  echo "======================================================"
+
+  ssh -tt root@"$HOST" '
+    echo
+    echo "Contenido actual de /var/crash:"
+    find /var/crash -mindepth 1 -maxdepth 1 \
+      -printf "%TY-%Tm-%Td %TH:%TM  %f\n" | sort
+
+    while true; do
+      echo
+      printf "Nombre exacto que se eliminará (Enter para terminar este AHV): "
+      IFS= read -r CRASH_NAME
+
+      [ -z "$CRASH_NAME" ] && break
+
+      case "$CRASH_NAME" in
+        */*|"."|"..")
+          echo "ERROR: introduce solamente el nombre, sin /var/crash/ ni barras."
+          continue
+          ;;
+      esac
+
+      TARGET="/var/crash/$CRASH_NAME"
+
+      if [ ! -e "$TARGET" ]; then
+        echo "ERROR: no existe: $TARGET"
+        continue
+      fi
+
+      echo
+      echo "Se eliminará:"
+      ls -ldh -- "$TARGET"
+      du -sh -- "$TARGET" 2>/dev/null
+      printf "Escribe BORRAR para confirmar: "
+      IFS= read -r CONFIRM
+
+      if [ "$CONFIRM" = "BORRAR" ]; then
+        rm -rf -- "$TARGET"
+        echo "Eliminado: $TARGET"
+      else
+        echo "Operación cancelada."
+      fi
+    done
+
+    echo
+    echo "Contenido restante de /var/crash:"
+    find /var/crash -mindepth 1 -maxdepth 1 \
+      -printf "%TY-%Tm-%Td %TH:%TM  %f\n" | sort
+  '
+done
+
+echo
+echo "Ejecutando comprobación final NCC..."
+ncc health_checks hypervisor_checks ahv_crash_file_check
