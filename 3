@@ -3,3 +3,11 @@ ssh root@180.38.54.161 'hostname; ls -lahtr /var/crash/'
 ssh root@180.38.54.118 'hostname; ls -lahtr /var/crash/'
 
 ssh root@180.38.54.158 'hostname; ls -lahtr /var/crash/'
+
+ssh root@180.38.54.119 "rm -rf -- '/var/crash/127.0.0.1-2026-08-08-21:23:35' && echo 'OK: limpiado 180.38.54.119' && ls -lahtr /var/crash/"
+ssh root@180.38.54.161 "rm -rf -- '/var/crash/127.0.0.1-2026-08-08-01:25:01' && echo 'OK: limpiado 180.38.54.161' && ls -lahtr /var/crash/"
+ssh root@180.38.54.118 "rm -rf -- '/var/crash/127.0.0.1-2026-08-08-19:20:50' && echo 'OK: limpiado 180.38.54.118' && ls -lahtr /var/crash/"
+
+ssh root@180.38.54.158 "rm -rf -- '/var/crash/127.0.0.1-2026-08-09-05:29:51' && echo 'Dump eliminado correctamente' && ls -lahtr /var/crash/"
+
+ncc health_checks hypervisor_checks ahv_crash_file_check
