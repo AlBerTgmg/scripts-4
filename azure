@@ -1,0 +1,2 @@
+Get-AppxPackage Microsoft.AAD.BrokerPlugin |
+Format-List Name,PackageFullName,InstallLocation,Status
