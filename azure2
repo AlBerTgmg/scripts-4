@@ -10,3 +10,90 @@ Invoke-WebRequest `
   -Proxy "http://proxybckboa.gsnet.corp:8080" `
   -ProxyUseDefaultCredentials `
   -UseBasicParsing
+
+
+
+PS C:\Users\x414229> [System.Net.WebRequest]::DefaultWebProxy.GetProxy(
+>>     "https://login.microsoftonline.com"
+>> )
+
+
+AbsolutePath   : /
+AbsoluteUri    : http://proxybckboa.gsnet.corp:8080/
+LocalPath      : /
+Authority      : proxybckboa.gsnet.corp:8080
+HostNameType   : Dns
+IsDefaultPort  : False
+IsFile         : False
+IsLoopback     : False
+PathAndQuery   : /
+Segments       : {/}
+IsUnc          : False
+Host           : proxybckboa.gsnet.corp
+Port           : 8080
+Query          :
+Fragment       :
+Scheme         : http
+OriginalString : http://proxybckboa.gsnet.corp:8080
+DnsSafeHost    : proxybckboa.gsnet.corp
+IdnHost        : proxybckboa.gsnet.corp
+IsAbsoluteUri  : True
+UserEscaped    : False
+UserInfo       :
+
+
+
+PS C:\Users\x414229> Invoke-WebRequest `
+>>   "https://login.microsoftonline.com" `
+>>   -Proxy "http://proxybckboa.gsnet.corp:8080" `
+>>   -ProxyUseDefaultCredentials `
+>>   -UseBasicParsing
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           :
+
+                    <!-- Copyright (C) Microsoft Corporation. All rights reserved. -->
+                    <!DOCTYPE html>
+                    <html dir="ltr" class="" lang="en">
+                    <head>
+                        <title>Sign in to your account</title>
+                        <meta http-equiv="...
+RawContent        : HTTP/1.1 200 OK
+                    Pragma: no-cache
+                    Strict-Transport-Security: max-age=31536000; includeSubDomains
+                    X-Content-Type-Options: nosniff
+                    X-Frame-Options: DENY
+                    Cross-Origin-Opener-Policy-Report-Only: same-...
+Forms             :
+Headers           : {[Pragma, no-cache], [Strict-Transport-Security, max-age=31536000; includeSubDomains],
+                    [X-Content-Type-Options, nosniff], [X-Frame-Options, DENY]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        :
+RawContentLength  : 54492
+
+
+
+PS C:\Users\x414229>
+PS C:\Users\x414229> Invoke-WebRequest `
+>>   "https://ols.officeapps.live.com" `
+>>   -Proxy "http://proxybckboa.gsnet.corp:8080" `
+>>   -ProxyUseDefaultCredentials `
+>>   -UseBasicParsing
+Invoke-WebRequest :
+403 - Forbidden: Access is denied.
+Server Error
+
+  403 - Forbidden: Access is denied.
+  You do not have permission to view this directory or page using the credentials that you supplied.
+
+At line:1 char:1
++ Invoke-WebRequest `
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebExc
+   eption
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+PS C:\Users\x414229>
