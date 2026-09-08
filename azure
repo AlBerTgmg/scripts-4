@@ -1,1 +1,2 @@
-Get-Service TokenBroker | Format-List Name,DisplayName,Status,StartType
+Get-WinEvent -ListLog "*WebAuth*" |
+Select-Object LogName,IsEnabled
