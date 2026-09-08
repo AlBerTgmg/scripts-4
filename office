@@ -1,5 +1,2 @@
-Invoke-CimMethod `
-  -Namespace 'root\CCM' `
-  -ClassName SMS_Client `
-  -MethodName TriggerSchedule `
-  -Arguments @{sScheduleID='{00000000-0000-0000-0000-000000000113}'}
+Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration" |
+Select ProductReleaseIds,Platform,ClientCulture,SharedComputerLicensing,VersionToReport
