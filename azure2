@@ -1,0 +1,4 @@
+Test-NetConnection login.microsoftonline.com -Port 443
+Test-NetConnection ols.officeapps.live.com -Port 443
+Test-NetConnection activation.sls.microsoft.com -Port 443
+Test-NetConnection officeclient.microsoft.com -Port 443
