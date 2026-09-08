@@ -3,3 +3,18 @@ $WAM = "$env:LOCALAPPDATA\Packages\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy"
 Test-Path $WAM
 Test-Path "$WAM\Settings"
 Get-ChildItem "$WAM\Settings" -Force -ErrorAction SilentlyContinue
+
+
+explorer.exe shell:appsFolder\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy!App
+
+
+
+
+Add-AppxPackage -Register `
+"$env:windir\SystemApps\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\AppxManifest.xml" `
+-DisableDevelopmentMode `
+-ForceApplicationShutdown
+
+
+
+dsregcmd /status
