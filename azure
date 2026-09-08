@@ -1,2 +1,1 @@
-Get-AppxPackage Microsoft.AAD.BrokerPlugin |
-Format-List Name,PackageFullName,InstallLocation,Status
+Get-Service TokenBroker | Format-List Name,DisplayName,Status,StartType
