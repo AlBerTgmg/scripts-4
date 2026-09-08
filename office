@@ -1,10 +1,2 @@
-Get-Service | Where-Object {$_.DisplayName -like "Citrix*"} |
-Select-Object Status,DisplayName
-
-
-
-Get-BrokerApplication | Select Name,PublishedName,Enabled
-
-
-Get-BrokerDesktopGroup |
-Select Name,Enabled,InMaintenanceMode,DeliveryType,SessionSupport
+Test-NetConnection vmngctxtrccp01.ngl.corp -Port 443
+Test-NetConnection vmngctxtrccp02.ngl.corp -Port 443
