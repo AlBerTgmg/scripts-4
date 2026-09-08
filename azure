@@ -1,2 +1,14 @@
-Get-WinEvent -ListLog "*WebAuth*" |
-Select-Object LogName,IsEnabled
+dsregcmd /status
+
+Get-WinEvent -LogName "Microsoft-Windows-WebAuth/Operational" -MaxEvents 50 |
+Select-Object TimeCreated,Id,LevelDisplayName,Message |
+Format-List
+
+
+Get-WinEvent -LogName "Microsoft-Windows-AAD/Operational" -MaxEvents 100 |
+Where-Object {
+    $_.LevelDisplayName -eq "Error" -or
+    $_.LevelDisplayName -eq "Warning"
+} |
+Select-Object TimeCreated,Id,LevelDisplayName,Message |
+Format-List
