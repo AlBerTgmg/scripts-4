@@ -1,2 +1,2 @@
-asnp Citrix.*
-Get-BrokerSite
+Get-Service | Where-Object {$_.DisplayName -like "Citrix*"} |
+Select-Object Status,DisplayName
