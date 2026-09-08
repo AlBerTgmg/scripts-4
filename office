@@ -1,2 +1,1 @@
-Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration" |
-Select ProductReleaseIds,Platform,ClientCulture,SharedComputerLicensing,VersionToReport
+Get-BrokerApplication | Select Name,PublishedName,Enabled
