@@ -1,1 +1,2 @@
+asnp Citrix.*
 Get-BrokerApplication | Select Name,PublishedName,Enabled
