@@ -1,0 +1,24 @@
+(Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration").OfficeMgmtCOM
+
+Get-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Office\16.0\Common\OfficeUpdate" -ErrorAction SilentlyContinue |
+Format-List *
+
+
+
+Remove-ItemProperty `
+"HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Updates" `
+-Name "UpdateDetectionLastRunTime" `
+-ErrorAction SilentlyContinue
+
+
+Start-ScheduledTask `
+-TaskPath "\Microsoft\Office\" `
+-TaskName "Office Automatic Updates 2.0"
+
+
+& "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe" `
+/update user displaylevel=true forceappshutdown=true
+
+
+
+(Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration").VersionToReport
