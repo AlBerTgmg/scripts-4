@@ -1,0 +1,46 @@
+- High Level Change Description:
+Restaurar la comunicación XML de Citrix StoreFront al protocolo seguro HTTPS por el puerto TCP 443.
+Durante la incidencia del 08/09/2026, la comunicación XML se modificó temporalmente de HTTPS/443 a HTTP/80 debido a la caducidad del certificado SSL utilizado por los Citrix Cloud Connectors.
+El certificado caducado ya ha sido renovado e instalado. Mediante este cambio de emergencia se revertirá la solución temporal y se restaurará la configuración original y segura mediante HTTPS/443.
+
+- Services/Servers/Workstreams/Channels Impacted?:
+Citrix StoreFront, Citrix DaaS, servicio XML y Citrix Cloud Connectors de Spain-Boadilla.
+Servidores StoreFront que utilizan los Cloud Connectors de Spain-Boadilla para la enumeración de aplicaciones y escritorios.
+
+- Technologies Involved in the Change?:
+Citrix StoreFront, Citrix DaaS, Citrix Cloud Connectors, Citrix XML Service, HTTPS/TLS y certificados SSL.
+
+- Has this Type of Change been attempted before [YES|NO]:
+YES.
+HTTPS/443 era la configuración estándar y operativa antes de la incidencia provocada por la caducidad del certificado.
+
+- Have previous Deployments resulted in any issues? [YES|NO] (If YES explain what happened):
+NO.
+La incidencia anterior no fue causada por la configuración HTTPS, sino por la caducidad del certificado SSL utilizado para la comunicación XML.
+
+- Any Dependencies with other Changes or it's Self-Contained? (If Dependencies, please add the Change Tickets):
+Cambio autocontenido.
+El nuevo certificado SSL ya ha sido renovado e instalado en los Citrix Cloud Connectors afectados.
+
+- Impact on Live Service expected? [YES|NO] (If YES, provide Impact Statement):
+NO se espera impacto en el servicio.
+Durante la modificación y propagación de la configuración podría producirse una interrupción mínima y temporal en la enumeración o lanzamiento de nuevas aplicaciones y escritorios Citrix.
+Las sesiones Citrix ya establecidas no deberían verse afectadas.
+
+- Is the deployment time window critical? [YES|NO] (if YES, what is the exact time window? That window should include deployment, testing and backout activities):
+YES.
+El cambio se ejecutará durante la ventana de mantenimiento de emergencia acordada para esta noche.
+La ventana incluirá la modificación de la configuración, propagación entre servidores StoreFront, validación funcional y rollback en caso necesario.
+
+- Any impact on Communications? [YES|NO]:
+NO.
+
+- Any impact on Desktops? [YES|NO]:
+NO se espera impacto sobre las sesiones activas.
+Podría existir una afectación mínima y temporal en la enumeración o lanzamiento de nuevas aplicaciones y escritorios mientras se aplica la configuración.
+
+- Is Market Risks impacted? [YES|NO]:
+NO.
+
+- Is DMZ impacted? [YES|NO]:
+NO.
