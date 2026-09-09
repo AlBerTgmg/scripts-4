@@ -88,3 +88,35 @@ La configuración HTTP/80 se encuentra actualmente operativa y ha sido utilizada
 
 - If the Change fails, what's the length of any service outage to reverse (backout)? [No outage|Less than an hour|More than an hour]:
 Less than an hour.
+
+
+
+
+
+
+- Post Production Implementation Testing (Describe briefly):
+Tras aplicar el cambio en producción se validará la correcta comunicación XML entre Citrix StoreFront y los Citrix Cloud Connectors mediante HTTPS/443.
+
+Se comprobará:
+- Conectividad TCP/443 entre StoreFront y los Cloud Connectors.
+- Correcta comunicación XML mediante HTTPS.
+- Ausencia de nuevos errores de Citrix Store Service relacionados con XML/HTTPS.
+- Correcta enumeración de aplicaciones y escritorios publicados.
+- Lanzamiento de una aplicación/escritorio de prueba para validar el funcionamiento end-to-end.
+- Correcto funcionamiento de los dos portales productivos.
+- Estado correcto de los Cloud Connectors en Citrix DaaS.
+
+La misma configuración ha sido validada previamente en el portal de pruebas TechAccess, donde se ha comprobado el funcionamiento correcto mediante HTTPS/443.
+
+- Type of Testing? (Choose as many as apply: Technical Testing, Functional Testing, Regression Testing, etc...):
+Technical Testing, Functional Testing y Regression Testing.
+
+- Who is performing the Testings?:
+Equipo Citrix / Virtualización.
+
+If PRO change:
+- Who Tested in PRE?:
+Equipo Citrix / Virtualización, mediante el portal TechAccess.
+
+- What was the PRE change ID?:
+N/A, validación realizada en el portal TechAccess antes de la ejecución en los portales productivos.
