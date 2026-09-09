@@ -64,3 +64,27 @@ Además, se prolongaría innecesariamente el workaround aplicado durante la inci
 Restauración de la configuración segura original mediante HTTPS/443, asegurando el cifrado de las comunicaciones XML y eliminando el workaround temporal HTTP/80.
 Se recupera la configuración estándar del servicio Citrix y se reduce el riesgo asociado al uso de comunicaciones no cifradas.
 
+
+
+
+
+- BackOut/Rollback Plan (Including Teams involved and Activities Order):
+Antes de iniciar el cambio se realizará snapshot de los servidores StoreFront afectados para disponer de un punto de recuperación previo a la modificación.
+
+En caso de fallo tras configurar la comunicación XML mediante HTTPS/443, se revertirá la configuración de StoreFront al estado anterior, restaurando temporalmente la comunicación XML mediante HTTP/80.
+
+Se validará posteriormente la correcta enumeración y lanzamiento de aplicaciones y escritorios Citrix.
+
+En caso de que la reversión de configuración no sea suficiente, se utilizará como último recurso el snapshot realizado previamente para restaurar el servidor al estado anterior al cambio.
+
+Equipo implicado: equipo Citrix/Virtualización.
+
+- Estimated Time Length for Backout:
+15-30 minutos.
+
+- Proven BackOut/Rollback method and Tested in Previous Environments? [YES|NO] (If NO, describe briefly the reason):
+YES.
+La configuración HTTP/80 se encuentra actualmente operativa y ha sido utilizada como workaround durante la incidencia. La restauración mediante snapshot es un procedimiento estándar de recuperación de servidores virtuales.
+
+- If the Change fails, what's the length of any service outage to reverse (backout)? [No outage|Less than an hour|More than an hour]:
+Less than an hour.
