@@ -44,3 +44,23 @@ NO.
 
 - Is DMZ impacted? [YES|NO]:
 NO.
+
+
+
+
+
+- Reason? [Project|Incident Fix|Vulnerability|Regulatory|Regulatory Compliance|BAU] :
+Incident Fix.
+
+- Business Rationale for the Change? (Why?, Value added?, etc...):
+Restaurar la configuración segura y estándar de la comunicación XML entre Citrix StoreFront y los Citrix Cloud Connectors mediante HTTPS por el puerto 443.
+Durante la incidencia del 08/09/2026 se habilitó temporalmente HTTP/80 como workaround debido a la caducidad del certificado SSL. El nuevo certificado ya ha sido renovado e instalado, por lo que se requiere retirar la configuración temporal y restablecer la comunicación cifrada.
+
+- Impact of not carrying out the change?:
+La comunicación XML permanecería utilizando HTTP/80, manteniendo una configuración temporal no cifrada y distinta del estándar definido para el servicio.
+Además, se prolongaría innecesariamente el workaround aplicado durante la incidencia y se mantendría una menor protección de las comunicaciones entre StoreFront y los Cloud Connectors.
+
+- What BENEFIT will this change bring?:
+Restauración de la configuración segura original mediante HTTPS/443, asegurando el cifrado de las comunicaciones XML y eliminando el workaround temporal HTTP/80.
+Se recupera la configuración estándar del servicio Citrix y se reduce el riesgo asociado al uso de comunicaciones no cifradas.
+
