@@ -1,0 +1,30 @@
+https://www.microsoft.com/en-us/download/details.aspx?id=49117
+
+
+
+download_Office365_2608.xml
+
+
+<Configuration>
+  <Add
+      SourcePath="C:\Temp\Office365_2608"
+      OfficeClientEdition="64"
+      Channel="MonthlyEnterprise"
+      Version="16.0.20326.20142">
+
+    <Product ID="O365ProPlusRetail">
+      <Language ID="es-es" />
+      <Language ID="en-us" />
+      <Language ID="fr-fr" />
+      <Language ID="pt-pt" />
+      <Language ID="de-de" />
+    </Product>
+
+  </Add>
+</Configuration>
+
+
+
+
+cd /d C:\Temp\ODT
+setup.exe /download download_Office365_2608.xml
