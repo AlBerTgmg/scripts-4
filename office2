@@ -6,21 +6,66 @@ download_Office365_2608.xml
 
 
 <Configuration>
+
   <Add
-      SourcePath="C:\Temp\Office365_2608"
       OfficeClientEdition="64"
       Channel="MonthlyEnterprise"
-      Version="16.0.20326.20142">
+      Version="16.0.20326.20142"
+      OfficeMgmtCOM="TRUE">
 
     <Product ID="O365ProPlusRetail">
+
       <Language ID="es-es" />
       <Language ID="en-us" />
       <Language ID="fr-fr" />
       <Language ID="pt-pt" />
+      <Language ID="pt-br" />
       <Language ID="de-de" />
+
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="Teams" />
+      <ExcludeApp ID="Bing" />
+      <ExcludeApp ID="Outlook" />
+
     </Product>
 
   </Add>
+
+  <Property Name="SharedComputerLicensing" Value="1" />
+  <Property Name="PinIconsToTaskbar" Value="TRUE" />
+
+  <Property Name="SCLCacheOverride" Value="1" />
+
+  <Property
+      Name="SCLCacheOverrideDirectory"
+      Value="\\vmngctxtfsp01.ngl.corp\FSCTXHOMEFP\OfficeLIC\%username%" />
+
+  <Property Name="AUTOACTIVATE" Value="1" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="TRUE" />
+  <Property Name="DeviceBasedLicensing" Value="0" />
+
+  <RemoveMSI>
+
+    <IgnoreProduct ID="InfoPath" />
+    <IgnoreProduct ID="InfoPathR" />
+    <IgnoreProduct ID="PrjPro" />
+    <IgnoreProduct ID="PrjStd" />
+    <IgnoreProduct ID="SharePointDesigner" />
+    <IgnoreProduct ID="VisPro" />
+    <IgnoreProduct ID="VisStd" />
+
+  </RemoveMSI>
+
+  <AppSettings>
+    <Setup Name="Company" Value="Grupo Santander" />
+  </AppSettings>
+
+  <Display Level="None" AcceptEULA="TRUE" />
+
+  <Logging Level="Standard" Path="C:\logs" />
+
 </Configuration>
 
 
