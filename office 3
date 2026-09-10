@@ -1,0 +1,3 @@
+Test-Path .\prog\setup.exe
+Test-Path .\prog\configuration.xml
+Test-Path .\prog\Office
