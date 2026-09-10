@@ -1,0 +1,910 @@
+#### ST&SO & SGT - Template PS v.3.4 ####
+#### Modification of 04/07/2022
+[CmdletBinding()]
+param( [String]$CallParam )
+######################################################################################
+# Application Info (REQUIRED)                                                        #
+######################################################################################
+$APP_Company         = "Microsoft"
+$APP_Name            = "Office_365_ProPlus_PT_BR_ES_EN_FR_DE"
+$APP_Version         = "16.0.20326.20142"
+$APP_Architecture    = "X64"
+$APP_System          = "01"
+$APP_Language        = "ML"
+$APP_InternalVersion = "01.00"
+$APP_GENE_NAME = ($($APP_Company) + "_" + $($APP_Name))
+if ($APP_Company -eq ""){$APP_GENE_NAME = $APP_Name}
+$Clave_Reg = "NO"
+$IPL = "NO"
+######################################################################################
+# Deployment Info (REQUIRED)                                                         #
+######################################################################################
+#
+# @ DETECTION METHOD
+#      Type
+#            File System
+#                File: 
+#                Version: 
+#                Date: 
+#            Registry: 
+#            Windows Installer: 
+#            Script: 
+#
+# @ USER EXPERIENCE
+#      Installation behavior
+#            Install for system: 
+#            Install for user: 
+#      Logon Requirement
+#            Only when a user is logged on: 
+#            Whether or not a user is logged on: 
+#            Only when no user is logged on: 
+#      Installation Program Visibility
+#            Normal: 
+#            Hidden: 
+#
+# @ DEPENDENCIES:
+# 
+# 
+#
+# @ COMMENTS:
+# 
+#
+#
+######################################################################################
+
+
+##################################################################################################################
+#                                                                                                                #
+#                                          DO NOT MODIFY BELOW THIS LINE                                         #
+#                                                                                                                #
+##################################################################################################################
+
+######################################################################################
+# VARIABLES             															 # 
+######################################################################################
+	
+$PathScript  = split-path -parent $MyInvocation.MyCommand.Definition
+$PathProg    = $PathScript + "\prog"
+$PathLog = "C:\logs\"
+$ExitCode = $null
+$Sep          = '_'
+$Package      = "$APP_GENE_NAME$Sep$APP_Version$Sep$APP_Architecture$Sep$APP_System$Sep$APP_Language"
+#$Package     = $APP_GENE_NAME  # generic log name without version 
+ if ($CallParam -eq 'TEST'){$ErrorActionPreference = 'Stop'}
+ else{$ErrorActionPreference = 'Continue'}
+$DateStartScript = get-date -Format 'HH:mm:ss'
+$logfile = $PathLog + $Package + ".log"
+$AllUserDesktop = [Environment]::GetFolderPath("CommonDesktopDirectory") # All user desktop
+$AllUserPrograms =[Environment]::GetFolderPath("CommonPrograms") # Start Menu for All user
+$ProgramData    = (Get-Item env:ALLUSERSPROFILE).value
+$Windir         = $env:windir
+$RebootNeeded   = $false
+
+######################################################################################
+# Get Computer Info                                                                  # 
+######################################################################################
+
+$ComputerInfo=Get-CimInstance Win32_OperatingSystem | Select Caption, Version, OSArchitecture 
+$ComputerUser = Get-WMIObject -class Win32_ComputerSystem | Select Domain,Model,Username
+$ComputerLanguage = Get-Culture
+$LauncherUser =[System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+$Hostname= $env:computername
+$OperatingSystem = $ComputerInfo.Caption
+$VersionOS = $ComputerInfo.Version
+$ArchitectureOs = $ComputerInfo.OSArchitecture
+$LanguageOS = $ComputerLanguage.DisplayName
+$Domain = $ComputerUser.Domain
+$Model = $ComputerUser.Model
+$User = $ComputerUser.UserName
+
+
+######################################################################################
+# Determine Folder-Architecture                                                      # 
+######################################################################################
+
+if ($APP_Architecture -eq 'X86')
+    {
+    $BitsOs = 32
+    $ProgFiles = $env:ProgramFiles
+    $SystemFiles = "$Windir\SYSTEM32"
+
+    }
+elseif ($APP_Architecture -eq 'X64')
+    {
+    $BitsOs = 64
+	$ProgFiles86 = ${env:ProgramFiles(x86)}
+    $ProgFiles = $env:ProgramFiles
+    $SystemFiles = "$Windir\SYSTEM32"
+    }
+elseif ($APP_Architecture -eq 'ALL')   
+    {
+	if ($ArchitectureOs -match '64')
+        {
+        $BitsOs = 64         
+		$ProgFiles86 = ${env:ProgramFiles(x86)}
+        }
+    else
+        {
+        $BitsOs = 32
+        }
+    $ProgFiles = $env:ProgramFiles
+    $SystemFiles = "$Windir\SYSTEM32"
+    }
+elseif ($APP_Architecture -eq 'WOW')
+    {
+  
+     if ($ArchitectureOs -like '*64*')
+        {
+        $BitsOs = 64       
+        $ProgFiles = ${env:ProgramFiles(x86)}
+		$ProgFiles64 = $env:ProgramFiles
+        $SystemFiles = "$Windir\SYSWOW64"
+        }
+    else
+        {
+        $BitsOs = 32
+        $ProgFiles = $env:ProgramFiles
+        $SystemFiles = "$Windir\SYSTEM32"
+        }
+    }
+
+
+######################################################################################
+# Function Param "NEW"                                                               # 
+######################################################################################
+
+If ($CallParam -eq "NEW")
+{
+New-Item -Name $Package -ItemType "directory"
+New-Item -Name "$Package\Prog" -ItemType "directory"
+Copy-Item .\Install.ps1 -Destination $Package
+Copy-Item .\Uninstall.ps1 -Destination $Package
+Exit 0
+}
+
+
+######################################################################################
+# Function Create-LogFile                                                            # 
+######################################################################################
+                             
+function Create-LogFile
+{
+ $DateTime  = Get-Date -Format 'HH:mm:ss' 
+ $DateTime2 = Get-Date -Format 'dd/MM/yyyy'
+ Add-Content -Value "$DateTime -----------------------------------------------------------------------------------" -Path $logfile
+ Add-Content -Value "$DateTime $Package " -Path $logfile
+ switch ($CallParam) {
+	"TEST"	{Add-Content -Value "$DateTime Internal Version: $APP_InternalVersion           TEST MODE : ON" -Path $logfile}
+	"/A"	{Add-Content -Value "$DateTime Internal Version: $APP_InternalVersion			INSTALL MODE ARRANQUE!!!" -Path $logfile}	
+	default {Add-Content -Value "$DateTime Internal Version: $APP_InternalVersion" -Path $logfile}
+ }
+ Add-Content -Value "$DateTime -----------------------------------------------------------------------------------" -Path $logfile
+ Add-Content -Value "$DateTime <<<< Start $DateTime2    $DateTime >>>>>" -Path $logfile
+ Add-Content -Value "$DateTime" -Path $logfile
+ Add-Content -Value "$DateTime O.S.                : $OperatingSystem - $ArchitectureOs" -Path $logfile
+ Add-Content -Value "$DateTime O.S. Language       : $LanguageOS" -Path $logfile
+ Add-Content -Value "$DateTime O.S. Version        : $VersionOS" -Path $logfile
+ Add-Content -Value "$DateTime Hostname            : $Hostname" -Path $logfile 
+ Add-Content -Value "$DateTime User                : $User" -Path $logfile
+ Add-Content -Value "$DateTime Domain              : $Domain" -Path $logfile
+ Add-Content -Value "$DateTime Install User        : $LauncherUser" -Path $logfile
+ Add-Content -Value "$DateTime Install Path        : $PathScript" -Path $logfile
+ Add-Content -Value "$DateTime System Enviroment $BitsOs" -Path $logfile
+ Add-Content -Value "$DateTime" -Path $logfile
+}
+
+
+######################################################################################
+# Function Finish-LogFile                                                            # 
+######################################################################################
+                             
+function Finish-LogFile
+{
+ Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       $CodeExit
+     )
+ 
+If ($Clave_Reg -eq "SI"){
+   switch ($CodeExit) {
+	0 {
+	Claves-Registro	
+	}
+	3010 {
+    Claves-Registro
+	}
+	4884 {
+	#return 0
+	#$ExitCode = 0
+	$CodeExit = 0
+	}
+	default {    
+	}
+   }
+}
+	 
+ $DateTime  = Get-Date -Format 'HH:mm:ss' 
+ $DateTime2 = Get-Date -Format 'dd/MM/yyyy' 
+ $DateEndScript = get-date -Format 'HH:mm:ss'
+ $Executiontime = New-TimeSpan -Start $DateStartScript -End $DateEndScript
+ Add-Content -Value "$DateTime Application Version: $APP_Version" -Path $logfile
+ Add-Content -Value "$DateTime" -Path $logfile
+ Add-Content -Value "$DateTime Finalize. Return value: $CodeExit" -Path $logfile
+ Add-Content -Value "$DateTime Execution Time: $Executiontime" -Path $logfile
+ Add-Content -Value "$DateTime <<<< Finish  $DateTime2    $DateTime >>>>>" -Path $logfile
+ Add-Content -Value "$DateTime -----------------------------------------------------------------------------------" -Path $LogFile
+ Add-Content -Value " " -Path $logfile
+ Add-Content -Value " " -Path $logfile
+ if ($CallParam -eq 'TEST')
+	{Write-Output "Output [$CodeExit]"
+    Break Script
+    }
+ else
+    {[Environment]::Exit($CodeExit)}
+ }
+######################################################################################
+# Function Claves-Registro                                                           # 
+######################################################################################
+ 
+function Claves-Registro
+{
+ $DateTime = Get-Date -Format 'HH:mm:ss'
+ $DateTime2 = Get-Date -Format 'dd/MM/yyyy'
+ $APP_REG =   $APP_GENE_NAME
+ $APP_REG2 = ($APP_GENE_NAME + "_DESINST")
+ $APP_REG_DESC = ""
+ if (Test-Path -Path "HKLM:\SOFTWARE\WOW6432Node\Paquetes\$($APP_REG)"){Remove-Item -Path "HKLM:\SOFTWARE\WOW6432Node\Paquetes\$($APP_REG)" -Recurse} 
+ if (Test-Path -Path "HKLM:\SOFTWARE\WOW6432Node\Paquetes\$($APP_REG2)"){Remove-Item -Path "HKLM:\SOFTWARE\WOW6432Node\Paquetes\$($APP_REG2)" -Recurse} 
+ New-Item -Path "HKLM:\SOFTWARE\WOW6432Node\Paquetes\$($APP_REG)"
+ New-ItemProperty -path "HKLM:\SOFTWARE\WOW6432Node\Paquetes\$($APP_REG)" -propertyType String -Name Version -value "$($APP_InternalVersion)"
+ New-ItemProperty -path "HKLM:\SOFTWARE\WOW6432Node\Paquetes\$($APP_REG)" -propertyType String -Name "Manufacturer Version" -value "$($APP_Version)"
+ New-ItemProperty -path "HKLM:\SOFTWARE\WOW6432Node\Paquetes\$($APP_REG)" -propertyType String -Name Date -value "$($DateTime2) $($datetime)"
+ New-ItemProperty -path "HKLM:\SOFTWARE\WOW6432Node\Paquetes\$($APP_REG)" -propertyType String -Name Description -value "$($APP_REG)_$($APP_Version)_$($APP_Architecture)_$($APP_System )_Vi$($APP_InternalVersion)_$($APP_Language)"
+ }
+ 
+######################################################################################
+# Function F-ARRANQUE                                                          		 # 
+######################################################################################
+Function F-ARRANQUE
+{
+      #$APP_Version -replace ".","_"
+	  $DateTime  = Get-Date -Format 'HH:mm:ss' 
+	  $DateTime2 = Get-Date
+	  $APP_VERALM1 = $APP_Version.SubString(0,2)
+	  $APP_VERALM2 = $APP_Version.SubString(3,2)
+	  $APP_VERALM = "$($APP_VERALM1)_$($APP_VERALM2)"
+	  $Folder_Arry = @(	"C:\SAN\PAQUETES",
+						"C:\SAN\PAQUETES\ALM",
+						"C:\SAN\PAQUETES\ERR", 
+						"C:\SAN\PAQUETES\EXE", 
+						"C:\SAN\PAQUETES\MVD",
+						"C:\SAN\PAQUETES\TMP")
+		foreach ($Folder in $Folder_Arry){
+		if (-not (New-Object -ComObject Scripting.FileSystemObject).FolderExists("$Folder")){
+			New-Item -Path "$Folder" -ItemType Directory}
+		else{	
+		}
+		}
+	  Remove-Item -Path "C:\SAN\PAQUETES\ALM\$($APP_GENE_NAME)*" -force -recurse
+	  Start-Sleep -s 3
+	  Write-ALM ("STARTING COPY = $LauncherUser $DateTime2 $Hostname") 0
+	  Write-Log ("STARTING COPY = $LauncherUser $DateTime2 $Hostname") 0
+	  New-Item -Path "C:\SAN\PAQUETES\ALM\$($APP_GENE_NAME)_$($APP_VERALM)" -ItemType Directory
+		if ((New-Object -ComObject Scripting.FileSystemObject).FolderExists("$Folder")){
+		Copy-Item "Install.ps1" -Destination "C:\SAN\PAQUETES\ALM\$($APP_GENE_NAME)_$($APP_VERALM)\Install.ps1" -Recurse -Force -Passthru
+		Copy-Item -Path "$PathProg" -Destination "C:\SAN\PAQUETES\ALM\$($APP_GENE_NAME)_$($APP_VERALM)" -Recurse -Force -Passthru
+		 if ((New-Object -ComObject Scripting.FileSystemObject).FolderExists("C:\SAN\PAQUETES\ALM\$($APP_GENE_NAME)_$($APP_VERALM)\PROG") -and (New-Object -ComObject Scripting.FileSystemObject).FileExists("C:\SAN\PAQUETES\ALM\$($APP_GENE_NAME)_$($APP_VERALM)\Install.ps1")){	
+		 Write-ALM ("LOAD C:\SAN\PAQUETES\ALM\$($APP_GENE_NAME)_$($APP_VERALM) OK") 0
+		 Write-Log ("LOAD C:\SAN\PAQUETES\ALM\$($APP_GENE_NAME)_$($APP_VERALM) OK") 0
+		 }
+		else{	
+		Write-ALM ("LOAD C:\SAN\PAQUETES\ALM\$($APP_GENE_NAME)_$($APP_VERALM) KO") 8899
+		Write-Log ("LOAD C:\SAN\PAQUETES\ALM\$($APP_GENE_NAME)_$($APP_VERALM) KO") 8899
+		Finish-LogFile 8899
+		}
+	  }
+	   $PXML = "C:\SAN\PAQUETES\ALM\$($APP_GENE_NAME)_$($APP_VERALM)\Prog\Instalar.dsh.xml"
+	   Add-Content -Value "<?xml version=""1.0"" encoding=""utf-8""?>" -Path $PXML
+	   Add-Content -Value "<DATSOF>" -Path $PXML
+	   Add-Content -Value "  <APLI>" -Path $PXML
+	   Add-Content -Value "    <NOMBRE>$APP_GENE_NAME</NOMBRE>" -Path $PXML
+	   Add-Content -Value "    <DESC>$($APP_GENE_NAME)_$($APP_VERALM)</DESC>" -Path $PXML
+	   Add-Content -Value "    <VERAPLI>$APP_Version</VERAPLI>" -Path $PXML
+	   Add-Content -Value "    <VERDIS>$APP_Verdis</VERDIS>" -Path $PXML
+	   Add-Content -Value "    <BITS_APPL>32/64</BITS_APPL>" -Path $PXML
+	   Add-Content -Value "    <IPL>$IPL</IPL>" -Path $PXML
+	   Add-Content -Value "    <TIPOINS>AR</TIPOINS>" -Path $PXML
+	   Add-Content -Value "    <PROCINS>install.ps1</PROCINS>" -Path $PXML
+	   Add-Content -Value "    <LOGFILE></LOGFILE>" -Path $PXML
+	   Add-Content -Value "  </APLI>" -Path $PXML
+	   Add-Content -Value "</DATSOF>" -Path $PXML
+	  Write-Log "ARRANQUE MODULE COMPLETED" 0
+	  #return 4884  
+	  #$ExitCode = 4884
+	  Finish-LogFile 4884
+}
+ 
+######################################################################################
+# Function Format-Rc                                                                  # 
+######################################################################################
+
+Function Format-Rc 
+{
+ Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [string]$Rcprm
+     )
+$Length = $Rcprm.Length
+
+if ($Length -eq 0)
+    {return "NULL"}
+
+elseif ($Length -eq 1)
+    {return "000$Rcprm"}
+
+elseif ($Length -eq 2)
+    {return "00$Rcprm"}
+
+elseif ($Length -eq 3)
+    {return "0$Rcprm"}
+
+else
+    {return "$Rcprm"}
+}
+
+
+
+######################################################################################
+# Function Message-User ( EX. Message-User "text spanish" "text english" )           # 
+######################################################################################
+
+Function Message-User 
+{ Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$MessageSp,
+     [Parameter(Mandatory=$true, Position=1)]
+       [STRING]$MessageEn
+     )
+
+# DON'T SHOW IF THE SCRIPT WAS LAUNCHED WITH 'P' ## .\INSTALL.PS1 P
+
+if ($CallParam -ne 'P')
+    {
+    # Load assembly
+    Add-Type -AssemblyName Microsoft.VisualBasic
+    $res=[Microsoft.VisualBasic.Interaction]::MsgBox("$MessageSp`n`n$MessageEn", 'OkCancel,systemmodal,Information', 'Atenci n / Attention')
+    if ($res -eq 'Cancel')
+       {
+        Write-Log "User cancel install" 9999
+        Finish-LogFile 9999       
+       }
+    }
+}
+##################################################################################################################
+#       F-CARTEL "PROCESS" "1" "0"                                                                               #
+#       PROCESS -->process name                                                                                  #
+#       First parameter: "0" close the process directly "1" Shows the cartel                                     #
+#       Second parameter: "0" PUT THE NAME OF THE APP "CUSTOM NAME"                                              #
+##################################################################################################################
+Function F-CARTEL 
+{ 
+Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$Proceso,
+     [Parameter(Mandatory=$true, Position=1)]
+       [STRING]$Todo,
+	 [Parameter(Mandatory=$true, Position=2)]
+       [STRING]$Mensa2
+     )
+	if (!(Test-Path -Path "c:\san\Scripts\Cartel.exe" -PathType Leaf)) {$Todo = 0}
+	if ($Mensa2 -eq "0"){$Mensa = $APP_Name}
+	else {$Mensa = $Mensa2}
+	for ($i = 0; $i -le 40; $i ++ )
+	  {
+	  	if ($Todo -eq 0){
+	    Close-Process $Proceso
+		$i = 40
+		}
+		if ($Todo -eq 1)
+		{
+		 if((get-process $Proceso -ErrorAction SilentlyContinue) -eq $Null)
+		 {
+			Close-Process $Proceso
+			$Todo= 0
+		 }
+		 else { 
+			$Exis0 = (New-Object -ComObject WScript.Shell).RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Paquetes\MENSA\APP","$Mensa","REG_SZ")
+			$Exis0 = (New-Object -ComObject WScript.Shell).RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Paquetes\MENSA\Version","$APP_Version","REG_SZ")
+			$Exis0 = (New-Object -ComObject WScript.Shell).RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Paquetes\MENSA\Control","1","REG_SZ")
+				  for ($j = 0; $j -le 30; $j ++ )
+				  {
+					$Exis0 = (New-Object -ComObject WScript.Shell).RegRead("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Paquetes\MENSA\Control") 
+					if ($Exis0 -eq "1"){
+						Start-Sleep -s 2						
+					}					
+					else {
+						Write-Log "PROCESS $Process CLOSED BY THE USER THE INSTALLATION CONTINUES $Proceso" 0
+						$Exis0 = (New-Object -ComObject WScript.Shell).RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Paquetes\MENSA\Control","0","REG_SZ")
+						$Todo= 0
+						break
+					}
+				  
+				  
+				  }
+		 }
+		}
+	  }	
+	  $Exis0 = (New-Object -ComObject WScript.Shell).RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Paquetes\MENSA\Control","0","REG_SZ")
+}
+
+######################################################################################
+# Function Write-Log ( EX. Write-Log "text" 22 )    (the number is optional)         # 
+######################################################################################
+
+function Write-Log 
+{ 	
+Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$Message,
+     [Parameter(Mandatory=$false, Position=1)]
+       $RetEndEL
+     )
+    
+    if ($RetEndEL -eq $null){
+        $DateTime = Get-Date -Format  HH:mm:ss  
+        Add-Content -Value "$DateTime [Rc=NULL] -- $Message" -Path $logfile
+    }
+    Else{   
+	    $RetEndClmp = Format-Rc ($RetEndEL).ToString()
+        $DateTime = Get-Date -Format  HH:mm:ss  
+        Add-Content -Value "$DateTime [Rc=$RetEndClmp] -- $Message" -Path $logfile
+    }
+}
+######################################################################################
+# Function Write-ALM  														         # 
+######################################################################################
+function Write-ALM 
+{ 	
+Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$Message,
+     [Parameter(Mandatory=$false, Position=1)]
+       $RetEndEL
+     )
+    $logfile2 = "C:\LOGS\PUESTO\COPIARALM.log"
+    if ($RetEndEL -eq $null){
+        $DateTime = Get-Date -Format 'HH:mm:ss' 
+        Add-Content -Value "$DateTime [Rc=NULL] -- $Message" -Path $logfile2
+    }
+    Else{   
+	    $RetEndClmp = Format-Rc ($RetEndEL).ToString()
+        $DateTime = Get-Date -Format 'HH:mm:ss' 
+        Add-Content -Value "$DateTime [Rc=$RetEndClmp] -- $Message" -Path $logfile2
+    }
+}
+
+
+######################################################################################
+# Function Extract-Zip ( EX. Extract-Zip "$PathProg\file.zip" "C:\temp" )            # 
+######################################################################################
+
+Function Extract-Zip
+{
+ Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$ZipFile,
+     [Parameter(Mandatory=$true, Position=1)]
+       [STRING]$DestinationFolder
+     )
+
+   if (Test-Path -path $ZipFile)
+    {
+      try
+        {
+        $FmZip = Get-Item $ZipFile
+        $error.Clear()
+        Expand-Archive -LiteralPath $ZipFile -DestinationPath $DestinationFolder -Force 
+		$ZipName = $FmZip.Name
+        If ($error.Count -eq 0)
+            {
+            Write-Log "Extract Zip $ZipFile in $DestinationFolder - OK" 0
+            return 0
+            }
+        else
+            {
+            if ($error[0].hresult -eq $null)
+            {$ERREXIT=999}
+            else
+            {$ERREXIT=$error[0].hresult}
+		    Write-Log "Extract Zip $ZipFile - KO" $ERREXIT
+            return $ERREXIT
+            }
+        }
+      Catch 
+        {
+            if ($error[0].hresult -eq $null)
+            {$ERREXIT=999}
+            else
+            {$ERREXIT=$error[0].hresult}
+
+        Write-Log "Extract Zip $ZipName - KO" $ERREXIT
+        return $ERREXIT
+        }
+    }
+  else
+    {
+      Write-Log "$ZipFile not found - KO" 2
+      return 2
+    }
+
+}
+
+
+######################################################################################
+# Function Firewall-Rules ( EX. Firewall-Rules ("$ProgFiles\App\App.exe") )          # 
+######################################################################################
+
+function Firewall-Rules
+{
+ Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$Program
+     )
+
+
+$FicheroRF = Get-Item $Program
+$ProgramaNameRF =$FicheroRF.name
+try
+     {
+      New-NetFirewallRule -DisplayName "$ProgramaNameRF TCP" -Direction Inbound -Program $Program -Protocol TCP -Action Allow -Profile Domain, Private -Enabled True
+      New-NetFirewallRule -DisplayName "$ProgramaNameRF UDP" -Direction Inbound -Program $Program -Protocol UDP -Action Allow -Profile Domain, Private -Enabled True
+      Write-Log "Firewall Rule TCP/UDP $Program correctly applied" 0
+      return 0
+     }
+catch
+     {
+     if ($error[0].hresult -eq $null)
+     {$ERREXIT=999}
+     else
+     {$ERREXIT=$error[0].hresult}    
+     Write-Log "Firewall Rules TCP/UDP $Program - KO" $ERREXIT
+     Finish-LogFile $ERREXIT
+     }
+}
+
+
+######################################################################################
+# Function Remove-Folder ( EX. Remove-Folder ("$ProgFiles\App\App.exe") )            # 
+######################################################################################
+
+function Remove-Folder
+{
+ Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$Folder
+     )
+if (Test-Path -path $Folder)
+    {try 
+        {               
+        
+        $error.Clear()
+        Write-Log "Remove-Item -Path $Folder -Recurse -Force" 0
+        Remove-Item -Path $Folder -Recurse -Force
+
+        
+        If ($error.Count -eq 0)
+            {
+            Write-Log "Remove  $Folder - OK" 0
+            return 0
+            }
+        else
+            {
+            $Erstr= $Error[0].ErrorDetails.Message
+		    Write-Log "Remove $Folder - KO - $Erstr" 1            
+            return 1
+            }
+        }
+    Catch
+        {
+        if ($error[0].hresult -eq $null)
+        {$ERREXIT=999}
+        else
+        {$ERREXIT=$error[0].hresult}        
+        Write-Log "Remove $Folder - KO" $ERREXIT
+        return $ERREXIT
+        }           
+     }   
+else
+    {
+    Write-Log "$Folder not found" 0
+    return 0
+    }
+}
+
+
+#######################################################################################
+# Function Permissions-Folder ( EX. Permissions-Folder ("$ProgFiles\AppFolder") )      # 
+#######################################################################################
+
+function Permissions-Folder
+{
+ Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$Folder
+     )
+
+
+if (Test-Path -path $Folder)
+    {
+    try
+        { 
+        $user = New-Object -TypeName 'System.Security.Principal.SecurityIdentifier' -ArgumentList @([System.Security.Principal.WellKnownSidType]::AuthenticatedUserSid, $null)
+        $inherit = [system.security.accesscontrol.InheritanceFlags]"ContainerInherit, ObjectInherit"
+        $propagation = [system.security.accesscontrol.PropagationFlags]"None"
+        $acl = Get-Acl $Folder
+        $accessrule = New-Object system.security.AccessControl.FileSystemAccessRule($user, "FullControl", $inherit, $propagation, "Allow")
+        $acl.AddAccessRule($accessrule)
+        set-acl -aclobject $acl $Folder
+        Get-Acl $Folder | fl
+        Write-Log "Set Folder permissions to $Folder Domain Users" 0
+		$ExeFile = "c:\windows\system32\icacls.exe"
+		$Param = """$Folder"" /T /C /grant *S-1-5-32-545:(OI)(CI)F"  
+		$Res=Start-Process "$ExeFile" -ArgumentList $Param -Wait -NoNewWindow -PassThru 
+        Write-Log "RESULTADO: $APP_GENE_NAME" $res.ExitCode 
+        If ($Res.ExitCode -eq 3010){
+            $Global:RebootNeeded = $true
+            $Res.ExitCode = 0
+        }
+		If ($Res.ExitCode -ne 0){Write-Log $Res.ExitCode}
+        If ($Text -eq ""){
+            Write-Log "Set Folder permissions to $Folder Local Users OK" 0
+        }
+        return 0
+       }
+    Catch
+        {
+        if ($error[0].hresult -eq $null)
+        {$ERREXIT=999}
+        else
+        {$ERREXIT=$error[0].hresult}
+        
+        Write-Log "Folder permissions error to $Folder" $ERREXIT
+        Finish-LogFile $ERREXIT
+        }
+    }
+}
+
+
+######################################################################################
+# Function Close-Process ( EX. Close-Process "Notepad" )                             # 
+######################################################################################
+
+function Close-Process
+{
+ Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$Proceso
+     )
+    if((get-process $Proceso -ErrorAction SilentlyContinue) -eq $Null){}
+	Else{
+		try
+		{
+		Stop-Process -Name $Proceso -Force
+		Write-Log "Stop process $Proceso" 0
+		return 0
+		}
+		catch
+		{
+		if ($error[0].hresult -eq $null){$ERREXIT=999}
+		else{$ERREXIT=$error[0].hresult}
+		Write-Log "Stop Proccess $proceso Error" $ERREXIT
+		return $ERREXIT
+		}
+	}	
+}
+
+
+###############################################################################################
+# Function MSI-Run-Uninstall ( EX. MSI-Run-Uninstall "72C7A21B-9CB0-40D3-B04F-987F6821C7C5" ) # 
+###############################################################################################
+
+Function MSI-Run-Uninstall
+{
+ Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$ProductCode,
+	 [Parameter(Mandatory=$false, Position=1)]
+       [STRING]$Muestro
+     )
+    if ($Muestro -eq "1"){Write-Log "Searching product code..." 0}
+    $Uninstall_Keys = "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall","HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"
+    $Busqueda = @()
+    foreach ($U_Key in $Uninstall_Keys) 
+        {
+        foreach ($Item in $ProductCode) { $busqueda += get-childitem -recurse $U_Key | get-itemproperty | where { $_.UninstallString -match $Item } }
+        }
+    if (!($Busqueda)) 
+        { 
+        if ($Muestro -eq "1"){Write-log "$ProductCode : Not installed" 0}
+        return 0
+        }
+    else
+    {
+            $name= ($Busqueda|select displayname).displayname
+            $msilog= "c:\logs\Uninst-$name.log"
+            
+            $parametros=' /x {'+$ProductCode+'} /qn /L*v '+"""$msilog"""
+            Write-Log "Running command for uninstallation..." 0
+            Write-Log "Run msiexec.exe $parametros" 0
+            $Res=Start-Process "Msiexec" -ArgumentList $Parametros -Wait -NoNewWindow -PassThru
+		    If ($Res.ExitCode -eq 3010){
+                $Global:RebootNeeded = $true
+                return 0
+            }
+		    If ($Res.ExitCode -ne 0){Finish-LogFile $Res.ExitCode}
+            Write-Log "Uninstall $namemsi - OK" 0
+            return 0
+    }
+}
+
+
+######################################################################################
+# Function MSI-Run ( EX. MSI-Run "PathProg\AppMSI.msi" )                             # 
+######################################################################################
+
+Function MSI-Run
+{
+Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$MsiFile
+     )
+
+  if (Test-Path -path $MsiFile)
+    {
+      try
+        {
+
+        $Fmsi = Get-Item $MsiFile
+        $msilogFile = $PathLog+$Fmsi.name+'.log'
+        $namemsi = $Fmsi.Name
+        $MSIArguments = @(
+            "/i"
+            ('"{0}"' -f $MsiFile)
+            "/qn"
+            "ALLUSERS=1"
+            "REINSTALLMODE=omus"
+            "/norestart"
+            "/L*v"
+            """$msilogFile"""
+            )
+        Write-Log "Running command for installation..." 0
+        Write-Log "Run msiexec.exe $MSIArguments" 0
+        $Res=Start-Process "msiexec.exe" -ArgumentList $MSIArguments -Wait -NoNewWindow -PassThru
+        If ($Res.ExitCode -eq 3010){
+            $Global:RebootNeeded = $true
+            return 0
+        }
+		If ($Res.ExitCode -ne 0)
+            {
+            if ($res.ExitCode -eq 1618)
+                {
+                Start-Sleep -Seconds 60
+                $Res=Start-Process "msiexec.exe" -ArgumentList $MSIArguments -Wait -NoNewWindow -PassThru
+                If ($Res.ExitCode -eq 3010)
+                    {
+                    $Global:RebootNeeded = $true
+                    return 0
+                    }
+                If ($res.ExitCode -ne 0){Finish-LogFile $Res.ExitCode}
+                }
+            else {Finish-LogFile $Res.ExitCode}
+            }
+        Write-Log "Install $namemsi - OK" 0
+        return 0
+        }
+      Catch 
+        {
+        if ($error[0].hresult -eq $null)
+        {$ERREXIT=999}
+        else
+        {$ERREXIT=$error[0].hresult}
+        Write-Log "Install $namemsi - KO" $ERREXIT
+        Finish-LogFile $ERREXIT
+        }
+    }
+  else
+    {
+      Write-Log "$MsiFile not found - KO" 8888
+      Finish-LogFile 8888
+    }
+    
+}
+
+
+##############################################################################################################################################
+# Function EXE-Run ( EX. EXE-Run "$Pathprog\C24iO_windows-x64_4_12_6.exe" "-q -varfile ""$PathProg\response.varfile""" "TEXT-LOG"(optional) )  # 
+##############################################################################################################################################
+
+Function EXE-Run
+{
+Param
+    ([Parameter(Mandatory=$true, Position=0)]
+       [STRING]$ExeFile,
+     [Parameter(Mandatory=$true, Position=1)]
+       [STRING]$Param,
+     [Parameter(Mandatory=$false, Position=2)]
+       [STRING]$Text
+     )
+        
+   if (Test-Path -path $ExeFile)
+    {
+      try
+        {
+        $FmExe = Get-Item $ExeFile
+        Write-Log "Run $ExeFile $Param" 0
+        $Res=Start-Process "$ExeFile" -ArgumentList $Param -Wait -NoNewWindow -PassThru 
+        If ($Res.ExitCode -eq 3010){
+            $Global:RebootNeeded = $true
+            return 0
+        }
+		If ($Res.ExitCode -ne 0){Finish-LogFile $Res.ExitCode}
+        If ($Text -eq ""){
+            Write-Log "$FmExe has been executed correctly - OK" 0
+        }
+        Else{
+            Write-Log "$Text has been executed correctly - OK" 0
+        }
+        return 0
+		
+        }
+      Catch 
+        {
+        if ($error[0].hresult -eq $null)
+        {$ERREXIT=999}
+        else
+        {$ERREXIT=$error[0].hresult}
+
+        If($Text -eq ""){Write-Log "$ExeFile $Param" $ERREXIT}
+        Else{Write-Log "$Text" $ERREXIT}
+        
+        Finish-LogFile $ERREXIT
+        }
+    }
+  else
+    {
+      Write-Log "$ExeFile not found - KO" 8888
+      Finish-LogFile 8888
+    }
+    
+}
+
+
+Create-LogFile
+
+##################################################################################################################
+#                                                                                                                #
+#                                          DO NOT MODIFY ABOVE THIS LINE                                         #
+#                                                                                                                #
+##################################################################################################################
+
+#Set-Variable Quote -Option Constant -Scope Global -Value (34 | %{[char]$_}) -ErrorAction SilentlyContinue  #Quote """
+#Set-Variable Space -Option Constant -Scope Global -Value (32 | %{[char]$_}) -ErrorAction SilentlyContinue  #Space " "
+#Set-Variable US    -Option Constant -Scope Global -Value (95 | %{[char]$_}) -ErrorAction SilentlyContinue  #UnderScore "_"
+
+##########################
+# Script START
+#-------------------------
+ 
+# Package code here	
+
+$ExitCode = EXE-Run "$Pathprog\Setup.exe" "/configure ""$PathProg\configuration.xml""" "OFFICE 365 2608 PT BR ES EN FR DE"  
+
+#-------------------------
+# Script END
+##########################
+
+If (($RebootNeeded -eq $true) -And ($ExitCode -eq 0)) {
+	$ExitCode = 3010
+	Write-Log "Installation finished successfully. System must be restarted." $ExitCode
+}
+Finish-LogFile $ExitCode
