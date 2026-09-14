@@ -1,0 +1,3 @@
+hostname
+whoami /upn
+dsregcmd /status
