@@ -8,3 +8,6 @@ netsh trace start scenario=InternetClient capture=yes report=no persistent=no ma
 
 
 netsh trace stop
+
+
+netsh trace convert input="C:\Users\ADMCYA~1\AppData\Local\Temp\Office-AP59-20260914-105404.etl" output="C:\Users\ADMCYA~1\AppData\Local\Temp\Office-AP59-20260914-105404.txt" dump=TXT report=no
