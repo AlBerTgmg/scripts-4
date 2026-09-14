@@ -22,3 +22,8 @@ Get-WinEvent -FilterHashtable @{
     } |
     Select-Object -First 15 TimeCreated, ProviderName, Id, Message |
     Format-List
+
+
+
+Get-WinEvent -LogName 'Microsoft-Windows-AAD/Operational' -MaxEvents 10 |
+    Format-List TimeCreated, Id, Message
