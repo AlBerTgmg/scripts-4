@@ -1,3 +1,13 @@
+hostname
+Resolve-DnsName -Name "www.msftconnecttest.com" -Type A -DnsOnly
+Resolve-DnsName -Name "dns.msftncsi.com" -Type A -DnsOnly
+
+
+
+
+
+
+
 Resolve-DnsName www.msftconnecttest.com -Type A
 Resolve-DnsName dns.msftncsi.com -Type A
 
