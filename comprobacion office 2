@@ -9,3 +9,223 @@ Get-ItemProperty 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityS
 
 Get-WinEvent -LogName 'Microsoft-Windows-NCSI/Operational' -MaxEvents 12 -ErrorAction Continue |
     Format-List TimeCreated, Id, Message
+
+
+
+hostname
+
+Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet' |
+    Select-Object EnableActiveProbing, ActiveWebProbeHost, ActiveWebProbePath, ActiveWebProbeContent, ActiveDnsProbeHost, ActiveDnsProbeContent |
+    Format-List
+
+Get-ItemProperty 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator' -ErrorAction SilentlyContinue |
+    Format-List *
+
+Get-WinEvent -LogName 'Microsoft-Windows-NCSI/Operational' -MaxEvents 12 -ErrorAction Continue |
+    Format-List TimeCreated, Id, Message
+
+
+PS C:\Users\x414229> hostname
+vmngctxtrxap59
+PS C:\Users\x414229>
+PS C:\Users\x414229> Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet' |
+>>     Select-Object EnableActiveProbing, ActiveWebProbeHost, ActiveWebProbePath, ActiveWebProbeContent, ActiveDnsProbeHost, ActiveDnsProbeContent |
+>>     Format-List
+
+
+EnableActiveProbing   : 1
+ActiveWebProbeHost    : www.msftconnecttest.com
+ActiveWebProbePath    : connecttest.txt
+ActiveWebProbeContent : Microsoft Connect Test
+ActiveDnsProbeHost    : dns.msftncsi.com
+ActiveDnsProbeContent : 131.107.255.255
+
+
+
+PS C:\Users\x414229>
+PS C:\Users\x414229> Get-ItemProperty 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator' -ErrorAction SilentlyContinue |
+>>     Format-List *
+
+
+(default)    :
+PSPath       : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NetworkConnec
+               tivityStatusIndicator
+PSParentPath : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows
+PSChildName  : NetworkConnectivityStatusIndicator
+PSDrive      : HKLM
+PSProvider   : Microsoft.PowerShell.Core\Registry
+
+
+
+PS C:\Users\x414229>
+PS C:\Users\x414229> Get-WinEvent -LogName 'Microsoft-Windows-NCSI/Operational' -MaxEvents 12 -ErrorAction Continue |
+>>     Format-List TimeCreated, Id, Message
+
+
+TimeCreated : 11/09/2026 9:22:37
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability:
+              Local ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 11/09/2026 9:22:36
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability:
+              Local ChangeReason: PassivePacketHops)
+
+TimeCreated : 10/09/2026 18:23:07
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability:
+              Local ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 10/09/2026 18:23:06
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability:
+              Local ChangeReason: PassivePacketHops)
+
+TimeCreated : 10/09/2026 16:51:00
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability:
+              Local ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 10/09/2026 16:50:59
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability:
+              Local ChangeReason: PassivePacketHops)
+
+TimeCreated : 10/09/2026 10:00:11
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability:
+              Local ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 10/09/2026 10:00:11
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability:
+              Local ChangeReason: PassivePacketHops)
+
+TimeCreated : 08/09/2026 9:58:27
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability:
+              Local ChangeReason: PassivePacketHops)
+
+TimeCreated : 08/09/2026 9:58:26
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability: None
+              ChangeReason: SuspectDnsProbeFailed)
+
+TimeCreated : 08/09/2026 9:24:39
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability:
+              Local ChangeReason: PassivePacketHops)
+
+TimeCreated : 08/09/2026 9:24:39
+Id          : 4042
+Message     : Capability change on {cec1e863-dc7e-4ace-bb85-6c659649faeb} (0x6008002000000 Family: V4 Capability: None
+              ChangeReason: SuspectDnsProbeFailed)
+
+PS C:\Users\x414229> hostname
+VMNGCTXTRXAP24
+PS C:\Users\x414229>
+PS C:\Users\x414229> Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet' |
+>>     Select-Object EnableActiveProbing, ActiveWebProbeHost, ActiveWebProbePath, ActiveWebProbeContent, ActiveDnsProbeH
+ost, ActiveDnsProbeContent |
+>>     Format-List
+
+
+EnableActiveProbing   : 1
+ActiveWebProbeHost    : www.msftconnecttest.com
+ActiveWebProbePath    : connecttest.txt
+ActiveWebProbeContent : Microsoft Connect Test
+ActiveDnsProbeHost    : dns.msftncsi.com
+ActiveDnsProbeContent : 131.107.255.255
+
+
+
+PS C:\Users\x414229>
+PS C:\Users\x414229> Get-ItemProperty 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator' -Er
+rorAction SilentlyContinue |
+>>     Format-List *
+
+
+(default)    :
+PSPath       : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NetworkConnec
+               tivityStatusIndicator
+PSParentPath : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows
+PSChildName  : NetworkConnectivityStatusIndicator
+PSDrive      : HKLM
+PSProvider   : Microsoft.PowerShell.Core\Registry
+
+
+
+PS C:\Users\x414229>
+PS C:\Users\x414229> Get-WinEvent -LogName 'Microsoft-Windows-NCSI/Operational' -MaxEvents 12 -ErrorAction Continue |
+>>     Format-List TimeCreated, Id, Message
+
+
+TimeCreated : 14/09/2026 10:04:45
+Id          : 4042
+Message     : Capability change on {A37F5215-6B2E-4A7B-A319-034065B2CA30} (0x6008002000000 Family: V6 Capability: None
+              ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 14/09/2026 10:04:45
+Id          : 4042
+Message     : Capability change on {A37F5215-6B2E-4A7B-A319-034065B2CA30} (0x6008002000000 Family: V4 Capability: None
+              ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 14/09/2026 10:04:44
+Id          : 4042
+Message     : Capability change on {424B868C-5D53-457D-A9F4-CFD126B268B7} (0x6008000000000 Family: V6 Capability: None
+              ChangeReason: ActiveHttpProbeFailedButDnsSucceeded)
+
+TimeCreated : 14/09/2026 10:04:41
+Id          : 4042
+Message     : Capability change on {A37F5215-6B2E-4A7B-A319-034065B2CA30} (0x6008002000000 Family: V4 Capability: None
+              ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 14/09/2026 10:04:41
+Id          : 4042
+Message     : Capability change on {A37F5215-6B2E-4A7B-A319-034065B2CA30} (0x6008002000000 Family: V6 Capability: None
+              ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 14/09/2026 10:04:40
+Id          : 4042
+Message     : Capability change on {424B868C-5D53-457D-A9F4-CFD126B268B7} (0x6008000000000 Family: V6 Capability: None
+              ChangeReason: ActiveHttpProbeFailedButDnsSucceeded)
+
+TimeCreated : 14/09/2026 10:04:35
+Id          : 4042
+Message     : Capability change on {A37F5215-6B2E-4A7B-A319-034065B2CA30} (0x6008002000000 Family: V6 Capability: None
+              ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 14/09/2026 10:04:35
+Id          : 4042
+Message     : Capability change on {A37F5215-6B2E-4A7B-A319-034065B2CA30} (0x6008002000000 Family: V4 Capability: None
+              ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 14/09/2026 10:04:34
+Id          : 4042
+Message     : Capability change on {424B868C-5D53-457D-A9F4-CFD126B268B7} (0x6008000000000 Family: V6 Capability: None
+              ChangeReason: ActiveHttpProbeFailedButDnsSucceeded)
+
+TimeCreated : 14/09/2026 9:39:22
+Id          : 4042
+Message     : Capability change on {A37F5215-6B2E-4A7B-A319-034065B2CA30} (0x6008002000000 Family: V4 Capability: None
+              ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 14/09/2026 9:39:22
+Id          : 4042
+Message     : Capability change on {A37F5215-6B2E-4A7B-A319-034065B2CA30} (0x6008002000000 Family: V6 Capability: None
+              ChangeReason: ActiveHttpProbeFailed)
+
+TimeCreated : 14/09/2026 9:39:21
+Id          : 4042
+Message     : Capability change on {424B868C-5D53-457D-A9F4-CFD126B268B7} (0x6008000000000 Family: V6 Capability: None
+              ChangeReason: ActiveHttpProbeFailedButDnsSucceeded)
+
+
+
+PS C:\Users\x414229>
+
+
+
+
+
