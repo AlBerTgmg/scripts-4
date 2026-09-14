@@ -20,3 +20,7 @@ else {
 
 
 Get-ChildItem -Path "$env:ProgramFiles\Microsoft Office","${env:ProgramFiles(x86)}\Microsoft Office" -Filter vnextdiag.ps1 -Recurse -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
+
+
+
+& "C:\Program Files\Microsoft Office\root\Office16\vNextDiag.ps1" -action list
