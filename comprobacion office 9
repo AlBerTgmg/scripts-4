@@ -1,0 +1,10 @@
+$archivo = Join-Path $env:TEMP ("Office-AP59-" + (Get-Date -Format "yyyyMMdd-HHmmss") + ".etl")
+netsh trace start scenario=InternetClient capture=yes report=no persistent=no maxsize=256 overwrite=no tracefile="$archivo"
+
+
+
+
+
+
+
+netsh trace stop
