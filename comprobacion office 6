@@ -13,3 +13,121 @@ Write-Host "Eventos distintos del aviso repetido:" $otros.Count
 $otros |
     Select-Object -First 20 TimeCreated, Id, LevelDisplayName, Message |
     Format-List
+
+
+
+
+
+TimeCreated      : 14/09/2026 9:36:45
+Id               : 1098
+LevelDisplayName : Error
+Message          : Error: 0xCAA5001C Token broker operation failed.
+                   Operation name: GetTokenSilently, Error: -895352821 (0xcaa2000b), Description: AADSTS500011: The resource principal named /cortana was not found in the tenant named
+                   35595a02-4d6d-44ac-99e1-f9ab4cd872db. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You might
+                   have sent your authentication request to the wrong tenant. Trace ID: d4348e00-b10f-4c76-8b92-16963cbd7e00 Correlation ID: e315df0c-5452-491f-8729-8f33ab9c2286 Timestamp: 2026-09-14
+                   07:36:45Z
+                   Logged at webaccountprocessor.cpp, line: 557, method: AAD::Core::WebAccountProcessor::ReportOperationError.
+
+TimeCreated      : 14/09/2026 9:36:45
+Id               : 1097
+LevelDisplayName : Warning
+Message          : Error: 0xCAA90056 Renew token by the primary refresh token failed.
+                   Logged at refreshtokenrequest.cpp, line: 100, method: RefreshTokenRequest::AcquireToken.
+
+                   Request: authority: https://login.microsoftonline.com/common, client: 26a7ee05-5602-4d76-a7ba-eae8b7b67941, redirect URI:
+                   ms-appx-web://Microsoft.AAD.BrokerPlugin/S-1-15-2-1861897761-1695161497-2927542615-642690995-327840285-2659745135-2630312742, resource: /cortana, correlation ID (request):
+                   e315df0c-5452-491f-8729-8f33ab9c2286
+
+TimeCreated      : 14/09/2026 9:36:45
+Id               : 1098
+LevelDisplayName : Error
+Message          : Error: 0xCAA2000B The resource is invalid due to configuration state or not existing.
+                   Code: invalid_resource
+                   Description: AADSTS500011: The resource principal named /cortana was not found in the tenant named 35595a02-4d6d-44ac-99e1-f9ab4cd872db. This can happen if the application has not been
+                   installed by the administrator of the tenant or consented to by any user in the tenant. You might have sent your authentication request to the wrong tenant. Trace ID:
+                   d4348e00-b10f-4c76-8b92-16963cbd7e00 Correlation ID: e315df0c-5452-491f-8729-8f33ab9c2286 Timestamp: 2026-09-14 07:36:45Z
+                   TokenEndpoint: https://login.microsoftonline.com/common/oauth2/token
+                   Logged at oauthtokenrequestbase.cpp, line: 391, method: OAuthTokenRequestBase::ProcessOAuthResponse.
+
+                   Request: authority: https://login.microsoftonline.com/common, client: 26a7ee05-5602-4d76-a7ba-eae8b7b67941, redirect URI:
+                   ms-appx-web://Microsoft.AAD.BrokerPlugin/S-1-15-2-1861897761-1695161497-2927542615-642690995-327840285-2659745135-2630312742, resource: /cortana, correlation ID (request):
+                   e315df0c-5452-491f-8729-8f33ab9c2286
+
+TimeCreated      : 14/09/2026 9:01:46
+Id               : 1160
+LevelDisplayName : Error
+Message          : Logon failure. Status: 0xC00000D0 Correlation ID: 13C2F59E-A464-40A6-B4B8-192F10A0C856
+
+TimeCreated      : 14/09/2026 9:01:46
+Id               : 1085
+LevelDisplayName : Error
+Message          : Logon failure. Status: 0xC00000D0 Correlation ID: 13C2F59E-A464-40A6-B4B8-192F10A0C856
+
+TimeCreated      : 14/09/2026 9:01:46
+Id               : 1081
+LevelDisplayName : Error
+Message          : OAuth response error: invalid_request
+                   Error description: AADSTS90002: Tenant 'ngl.corp' not found. Check to make sure you have the correct tenant ID and are signing into the correct cloud. Check with your subscription
+                   administrator, this may happen if there are no active subscriptions for the tenant. Trace ID: 83575071-7255-4736-9db5-8872e5b27100 Correlation ID: 13c2f59e-a464-40a6-b4b8-192f10a0c856
+                   Timestamp: 2026-09-14 07:01:46Z
+                   CorrelationID: 13c2f59e-a464-40a6-b4b8-192f10a0c856
+
+
+TimeCreated      : 14/09/2026 9:01:46
+Id               : 1025
+LevelDisplayName : Error
+Message          : Http request status: 400. Method: POST Endpoint Uri: https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db/oauth2/token Correlation ID:
+                   13C2F59E-A464-40A6-B4B8-192F10A0C856
+
+TimeCreated      : 14/09/2026 8:23:30
+Id               : 1098
+LevelDisplayName : Error
+Message          : Error: 0xCAA5001C Token broker operation failed.
+                   Operation name: GetTokenSilently, Error: -895352831 (0xcaa20001), Description: V2Error: unauthorized_client AADSTS700016: Application with identifier '00000000480728C5' was not found
+                   in the directory '35595a02-4d6d-44ac-99e1-f9ab4cd872db'. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the
+                   tenant. You may have sent your authentication request to the wrong tenant. Trace ID: 379f925b-5c0d-44a7-bd9e-071681190401 Correlation ID: 3200f6fa-b110-4125-ab8d-be56b1e084db
+                   Timestamp: 2026-09-14 06:23:30Z
+                   Logged at webaccountprocessor.cpp, line: 557, method: AAD::Core::WebAccountProcessor::ReportOperationError.
+
+TimeCreated      : 14/09/2026 8:23:30
+Id               : 1097
+LevelDisplayName : Warning
+Message          : Error: 0xCAA90056 Renew token by the primary refresh token failed.
+                   Logged at refreshtokenrequest.cpp, line: 100, method: RefreshTokenRequest::AcquireToken.
+
+                   Request: authority: https://login.microsoftonline.com/common, client: 00000000480728C5, redirect URI: ms-appx-web://Microsoft.AAD.BrokerPlugin/00000000480728C5, resource: , correlation
+                   ID (request): 3200f6fa-b110-4125-ab8d-be56b1e084db
+
+TimeCreated      : 14/09/2026 8:23:30
+Id               : 1098
+LevelDisplayName : Error
+Message          : Error: 0xCAA20001 The client is not authorized to request an authorization code using this method.
+                   Code: unauthorized_client
+                   Description: V2Error: unauthorized_client AADSTS700016: Application with identifier '00000000480728C5' was not found in the directory '35595a02-4d6d-44ac-99e1-f9ab4cd872db'. This can
+                   happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You may have sent your authentication request to the
+                   wrong tenant. Trace ID: 379f925b-5c0d-44a7-bd9e-071681190401 Correlation ID: 3200f6fa-b110-4125-ab8d-be56b1e084db Timestamp: 2026-09-14 06:23:30Z
+                   TokenEndpoint: https://login.microsoftonline.com/common/oauth2/token
+                   Logged at oauthtokenrequestbase.cpp, line: 391, method: OAuthTokenRequestBase::ProcessOAuthResponse.
+
+                   Request: authority: https://login.microsoftonline.com/common, client: 00000000480728C5, redirect URI: ms-appx-web://Microsoft.AAD.BrokerPlugin/00000000480728C5, resource: , correlation
+                   ID (request): 3200f6fa-b110-4125-ab8d-be56b1e084db
+
+TimeCreated      : 14/09/2026 8:23:14
+Id               : 1097
+LevelDisplayName : Warning
+Message          : Error: 0x4AA500F0 Browser SSO data format successfully updated.
+                   Nonce: no; Authority: n/a; Cookies: 0
+                   Logged at cookiestoreformatv2.cpp, line: 74, method: CookieStoreFormatV2::Apply.
+
+TimeCreated      : 14/09/2026 8:23:14
+Id               : 1097
+LevelDisplayName : Warning
+Message          : Error: 0x8AA500E6 Enumeration status set for existing webaccounts successfully.
+                   Logged at accountenumerationstatemigration.cpp, line: 70, method: AccountEnumerationStateMigration::Apply.
+
+TimeCreated      : 14/09/2026 8:23:14
+Id               : 1097
+LevelDisplayName : Warning
+Message          : Error: 0x8AA500DB The cache has been partitioned successfully.
+                   Logged at cachepartitioning.cpp, line: 35, method: CachePartitioning::Apply.
+
