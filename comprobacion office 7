@@ -96,3 +96,87 @@ PS C:\Users\x414229> dsregcmd /status
         SessionIsNotRemote : NO
             CertEnrollment : none
               PreReqResult : WillNotProvision
+
+
+
+
+
+PS C:\Users\x414229> hostname
+VMNGCTXTRXAP24
+PS C:\Users\x414229> whoami /upn
+x414229@santanderglobaltech.com
+PS C:\Users\x414229> dsregcmd /status
+
++----------------------------------------------------------------------+
+| Device State                                                         |
++----------------------------------------------------------------------+
+
+        AzureAdJoined : YES
+     EnterpriseJoined : NO
+             DeviceId : 95c0234c-231e-447e-9b89-e9bfc2c850d9
+           Thumbprint : 4216A5C741AA20BC957EF973E969214342EDADC
+       KeyContainerId : 172de584-10a1-426c-b22a-650b90e7b401
+          KeyProvider : Microsoft Software Key Storage Provider
+         TpmProtected : NO
+         KeySignTest: : MUST Run elevated to test.
+                  Idp : login.windows.net
+             TenantId : 35595a02-4d6d-44ac-99e1-f9ab4cd872db
+           TenantName : Santander Office 365
+          AuthCodeUrl : https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db/oauth2/authorize
+       AccessTokenUrl : https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db/oauth2/token
+               MdmUrl : https://enrollment.manage.microsoft.com/enrollmentserver/discovery.svc
+            MdmTouUrl : https://portal.manage.microsoft.com/TermsofUse.aspx
+     MdmComplianceUrl : https://portal.manage.microsoft.com/?portalAction=Compliance
+          SettingsUrl :
+       JoinSrvVersion : 1.0
+           JoinSrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/device/
+            JoinSrvId : urn:ms-drs:enterpriseregistration.windows.net
+        KeySrvVersion : 1.0
+            KeySrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/key/
+             KeySrvId : urn:ms-drs:enterpriseregistration.windows.net
+         DomainJoined : YES
+           DomainName : NGL
+
++----------------------------------------------------------------------+
+| User State                                                           |
++----------------------------------------------------------------------+
+
+               NgcSet : NO
+      WorkplaceJoined : NO
+        WamDefaultSet : YES
+  WamDefaultAuthority : organizations
+         WamDefaultId : https://login.microsoft.com
+       WamDefaultGUID : {B16898C6-A148-4967-9171-64D755DA8520} (AzureAd)
+           AzureAdPrt : YES
+
++----------------------------------------------------------------------+
+| Ngc Prerequisite Check                                               |
++----------------------------------------------------------------------+
+
+        IsUserAzureAD : YES
+        PolicyEnabled : NO
+       DeviceEligible : YES
+   SessionIsNotRemote : NO
+     X509CertRequired : NO
+         PreReqResult : WillNotProvision
+
+PS C:\Users\x414229>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
