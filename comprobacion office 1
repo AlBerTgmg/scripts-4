@@ -24,3 +24,102 @@ foreach ($url in $urls) {
         }
     }
 }
+
+
+
+
+PS C:\Users\x414229> hostname
+vmngctxtrxap59
+PS C:\Users\x414229>
+PS C:\Users\x414229> Test-NetConnection proxy.nngg.corp -Port 8080
+
+
+ComputerName     : proxy.nngg.corp
+RemoteAddress    : 180.16.225.15
+RemotePort       : 8080
+InterfaceAlias   : SERVICE
+SourceAddress    : 180.44.17.58
+TcpTestSucceeded : True
+
+
+
+PS C:\Users\x414229>
+PS C:\Users\x414229> $urls = @(
+>>     'https://login.microsoftonline.com',
+>>     'https://activation.sls.microsoft.com'
+>> )
+PS C:\Users\x414229>
+PS C:\Users\x414229> foreach ($url in $urls) {
+>>     Write-Host "`n--- $url ---"
+>>     try {
+>>         $r = Invoke-WebRequest -Uri $url `
+>>             -Proxy 'http://proxy.nngg.corp:8080' `
+>>             -ProxyUseDefaultCredentials `
+>>             -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop
+>>
+>>         Write-Host "HTTP:" $r.StatusCode
+>>     }
+>>     catch {
+>>         Write-Host "Error:" $_.Exception.Message
+>>         if ($_.Exception.Response) {
+>>             Write-Host "HTTP:" ([int]$_.Exception.Response.StatusCode)
+>>         }
+>>     }
+>> }
+
+--- https://login.microsoftonline.com ---
+HTTP: 200
+
+--- https://activation.sls.microsoft.com ---
+Error: The remote server returned an error: (403) Forbidden.
+HTTP: 403
+PS C:\Users\x414229>
+
+
+
+PS C:\Users\x414229> hostname
+VMNGCTXTRXAP24
+PS C:\Users\x414229>
+PS C:\Users\x414229> Test-NetConnection proxy.nngg.corp -Port 8080
+
+
+ComputerName     : proxy.nngg.corp
+RemoteAddress    : 180.16.225.15
+RemotePort       : 8080
+InterfaceAlias   : RED Servicio
+SourceAddress    : 180.18.145.110
+TcpTestSucceeded : True
+
+
+
+PS C:\Users\x414229>
+PS C:\Users\x414229> $urls = @(
+>>     'https://login.microsoftonline.com',
+>>     'https://activation.sls.microsoft.com'
+>> )
+PS C:\Users\x414229>
+PS C:\Users\x414229> foreach ($url in $urls) {
+>>     Write-Host "`n--- $url ---"
+>>     try {
+>>         $r = Invoke-WebRequest -Uri $url `
+>>             -Proxy 'http://proxy.nngg.corp:8080' `
+>>             -ProxyUseDefaultCredentials `
+>>             -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop
+>>
+>>         Write-Host "HTTP:" $r.StatusCode
+>>     }
+>>     catch {
+>>         Write-Host "Error:" $_.Exception.Message
+>>         if ($_.Exception.Response) {
+>>             Write-Host "HTTP:" ([int]$_.Exception.Response.StatusCode)
+>>         }
+>>     }
+>> }
+
+--- https://login.microsoftonline.com ---
+Error: The underlying connection was closed: An unexpected error occurred on a send.
+
+--- https://activation.sls.microsoft.com ---
+Error: The remote server returned an error: (403) Forbidden.
+HTTP: 403
+PS C:\Users\x414229>
