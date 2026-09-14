@@ -1,15 +1,59 @@
-$origen = 'C:\Users\ADMCYA~1\AppData\Local\Temp\Office-AP59-20260914-105404.txt'
-$salida = Join-Path (Split-Path $origen) 'Office-AP59-WebIO.txt'
+24359: [2]2C10.2EF4::‎2026‎-‎09‎-‎14 10:54:22.513 [Microsoft-Windows-WebIO]0x246B18DE180: WebCreateHttpRequest completed successfully. (Session 0x246AAE1E780[0xFE00000720000001]) (Method GET) (URI https://substrate.office.com/CompliancePolicy/ClientSyncFile/x414229@santanderglobaltech.com?FileId=0389DF5F292138330C682047294BF050E6FAE0946B272345D5CB4C398D0F0E0935595A024D6D44AC99E1F9AB4CD872DB&supportedMaxVersion=1.0.50.0) (Version 0x1.0x1) -> (Request Handle 0xFF00000230000001) 
+24393: [2]2C10.2EF4::‎2026‎-‎09‎-‎14 10:54:22.513 [Microsoft-Windows-WebIO]0x246B18DE180: Starting Proxy Resolution 
+24397: [2]2C10.2EF4::‎2026‎-‎09‎-‎14 10:54:22.513 [Microsoft-Windows-WebIO]0x246B18DE180: Completed Proxy Resolution 
+24399: [2]2C10.2EF4::‎2026‎-‎09‎-‎14 10:54:22.513 [Microsoft-Windows-WebIO]0x246B18DE180: Request on Endpoint (Server Endpoint: 0x246AAD778C0) (Proxy Endpoint: 0x246AAD77E60) (Connection Manager: 0x246B0CE0F20) 
+24401: [2]2C10.2EF4::‎2026‎-‎09‎-‎14 10:54:22.513 [Microsoft-Windows-WebIO]0x246B18DE180: =====Waiting For Available Connection===== 
+24403: [2]2C10.2EF4::‎2026‎-‎09‎-‎14 10:54:22.513 [Microsoft-Windows-WebIO]0x246B18DE180: Acquired a connection slot (ConnMgr: 0x246B0CE0F20), (Connection: 0x246B1922080) 
+24405: [2]2C10.2EF4::‎2026‎-‎09‎-‎14 10:54:22.513 [Microsoft-Windows-WebIO]0x246B18DE180: =====Request Connect====================== 
+24413: [2]2C10.2EF4::‎2026‎-‎09‎-‎14 10:54:22.513 [Microsoft-Windows-WebIO]0x246B1922080: Name Resolution Request (Name proxybckboa.gsnet.corp:8080) (Timeout 0x0) (CompletionContext: 0x2469F54C300) 
+24417: [2]2C10.2EF4::‎2026‎-‎09‎-‎14 10:54:22.513 [Microsoft-Windows-WebIO]0x246AB06E900: Resolving addresses (Host proxybckboa.gsnet.corp) (Flags: 0x20002) 
+24487: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:22.514 [Microsoft-Windows-WebIO]0x246AB06E900: Address resolution completed (Error = The operation completed successfully.) (Host proxybckboa.gsnet.corp) (Flags: 0x0).(AddressCount 0x1) 
+24489: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:22.514 [Microsoft-Windows-WebIO]0x246B1922080: Name Resolution Request Completed (FQDN proxybckboa.gsnet.corp) (Canonical proxybckboa.gsnet.corp) (AddressCount: 0x1) AddressData: 0x02000000B4CD1223000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+24493: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:22.514 [Microsoft-Windows-WebIO]0x246B1922080: =====TCP Connect========================== 
+24512: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:22.514 [Microsoft-Windows-WebIO]0x246B1922080: Connecting (Socket 0x1564) (Context 0x246B0F18360) (RemaingAddress 0x1) Address: 180.205.18.35:8080. 
+24545: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:22.516 [Microsoft-Windows-WebIO]0x246B1922080: Connection established (Socket 0x1564) (Context 0x246B0F18360) 
+24626: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:22.545 [Microsoft-Windows-WebIO]0x246B1922080: SSL AcquireCredentialsHandle returned - (STATUS_SUCCESS ) Credential Handle(0x2374D1D9BD0:0x2469F59C970) (EnabledProtocols SP_PROT_TLS1_2_CLIENT ) (ClientCert 0x0) (EnableRevertToSelfClientCertificate 0x0) (CipherConfig 0x0) 
+24695: [5]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:22.578 [Microsoft-Windows-WebIO]0x246B1922080: SSL Cert Validation - (Error: STATUS_SUCCESS ) Context Handle(0x2374D16AEC0:0x2374D16AEC0) (IgnoredServerCertErrors 0x80) (CertErrors 0x0) 
+24750: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:22.605 [Microsoft-Windows-WebIO]0x00000246B18DE180: WebSetHttpRequestHeader returning 0 for WebHttpHeaderAppend on Header Name (Connection) Value (Keep-Alive) 
+24836: [5]2C10.3094::‎2026‎-‎09‎-‎14 10:54:22.682 [Microsoft-Windows-WebIO]0x246B18DE180: WebHttpReceiveResponse (Handle: 0xFF00000230000001) (Flags 0x0) (ResponseFlags 0x0) CompletionContext (0x246AACD2A10) 
+24842: [5]2C10.3094::‎2026‎-‎09‎-‎14 10:54:22.683 [Microsoft-Windows-WebIO]0x246B18DE180: WebCancelHttpRequest Complete (Error: The operation completed successfully.) (Handle: 0xFF00000230000001) (Flags 0x0) 
+24848: [5]2C10.3094::‎2026‎-‎09‎-‎14 10:54:22.683 [Microsoft-Windows-WebIO]0x246B18DE180: WebCloseHttpRequest completed sucessfully error = The operation completed successfully.. (Handle 0xFF00000230000001) (Flags 0x0) 
+28761: [7]2C10.2040::‎2026‎-‎09‎-‎14 10:54:23.803 [Microsoft-Windows-WebIO]0x246B1414F40: WebCreateHttpRequest completed successfully. (Session 0x246B10DC4B0[0xFF00000020000001]) (Method POST) (URI https://outlook.office365.com/api/v2.0/me/GetLastPrivateCatalogUpdate) (Version 0x1.0x1) -> (Request Handle 0xFD00000730000001) 
+28789: [7]2C10.2040::‎2026‎-‎09‎-‎14 10:54:23.803 [Microsoft-Windows-WebIO]0x246B1414F40: Starting Proxy Resolution 
+28791: [7]2C10.2040::‎2026‎-‎09‎-‎14 10:54:23.803 [Microsoft-Windows-WebIO]0x246B1414F40: Completed Proxy Resolution 
+28792: [7]2C10.2040::‎2026‎-‎09‎-‎14 10:54:23.803 [Microsoft-Windows-WebIO]0x246B1414F40: Request on Endpoint (Server Endpoint: 0x246AAD77AA0) (Proxy Endpoint: 0x246AAD77C80) (Connection Manager: 0x246B0CE1260) 
+28793: [7]2C10.2040::‎2026‎-‎09‎-‎14 10:54:23.803 [Microsoft-Windows-WebIO]0x246B1414F40: =====Waiting For Available Connection===== 
+28794: [7]2C10.2040::‎2026‎-‎09‎-‎14 10:54:23.803 [Microsoft-Windows-WebIO]0x246B1414F40: Acquired a connection slot (ConnMgr: 0x246B0CE1260), (Connection: 0x246B100EEC0) 
+28795: [7]2C10.2040::‎2026‎-‎09‎-‎14 10:54:23.803 [Microsoft-Windows-WebIO]0x246B1414F40: =====Request Connect====================== 
+28799: [7]2C10.2040::‎2026‎-‎09‎-‎14 10:54:23.803 [Microsoft-Windows-WebIO]0x246B100EEC0: Name Resolution Request (Name proxybckboa.gsnet.corp:8080) (Timeout 0x0) (CompletionContext: 0x246B1417620) 
+28801: [7]2C10.2040::‎2026‎-‎09‎-‎14 10:54:23.804 [Microsoft-Windows-WebIO]0x246AB06E890: Resolving addresses (Host proxybckboa.gsnet.corp) (Flags: 0x20002) 
+28865: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:23.804 [Microsoft-Windows-WebIO]0x246AB06E890: Address resolution completed (Error = The operation completed successfully.) (Host proxybckboa.gsnet.corp) (Flags: 0x0).(AddressCount 0x1) 
+28866: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:23.804 [Microsoft-Windows-WebIO]0x246B100EEC0: Name Resolution Request Completed (FQDN proxybckboa.gsnet.corp) (Canonical proxybckboa.gsnet.corp) (AddressCount: 0x1) AddressData: 0x02000000B4CD1223000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+28869: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:23.804 [Microsoft-Windows-WebIO]0x246B100EEC0: =====TCP Connect========================== 
+28886: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:23.804 [Microsoft-Windows-WebIO]0x246B100EEC0: Connecting (Socket 0x1778) (Context 0x246AACAA2D0) (RemaingAddress 0x1) Address: 180.205.18.35:8080. 
+28916: [1]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:23.807 [Microsoft-Windows-WebIO]0x246B100EEC0: Connection established (Socket 0x1778) (Context 0x246AACAA2D0) 
+28964: [0]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:23.835 [Microsoft-Windows-WebIO]0x246B100EEC0: SSL AcquireCredentialsHandle returned - (STATUS_SUCCESS ) Credential Handle(0x2374D1D9A40:0x2469F59C970) (EnabledProtocols SP_PROT_TLS1_2_CLIENT ) (ClientCert 0x0) (EnableRevertToSelfClientCertificate 0x0) (CipherConfig 0x0) 
+29068: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:23.892 [Microsoft-Windows-WebIO]0x246B100EEC0: SSL Cert Validation - (Error: STATUS_SUCCESS ) Context Handle(0x2374CAC7A20:0x2374CAC7A20) (IgnoredServerCertErrors 0x80) (CertErrors 0x0) 
+29078: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:23.893 [Microsoft-Windows-WebIO]0x00000246B1414F40: WebSetHttpRequestHeader returning 0 for WebHttpHeaderAppend on Header Name (X-MS-Negotiate) Value (Server) 
+29082: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:23.893 [Microsoft-Windows-WebIO]0x00000246B1414F40: WebSetHttpRequestHeader returning 0 for WebHttpHeaderAppend on Header Name (Connection) Value (Keep-Alive) 
+29232: [2]2C10.32EC::‎2026‎-‎09‎-‎14 10:54:23.944 [Microsoft-Windows-WebIO]0x246B1414F40: WebHttpReceiveResponse (Handle: 0xFD00000730000001) (Flags 0x0) (ResponseFlags 0x0) CompletionContext (0x246AAC1AFA0) 
+29286: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:23.947 [Microsoft-Windows-WebIO]0x246B1414F40: WebCloseHttpRequest completed sucessfully error = The operation completed successfully.. (Handle 0xFD00000730000001) (Flags 0x0) 
+32043: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.213 [Microsoft-Windows-WebIO]0x246B1AADDB0: WebCreateHttpRequest completed successfully. (Session 0x246AAE1E780[0xFE00000720000001]) (Method POST) (URI https://titles.prod.mos.microsoft.com/catalog/v1/users/acquisitions/get) (Version 0x1.0x1) -> (Request Handle 0xFF00000430000001) 
+32072: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.213 [Microsoft-Windows-WebIO]0x246B1AADDB0: Starting Proxy Resolution 
+32074: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.213 [Microsoft-Windows-WebIO]0x246B1AADDB0: Completed Proxy Resolution 
+32075: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.213 [Microsoft-Windows-WebIO]0x246B1AADDB0: Request on Endpoint (Server Endpoint: 0x246B12B6820) (Proxy Endpoint: 0x246AAD77E60) (Connection Manager: 0x246B0E12A60) 
+32076: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.213 [Microsoft-Windows-WebIO]0x246B1AADDB0: =====Waiting For Available Connection===== 
+32077: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.213 [Microsoft-Windows-WebIO]0x246B1AADDB0: Acquired a connection slot (ConnMgr: 0x246B0E12A60), (Connection: 0x246B1AB3010) 
+32078: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.213 [Microsoft-Windows-WebIO]0x246B1AADDB0: =====Request Connect====================== 
+32082: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.213 [Microsoft-Windows-WebIO]0x246B1AB3010: Name Resolution Request (Name proxybckboa.gsnet.corp:8080) (Timeout 0x0) (CompletionContext: 0x246B0F17F30) 
+32083: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.213 [Microsoft-Windows-WebIO]0x246B1AB3010: Name Resolution Request Completed (FQDN proxybckboa.gsnet.corp) (Canonical proxybckboa.gsnet.corp) (AddressCount: 0x1) AddressData: 0x02000000B4CD1223000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+32086: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.213 [Microsoft-Windows-WebIO]0x246B1AB3010: =====TCP Connect========================== 
+32103: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.213 [Microsoft-Windows-WebIO]0x246B1AB3010: Connecting (Socket 0xC6C) (Context 0x246B0F18200) (RemaingAddress 0x1) Address: 180.205.18.35:8080. 
+32135: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.216 [Microsoft-Windows-WebIO]0x246B1AB3010: Connection established (Socket 0xC6C) (Context 0x246B0F18200) 
+32189: [7]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.239 [Microsoft-Windows-WebIO]0x246B1AB3010: SSL AcquireCredentialsHandle returned - (STATUS_SUCCESS ) Credential Handle(0x2374D539790:0x2469F59C970) (EnabledProtocols SP_PROT_TLS1_2_CLIENT ) (ClientCert 0x0) (EnableRevertToSelfClientCertificate 0x0) (CipherConfig 0x0) 
+32355: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.296 [Microsoft-Windows-WebIO]0x246B1AB3010: SSL Cert Validation - (Error: STATUS_SUCCESS ) Context Handle(0x2374D6787C0:0x2374D6787C0) (IgnoredServerCertErrors 0x80) (CertErrors 0x0) 
+32369: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.296 [Microsoft-Windows-WebIO]0x00000246B1AADDB0: WebSetHttpRequestHeader returning 0 for WebHttpHeaderAppend on Header Name (Content-Type) Value (application/x-www-form-urlencoded) 
+32371: [4]2C10.1C14::‎2026‎-‎09‎-‎14 10:54:24.296 [Microsoft-Windows-WebIO]0x00000246B1AADDB0: WebSetHttpRequestHeader returning 0 for WebHttpHeaderAppend on Header Name (Connection) Value (Keep-Alive) 
+32575: [5]2C10.3094::‎2026‎-‎09‎-‎14 10:54:24.657 [Microsoft-Windows-WebIO]0x246B1AADDB0: WebHttpReceiveResponse (Handle: 0xFF00000430000001) (Flags 0x0) (ResponseFlags 0x0) CompletionContext (0x246AAC1AFA0) 
+32601: [5]2C10.3094::‎2026‎-‎09‎-‎14 10:54:24.657 [Microsoft-Windows-WebIO]0x246B1AADDB0: WebCloseHttpRequest completed sucessfully error = The operation completed successfully.. (Handle 0xFF00000430000001) (Flags 0x0) 
 
-Select-String -LiteralPath $origen -Pattern 'Microsoft-Windows-WebIO' |
-    Where-Object {
-        $_.Line -match 'Url|Uri|Host|Server|Proxy|Status|Response|Error|Connect' -and
-        $_.Line -notmatch 'Headers|Cookie|Authorization|Set Request Option|Entity|DataChunk|Buffer'
-    } |
-    Select-Object -First 200 |
-    ForEach-Object {
-        '{0}: {1}' -f $_.LineNumber, $_.Line
-    } |
-    Set-Content -LiteralPath $salida -Encoding UTF8
-
-notepad.exe $salida
