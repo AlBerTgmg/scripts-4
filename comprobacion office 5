@@ -1,59 +1,20 @@
 hostname
-Resolve-DnsName -Name "www.msftconnecttest.com" -Type A -DnsOnly
-Resolve-DnsName -Name "dns.msftncsi.com" -Type A -DnsOnly
 
+Get-CimInstance Win32_OperatingSystem |
+    Format-List Caption, Version, BuildNumber
 
+$proxyAuto = [System.Net.WebRequest]::GetSystemWebProxy()
 
-
-
-
-
-Resolve-DnsName www.msftconnecttest.com -Type A
-Resolve-DnsName dns.msftncsi.com -Type A
-
-try {
-    $r = Invoke-WebRequest -Uri 'http://www.msftconnecttest.com/connecttest.txt' -Proxy 'http://proxy.nngg.corp:8080' -ProxyUseDefaultCredentials -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop
-    Write-Host "HTTP:" $r.StatusCode
-    Write-Host "Contenido:" $r.Content
+foreach ($destino in @(
+    'https://login.microsoftonline.com',
+    'https://activation.sls.microsoft.com',
+    'http://www.msftconnecttest.com/connecttest.txt'
+)) {
+    $uri = [uri]$destino
+    Write-Host "`nDestino: $destino"
+    Write-Host "Proxy elegido:" $proxyAuto.GetProxy($uri).AbsoluteUri
+    Write-Host "Sin proxy:" $proxyAuto.IsBypassed($uri)
 }
-catch {
-    Write-Host "Error:" $_.Exception.Message
-}
-
-
-PS C:\Users\x414229> Resolve-DnsName www.msftconnecttest.com -Type A
-Resolve-DnsName : www.msftconnecttest.com : DNS name does not exist
-At line:1 char:1
-+ Resolve-DnsName www.msftconnecttest.com -Type A
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ResourceUnavailable: (www.msftconnecttest.com:String) [Resolve-DnsName], Win32Exception
-    + FullyQualifiedErrorId : DNS_ERROR_RCODE_NAME_ERROR,Microsoft.DnsClient.Commands.ResolveDnsName
-
-PS C:\Users\x414229> Resolve-DnsName dns.msftncsi.com -Type A
-Resolve-DnsName : dns.msftncsi.com : DNS name does not exist
-At line:1 char:1
-+ Resolve-DnsName dns.msftncsi.com -Type A
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ResourceUnavailable: (dns.msftncsi.com:String) [Resolve-DnsName], Win32Exception
-    + FullyQualifiedErrorId : DNS_ERROR_RCODE_NAME_ERROR,Microsoft.DnsClient.Commands.ResolveDnsName
-
-PS C:\Users\x414229>
-PS C:\Users\x414229> try {
->>     $r = Invoke-WebRequest -Uri 'http://www.msftconnecttest.com/connecttest.txt' -Proxy 'http://proxy.nngg.corp:8080' -ProxyUseDefaultCredentials -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop
->>     Write-Host "HTTP:" $r.StatusCode
->>     Write-Host "Contenido:" $r.Content
->> }
->> catch {
->>     Write-Host "Error:" $_.Exception.Message
->> }
-HTTP: 200
-Contenido: Microsoft Connect Test
-PS C:\Users\x414229>
-
-
-
-
-
 
 
 
