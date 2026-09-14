@@ -1,3 +1,98 @@
 hostname
 whoami /upn
 dsregcmd /status
+
+
+PS C:\Users\x414229> hostname
+vmngctxtrxap59
+PS C:\Users\x414229> whoami /upn
+x414229@santanderglobaltech.com
+PS C:\Users\x414229> dsregcmd /status
+
++----------------------------------------------------------------------+
+| Device State                                                         |
++----------------------------------------------------------------------+
+
+             AzureAdJoined : YES
+          EnterpriseJoined : NO
+              DomainJoined : YES
+                DomainName : NGL
+
++----------------------------------------------------------------------+
+| Device Details                                                       |
++----------------------------------------------------------------------+
+
+                  DeviceId : d6f33971-933d-4f4a-b746-40dc7c1ac1fa
+                Thumbprint : 4A82DAD68198EE7E750E19423AD9ECDF0418A6A6
+ DeviceCertificateValidity : [ 2024-10-14 22:13:05.000 UTC -- 2034-10-14 22:43:05.000 UTC ]
+            KeyContainerId : d3b04df4-4e05-4bf2-b301-5eae16dfdbff
+               KeyProvider : Microsoft Software Key Storage Provider
+              TpmProtected : NO
+
++----------------------------------------------------------------------+
+| Tenant Details                                                       |
++----------------------------------------------------------------------+
+
+                TenantName : Santander Office 365
+                  TenantId : 35595a02-4d6d-44ac-99e1-f9ab4cd872db
+                       Idp : login.windows.net
+               AuthCodeUrl : https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db/oauth2/authorize
+            AccessTokenUrl : https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db/oauth2/token
+                    MdmUrl : https://enrollment.manage.microsoft.com/enrollmentserver/discovery.svc
+                 MdmTouUrl : https://portal.manage.microsoft.com/TermsofUse.aspx
+          MdmComplianceUrl : https://portal.manage.microsoft.com/?portalAction=Compliance
+               SettingsUrl :
+            JoinSrvVersion : 1.0
+                JoinSrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/device/
+                 JoinSrvId : urn:ms-drs:enterpriseregistration.windows.net
+             KeySrvVersion : 1.0
+                 KeySrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/key/
+                  KeySrvId : urn:ms-drs:enterpriseregistration.windows.net
+        WebAuthNSrvVersion : 1.0
+            WebAuthNSrvUrl : https://enterpriseregistration.windows.net/webauthn/35595a02-4d6d-44ac-99e1-f9ab4cd872db/
+             WebAuthNSrvId : urn:ms-drs:enterpriseregistration.windows.net
+    DeviceManagementSrvVer : 1.0
+    DeviceManagementSrvUrl : https://enterpriseregistration.windows.net/manage/35595a02-4d6d-44ac-99e1-f9ab4cd872db/
+     DeviceManagementSrvId : urn:ms-drs:enterpriseregistration.windows.net
+
++----------------------------------------------------------------------+
+| User State                                                           |
++----------------------------------------------------------------------+
+
+                    NgcSet : NO
+           WorkplaceJoined : NO
+             WamDefaultSet : YES
+       WamDefaultAuthority : organizations
+              WamDefaultId : https://login.microsoft.com
+            WamDefaultGUID : {B16898C6-A148-4967-9171-64D755DA8520} (AzureAd)
+
++----------------------------------------------------------------------+
+| SSO State                                                            |
++----------------------------------------------------------------------+
+
+                AzureAdPrt : YES
+      AzureAdPrtUpdateTime : 2026-09-14 06:22:54.000 UTC
+      AzureAdPrtExpiryTime : 2026-09-28 06:23:29.000 UTC
+       AzureAdPrtAuthority : https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db
+             EnterprisePrt : NO
+    EnterprisePrtAuthority :
+
++----------------------------------------------------------------------+
+| Diagnostic Data                                                      |
++----------------------------------------------------------------------+
+
+         AadRecoveryNeeded : NO
+               KeySignTest : MUST Run elevated to test.
+
++----------------------------------------------------------------------+
+| Ngc Prerequisite Check                                               |
++----------------------------------------------------------------------+
+
+            IsDeviceJoined : YES
+             IsUserAzureAD : YES
+             PolicyEnabled : NO
+          PostLogonEnabled : YES
+            DeviceEligible : YES
+        SessionIsNotRemote : NO
+            CertEnrollment : none
+              PreReqResult : WillNotProvision
