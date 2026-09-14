@@ -1,0 +1,14 @@
+hostname
+whoami
+
+Get-AppxPackage -Name Microsoft.AAD.BrokerPlugin |
+    Format-List Name, Version, Status, InstallLocation
+
+Test-Path "$env:windir\SystemApps\Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy\AppxManifest.xml"
+
+Get-Service TokenBroker |
+    Format-Table Name, Status, StartType
+
+Get-ItemProperty 'HKCU:\Software\Microsoft\Office\16.0\Common\Identity' -ErrorAction SilentlyContinue |
+    Select-Object EnableADAL, DisableAADWAM, DisableADALatopWAMOverride |
+    Format-List
