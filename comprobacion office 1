@@ -9,3 +9,19 @@ Get-ItemProperty `
  -ErrorAction SilentlyContinue |
  Select-Object SharedComputerLicensing |
  Format-List
+
+
+
+
+
+Get-ItemProperty `
+ 'HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration' `
+ -ErrorAction SilentlyContinue |
+ Select-Object SharedComputerLicensing, VersionToReport, ProductReleaseIds |
+ Format-List
+
+Get-ItemProperty `
+ 'HKLM:\SOFTWARE\Policies\Microsoft\Office\16.0\Common\Licensing' `
+ -ErrorAction SilentlyContinue |
+ Select-Object SharedComputerLicensing |
+ Format-List
