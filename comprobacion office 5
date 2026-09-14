@@ -1,5 +1,11 @@
-Get-WinEvent -FilterHashtable @{
-    LogName = 'Microsoft-Windows-AAD/Operational'
-    StartTime = (Get-Date).AddMinutes(-10)
-} -MaxEvents 15 -ErrorAction Continue |
-    Format-List TimeCreated, Id, LevelDisplayName, Message
+Resolve-DnsName www.msftconnecttest.com -Type A
+Resolve-DnsName dns.msftncsi.com -Type A
+
+try {
+    $r = Invoke-WebRequest -Uri 'http://www.msftconnecttest.com/connecttest.txt' -Proxy 'http://proxy.nngg.corp:8080' -ProxyUseDefaultCredentials -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop
+    Write-Host "HTTP:" $r.StatusCode
+    Write-Host "Contenido:" $r.Content
+}
+catch {
+    Write-Host "Error:" $_.Exception.Message
+}
