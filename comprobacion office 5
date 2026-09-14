@@ -1,0 +1,5 @@
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Microsoft-Windows-AAD/Operational'
+    StartTime = (Get-Date).AddMinutes(-10)
+} -MaxEvents 15 -ErrorAction Continue |
+    Format-List TimeCreated, Id, LevelDisplayName, Message
