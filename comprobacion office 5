@@ -1,26 +1,24 @@
-hostname
-$proxyAuto = [System.Net.WebRequest]::GetSystemWebProxy()
+$inicioPrueba = Get-Date
 
-foreach ($destino in @(
-    'https://login.microsoftonline.com',
-    'https://activation.sls.microsoft.com',
-    'http://www.msftconnecttest.com/connecttest.txt'
-)) {
-    $uri = [uri]$destino
-    $proxyElegido = $proxyAuto.GetProxy($uri)
+Get-WinEvent -ListLog 'Microsoft-Windows-AAD/Operational' |
+    Format-List LogName, IsEnabled, RecordCount
 
-    Write-Host "`nDestino: $destino"
-    Write-Host "Proxy: $proxyElegido"
 
-    try {
-        $r = Invoke-WebRequest -Uri $uri -Proxy $proxyElegido -ProxyUseDefaultCredentials -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop
-        Write-Host "HTTP:" $r.StatusCode
 
-        if ($uri.Host -eq 'www.msftconnecttest.com') {
-            Write-Host "Contenido:" $r.Content
-        }
-    }
-    catch {
-        Write-Host "Error:" $_.Exception.Message
-    }
-}
+
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Microsoft-Windows-AAD/Operational'
+    StartTime = $inicioPrueba
+} -ErrorAction Continue |
+    Format-List TimeCreated, Id, Message
+
+Get-WinEvent -FilterHashtable @{
+    LogName = 'Application'
+    StartTime = $inicioPrueba
+} -ErrorAction Continue |
+    Where-Object {
+        $_.ProviderName -match 'Office|AppModel' -or
+        $_.Message -match 'AAD.BrokerPlugin|TokenBroker'
+    } |
+    Select-Object -First 15 TimeCreated, ProviderName, Id, Message |
+    Format-List
