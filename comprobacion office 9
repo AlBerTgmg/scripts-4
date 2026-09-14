@@ -11,3 +11,19 @@ netsh trace stop
 
 
 netsh trace convert input="C:\Users\ADMCYA~1\AppData\Local\Temp\Office-AP59-20260914-105404.etl" output="C:\Users\ADMCYA~1\AppData\Local\Temp\Office-AP59-20260914-105404.txt" dump=TXT report=no
+
+
+
+$origen = 'C:\Users\ADMCYA~1\AppData\Local\Temp\Office-AP59-20260914-105404.txt'
+$salida = Join-Path (Split-Path $origen) 'Office-AP59-resumen.txt'
+
+Select-String -LiteralPath $origen -Pattern 'WinHttp|WinINet|NCSI|AAD|TokenBroker|msftconnecttest|microsoftonline|sls\.microsoft|proxybckboa|proxysgt|proxy\.nngg' |
+    Select-Object -First 250 |
+    ForEach-Object {
+        $texto = $_.Line
+        if ($texto.Length -gt 1500) { $texto = $texto.Substring(0,1500) }
+        '{0}: {1}' -f $_.LineNumber, $texto
+    } |
+    Set-Content -LiteralPath $salida -Encoding UTF8
+
+notepad.exe $salida
