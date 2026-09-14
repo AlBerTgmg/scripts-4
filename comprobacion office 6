@@ -1,0 +1,15 @@
+$eventos = Get-WinEvent -FilterHashtable @{
+    LogName = 'Microsoft-Windows-AAD/Operational'
+    StartTime = (Get-Date).Date
+} -ErrorAction Stop
+
+$otros = @($eventos | Where-Object {
+    $_.Message -notmatch '0x8AA100AB'
+})
+
+Write-Host "Eventos de hoy:" $eventos.Count
+Write-Host "Eventos distintos del aviso repetido:" $otros.Count
+
+$otros |
+    Select-Object -First 20 TimeCreated, Id, LevelDisplayName, Message |
+    Format-List
