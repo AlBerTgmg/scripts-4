@@ -1,27 +1,26 @@
-Get-ItemProperty `
- 'HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration' `
- -ErrorAction SilentlyContinue |
- Select-Object SharedComputerLicensing, VersionToReport, ProductReleaseIds |
- Format-List
+hostname
 
-Get-ItemProperty `
- 'HKLM:\SOFTWARE\Policies\Microsoft\Office\16.0\Common\Licensing' `
- -ErrorAction SilentlyContinue |
- Select-Object SharedComputerLicensing |
- Format-List
+Test-NetConnection proxy.nngg.corp -Port 8080
 
+$urls = @(
+    'https://login.microsoftonline.com',
+    'https://activation.sls.microsoft.com'
+)
 
+foreach ($url in $urls) {
+    Write-Host "`n--- $url ---"
+    try {
+        $r = Invoke-WebRequest -Uri $url `
+            -Proxy 'http://proxy.nngg.corp:8080' `
+            -ProxyUseDefaultCredentials `
+            -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop
 
-
-
-Get-ItemProperty `
- 'HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration' `
- -ErrorAction SilentlyContinue |
- Select-Object SharedComputerLicensing, VersionToReport, ProductReleaseIds |
- Format-List
-
-Get-ItemProperty `
- 'HKLM:\SOFTWARE\Policies\Microsoft\Office\16.0\Common\Licensing' `
- -ErrorAction SilentlyContinue |
- Select-Object SharedComputerLicensing |
- Format-List
+        Write-Host "HTTP:" $r.StatusCode
+    }
+    catch {
+        Write-Host "Error:" $_.Exception.Message
+        if ($_.Exception.Response) {
+            Write-Host "HTTP:" ([int]$_.Exception.Response.StatusCode)
+        }
+    }
+}
