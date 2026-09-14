@@ -1,6 +1,1 @@
-Get-WinEvent -ListLog 'Microsoft-Windows-NCSI/Analytic' |
-    Format-List IsEnabled, RecordCount
-
-Get-WinEvent -LogName 'Microsoft-Windows-NCSI/Analytic' -Oldest -ErrorAction Continue |
-    Select-Object -Last 30 TimeCreated, Id, Message |
-    Format-List
+hostname; Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet' | Format-List *
