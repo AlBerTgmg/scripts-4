@@ -1,8 +1,4 @@
 hostname
-
-Get-CimInstance Win32_OperatingSystem |
-    Format-List Caption, Version, BuildNumber
-
 $proxyAuto = [System.Net.WebRequest]::GetSystemWebProxy()
 
 foreach ($destino in @(
@@ -11,12 +7,20 @@ foreach ($destino in @(
     'http://www.msftconnecttest.com/connecttest.txt'
 )) {
     $uri = [uri]$destino
+    $proxyElegido = $proxyAuto.GetProxy($uri)
+
     Write-Host "`nDestino: $destino"
-    Write-Host "Proxy elegido:" $proxyAuto.GetProxy($uri).AbsoluteUri
-    Write-Host "Sin proxy:" $proxyAuto.IsBypassed($uri)
+    Write-Host "Proxy: $proxyElegido"
+
+    try {
+        $r = Invoke-WebRequest -Uri $uri -Proxy $proxyElegido -ProxyUseDefaultCredentials -UseBasicParsing -TimeoutSec 30 -ErrorAction Stop
+        Write-Host "HTTP:" $r.StatusCode
+
+        if ($uri.Host -eq 'www.msftconnecttest.com') {
+            Write-Host "Contenido:" $r.Content
+        }
+    }
+    catch {
+        Write-Host "Error:" $_.Exception.Message
+    }
 }
-
-
-
-
-
