@@ -1,1 +1,250 @@
-1
+4570: [6]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.804 [Microsoft-Windows-WinINet]Session handle 0xCC0004 created: UserAgent=OneAuth/10.2.1 (Windows), AccessType=PRECONFIG, ProxyList=, ProxyBypassList=, Flags=0x10000000 
+4573: [6]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.806 [Microsoft-Windows-WinINet]Handle 0xCC0008 created by InternetConnect: SessionHandle=0xCC0004, Server=ecs.office.com:443, HTTP, Flags=0x0 
+4575: [6]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.806 [Microsoft-Windows-WinINet]Request handle 0xCC000C created by HttpOpenRequest: ConnectionHandle=0xCC0008, GET, Target=/config/v1/OneAuth-MSAL/10.2.1?OS=Windows&ApplicationID=com.microsoft.Office&OneAuthVersion=10.2.1, Ver=HTTP/1.1, Referrer=, Media types=, Flags=0x800800 
+4577: [6]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.806 [Microsoft-Windows-WinINet]Request handle 0xCC000C Server Details: Server=ecs.office.com Port=443 Service=https 
+4579: [6]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.806 [Microsoft-Windows-WinINet]HTTP request was received from API: RequestHandle=0xCC000C, RequestContext=0x2469ACA7A30 
+4596: [6]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.808 [Microsoft-Windows-WinINet]0x2469ACB3550,0x2469AC74C50,C:\Users\x414229\AppData\Local\Microsoft\Windows\INetCache\IE
+4598: [7]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.809 [Microsoft-Windows-WinINet]0x2469ACB3550,0
+4600: [7]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.809 [Microsoft-Windows-WinINet]0x2469ACB3550,ecs.office.com:443
+4602: [6]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.809 [Microsoft-Windows-WinINet]0x2469ACB3550,0
+4609: [6]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.828 [Microsoft-Windows-WinINet]Server certificate validated: RequestHandle=0xCC000C, CertHash=05888DD7E87F22C0CF2E44AE9A2182C68031C22B, WarningFlags=69888 
+4611: [6]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.828 [Microsoft-Windows-WinINet]0x2469EFDD5C0,https://ecs.office.com/config/v1/OneAuth-MSAL/10.2.1?OS=Windows&ApplicationID=com.microsoft.Office&OneAuthVersion=10.2.1
+4613: [6]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.828 [Microsoft-Windows-WinINet]0x2469EFDD5C0
+4615: [6]2C10.0318::‎2026‎-‎09‎-‎14 10:54:16.828 [Microsoft-Windows-WinINet]0x2469EFDD5C0
+4618: [0]2C10.2F04::‎2026‎-‎09‎-‎14 10:54:16.832 [Microsoft-Windows-WinHttp]Queue WorkItem  Thread Action (Context: 0x2469ACB87E0) 
+4620: [4]2C10.0590::‎2026‎-‎09‎-‎14 10:54:16.832 [Microsoft-Windows-WinHttp]Starting WorkItem  Thread Action (Context: 0x2469ACB87E0) 
+4621: [4]2C10.0590::‎2026‎-‎09‎-‎14 10:54:16.832 [Microsoft-Windows-WinHttp]Queue Wait Callback  Thread Action (Context: 0x2469ACCB800) 
+4622: [4]2C10.0590::‎2026‎-‎09‎-‎14 10:54:16.832 [Microsoft-Windows-WinHttp]Queue Wait Callback  Thread Action (Context: 0x2469ACCB840) 
+4623: [4]2C10.0590::‎2026‎-‎09‎-‎14 10:54:16.832 [Microsoft-Windows-WinHttp]Queue Wait Callback  Thread Action (Context: 0x2469ACCB880) 
+4625: [4]2C10.0590::‎2026‎-‎09‎-‎14 10:54:16.832 [Microsoft-Windows-WinHttp]Stopping WorkItem  Thread Action (Context: 0x2469ACB87E0) 
+4635: [4]0D60.2D5C::‎2026‎-‎09‎-‎14 10:54:16.834 [Microsoft-Windows-WinHttp]Searching for Proxy Information for the URL: URL=https://ecs.office.com/ 
+7597: [0]0D60.2D5C::‎2026‎-‎09‎-‎14 10:54:17.094 [Microsoft-Windows-WinHttp]Client has successfully retrieved proxy data for accessing a specified resource: URL=https://ecs.office.com/, ProxyString=PROXY proxybckboa.gsnet.corp:8080 
+7598: [4]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.094 [Microsoft-Windows-WinHttp]Starting Wait Callback  Thread Action (Context: 0x2469ACCB800) 
+7600: [4]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.094 [Microsoft-Windows-WinHttp]Canceling Timer  Thread Action (Context: 0x2469ACCB800) 
+7601: [4]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.094 [Microsoft-Windows-WinHttp]Canceling Timer  Thread Action (Context: 0x2469ACCB840) 
+7602: [4]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.094 [Microsoft-Windows-WinHttp]Canceling Timer  Thread Action (Context: 0x2469ACCB880) 
+7603: [4]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.094 [Microsoft-Windows-WinHttp]Stopping Wait Callback  Thread Action (Context: 0x2469ACCB800) 
+7615: [6]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.106 [Microsoft-Windows-WinINet]0x246AAF47D40,0x2469AC74C50,C:\Users\x414229\AppData\Local\Microsoft\Windows\INetCookies\ESE\
+7617: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x246AAF47D40,0
+7619: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x246AAF47D40,com.office
+7621: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x246AAF47D40,0
+7623: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x2469EFDD5C0
+7625: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x2469EFDD5C0
+7627: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x2469EFDD5C0,4294967294
+7628: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]Handle 0xCC0010 created by InternetConnect: SessionHandle=0xCC0004, Server=ecs.office.com:443, HTTP, Flags=0x0 
+7629: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]Request handle 0xCC0014 created by HttpOpenRequest: ConnectionHandle=0xCC0010, CONNECT, Target=/, Ver=HTTP/1.1, Referrer=, Media types=, Flags=0x94680000 
+7630: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]Request handle 0xCC0014 Server Details: Server=ecs.office.com Port=443 Service=http 
+7631: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]HTTP request was received from API: RequestHandle=0xCC0014, RequestContext=0x0 
+7632: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x246AB132000,http://ecs.office.com:443/
+7633: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x246AB132000
+7634: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x246AB132000
+7635: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x246AB132000
+7636: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x246AB132000
+7637: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x246AB132000,4294967295
+7639: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x246AB132000,proxybckboa.gsnet.corp
+7641: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]DNS query for proxybckboa.gsnet.corp hostname is sent: Handle=0xCC0014 
+7643: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.107 [Microsoft-Windows-WinINet]0x3,proxybckboa.gsnet.corp
+7662: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.108 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW info.  queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 0, error 0 and seq 307 
+7663: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.108 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW info.  queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 0, error 0 and seq 310 
+7664: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.108 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW is called for queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 1 and seq 226 
+7665: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.112 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is called for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp, serviceGUID {0002a803-0000-0000-c000-000000000046}, interface index 0 and control flags 3146000 
+7666: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.112 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is completed for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp serviceGUID {0002a803-0000-0000-c000-000000000046}, interface index 0, control flags 3146000 and lookup handle 2502538106736 with status 0 
+7667: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.112 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is called for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp, serviceGUID {00090035-0000-001c-c000-000000000046}, interface index 0 and control flags 3146000 
+7668: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.112 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is completed for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp serviceGUID {00090035-0000-001c-c000-000000000046}, interface index 0, control flags 3146000 and lookup handle 2502538107776 with status 0 
+7669: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.112 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW info.  queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 1, error 0 and seq 314 
+7672: [5]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.112 [Microsoft-Windows-DNS-Client]DNS query is called for the name proxybckboa.gsnet.corp, type 28, query options 1073897472, Server List , isNetwork query 0, network index 0, interface index 0, is asynchronous query 0 
+7673: [7]2C10.2040::‎2026‎-‎09‎-‎14 10:54:17.112 [Microsoft-Windows-DNS-Client]DNS query is called for the name proxybckboa.gsnet.corp, type 1, query options 1073766400, Server List , isNetwork query 0, network index 0, interface index 0, is asynchronous query 0 
+7674: [7]2C10.2040::‎2026‎-‎09‎-‎14 10:54:17.112 [Microsoft-Windows-DNS-Client]DNS query is completed for the name proxybckboa.gsnet.corp, type 1, query options 1073766400 with status 87 Results  
+7685: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.115 [Microsoft-Windows-DNS-Client]Network query initiated for the name proxybckboa.gsnet.corp (is parallel query 1) on network index 0 with interface count 1 with first interface name SERVICE, local addresses 180.44.17.58 and Dns Servers 180.18.200.202;180.16.200.200 
+7686: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.115 [Microsoft-Windows-DNS-Client]Cache lookup called for name proxybckboa.gsnet.corp, type 1, options 2251800887582720 and interface index 0 
+7687: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.115 [Microsoft-Windows-DNS-Client]Cache lookup for name proxybckboa.gsnet.corp, type 1 and option 2251800887582720 returned 9701 with results  
+7689: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.115 [Microsoft-Windows-DNS-Client]Query wire called for name proxybckboa.gsnet.corp, type 1, interface index 0 and network index 0 
+7690: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.115 [Microsoft-Windows-DNS-Client]DNS Query sent to DNS Server 180.18.200.202 for name proxybckboa.gsnet.corp and type 1 
+7707: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.115 [Microsoft-Windows-DNS-Client]Network query initiated for the name proxybckboa.gsnet.corp (is parallel query 1) on network index 1 with interface count 1 with first interface name MANAGEMENT, local addresses 22.91.3.169 and Dns Servers  
+7709: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.115 [Microsoft-Windows-DNS-Client]Query wire called for name proxybckboa.gsnet.corp, type 1, interface index 0 and network index 1 
+7710: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.115 [Microsoft-Windows-DNS-Client]Query response for name proxybckboa.gsnet.corp, type 1, interface index 0 and network index 1 returned 1460 with results  
+7717: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.116 [Microsoft-Windows-DNS-Client]Received response from DNS Server 180.18.200.202 for name proxybckboa.gsnet.corp and type 1 with response status 0 
+7723: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.116 [Microsoft-Windows-DNS-Client]Query response for name proxybckboa.gsnet.corp, type 1, interface index 0 and network index 0 returned 0 with results 180.205.18.35; 
+7726: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.116 [Microsoft-Windows-DNS-Client]Cache lookup called for name proxybckboa.gsnet.corp, type 28, options 2251800888107008 and interface index 0 
+7727: [5]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.116 [Microsoft-Windows-DNS-Client]Cache lookup for name proxybckboa.gsnet.corp, type 28 and option 2251800888107008 returned 9701 with results  
+7730: [6]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.116 [Microsoft-Windows-DNS-Client]DNS query is completed for the name proxybckboa.gsnet.corp, type 28, query options 2251800887582720 with status 0 Results ::ffff:180.205.18.35; 
+7745: [6]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.119 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW is completed for queryName proxybckboa.gsnet.corp with status 0 and result 180.205.18.35; 
+7746: [6]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.119 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW info.  queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 1, error 0 and seq 315 
+7747: [6]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.119 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW info.  queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 1, error 0 and seq 324 
+7748: [6]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.119 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW is completed for queryName proxybckboa.gsnet.corp with status 0 and result 180.205.18.35; 
+7750: [6]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.119 [Microsoft-Windows-WinINet]0,0x3,proxybckboa.gsnet.corp
+7752: [6]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.119 [Microsoft-Windows-WinINet]DNS query for proxybckboa.gsnet.corp hostname is complete: Handle=0xCC0014, Addresses=180.205.18.35; 
+7754: [6]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.119 [Microsoft-Windows-WinINet]0x246AB132000,proxybckboa.gsnet.corp
+7774: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.125 [Microsoft-Windows-WinINet]0x246AB132000,4044,55674,0
+7806: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.128 [Microsoft-Windows-WinINet]0x246AB132000,4044
+7808: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.128 [Microsoft-Windows-WinINet]TCP connection to server proxybckboa.gsnet.corp established: ConnectionHandle=0xCC0014, SocketHandle=0xFCC, LocalPort=55674 
+7811: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.128 [Microsoft-Windows-WinINet]0x246AB132000,55674,HTTP ,16,180.44.17.58:55674,16,180.205.18.35:8080
+7813: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.128 [Microsoft-Windows-WinINet]HTTP Request Headers RequestHandle=0xCC0014 CONNECT ecs.office.com:443 HTTP/1.0  User-Agent: OneAuth/10.2.1 (Windows)  Host: ecs.office.com:443  Content-Length: 0  Proxy-Connection: Keep-Alive  Pragma: no-cache     
+7815: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.128 [Microsoft-Windows-WinINet]0x246AB132000,170
+7822: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.128 [Microsoft-Windows-WinINet]HTTP request was sent successfully: RequestHandle=0xCC0014, SocketHandle=0xFCC, CONNECT, CookieSent= false 
+7824: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.128 [Microsoft-Windows-WinINet]0x246AB132000,1024
+7826: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.128 [Microsoft-Windows-WinINet]0x246AB132000,1024
+7828: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.128 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+7846: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.157 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+7848: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.157 [Microsoft-Windows-WinINet]0x246AB132000,39
+7850: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.157 [Microsoft-Windows-WinINet]HTTP response (200) received: RequestHandle=0xCC0014, SocketHandle=0xFCC, CONNECT, ContentLength=--- 
+7852: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.157 [Microsoft-Windows-WinINet]HTTP Response Headers RequestHandle=0xCC0014 HTTP/1.0 200 Connection established     
+7854: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.157 [Microsoft-Windows-WinINet]0x246AB132000
+7856: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.157 [Microsoft-Windows-WinINet]0x246AB132000
+7858: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.157 [Microsoft-Windows-WinINet]0x246AB132000,35,HTTP/1.0 200 Connection established
+7860: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.157 [Microsoft-Windows-WinINet]Handle 0xCC0014 closed successfully 
+7861: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.157 [Microsoft-Windows-WinINet]Handle 0xCC0010 closed successfully 
+7864: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.157 [Microsoft-Windows-WinINet]Requested URL=http://ecs.office.com:443/ Verb=CONNECT RequestHeaders=CONNECT ecs.office.com:443 HTTP/1.0  User-Agent: OneAuth/10.2.1 (Windows)  Host: ecs.office.com:443  Content-Length: 0  Proxy-Connection: Keep-Alive  Pragma: no-cache     ResponseHeaders=HTTP/1.0 200 Connection established     Status=200 Cache=Missed  
+7866: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.157 [Microsoft-Windows-WinINet]Client begins SSL negotiation: RequestHandle=0xCC000C 
+7868: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.162 [Microsoft-Windows-WinINet]0x2469F03B3E0,ecs.office.com,1,4044
+7870: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.162 [Microsoft-Windows-WinINet]0x2469F03B3E0,ecs.office.com,1,4044,590610
+7876: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.162 [Microsoft-Windows-WinINet]HTTP request was sent successfully: RequestHandle=0xCC000C, SocketHandle=0xFCC, GET, CookieSent= false 
+7877: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.162 [Microsoft-Windows-WinINet]0x2469EFDD5C0,16384
+7878: [7]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.162 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+7901: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.190 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+7902: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.190 [Microsoft-Windows-WinINet]0x2469EFDD5C0,1460
+7903: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.190 [Microsoft-Windows-WinINet]0x2469F03B3E0,ecs.office.com,2,4044
+7904: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.190 [Microsoft-Windows-WinINet]0x2469F03B3E0,ecs.office.com,2,4044,2148074264
+7905: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.190 [Microsoft-Windows-WinINet]0x2469EFDD5C0,14924
+7906: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.190 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+7914: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.191 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+7915: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.191 [Microsoft-Windows-WinINet]0x2469EFDD5C0,1460
+7916: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.191 [Microsoft-Windows-WinINet]0x2469EFDD5C0,13464
+7917: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.191 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+7925: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.191 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+7926: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.191 [Microsoft-Windows-WinINet]0x2469EFDD5C0,5660
+7927: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.191 [Microsoft-Windows-WinINet]0x2469F03B3E0,ecs.office.com,3,4044
+7928: [4]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.193 [Microsoft-Windows-WinINet]0x2469F03B3E0,ecs.office.com,3,4044,590610
+7941: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.216 [Microsoft-Windows-WinINet]Server certificate validated: RequestHandle=0xCC000C, CertHash=A36B8A488FBBE448C32D0B4D43A72C92D6E64BF4, WarningFlags=0 
+7943: [2]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.216 [Microsoft-Windows-WinINet]0x2469ACB3550,ecs.office.com:443
+7945: [4]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.217 [Microsoft-Windows-WinINet]0x2469ACB3550,0
+7951: [4]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.217 [Microsoft-Windows-WinINet]HTTP request was sent successfully: RequestHandle=0xCC000C, SocketHandle=0xFCC, GET, CookieSent= false 
+7952: [4]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.217 [Microsoft-Windows-WinINet]0x2469EFDD5C0,16384
+7953: [4]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.217 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+7979: [1]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.243 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+7980: [1]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.244 [Microsoft-Windows-WinINet]0x2469EFDD5C0,358
+7981: [1]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.244 [Microsoft-Windows-WinINet]0x2469F03B3E0,ecs.office.com,4,4044
+7982: [3]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.247 [Microsoft-Windows-WinINet]0x2469F03B3E0,ecs.office.com,4,4044,0
+7984: [3]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.247 [Microsoft-Windows-WinINet]SSL negotiation between client and server has completed successfully: RequestHandle=0xCC000C 
+7985: [3]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.247 [Microsoft-Windows-WinINet]0x2469EFDD5C0,55674,HTTP ,16,180.44.17.58:55674,16,180.205.18.35:8080
+7986: [3]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.247 [Microsoft-Windows-WinINet]HTTP Request Headers RequestHandle=0xCC000C GET /config/v1/OneAuth-MSAL/10.2.1?OS=Windows&ApplicationID=com.microsoft.Office&OneAuthVersion=10.2.1 HTTP/1.1  X-ECS-Client-Last-Telemetry-Events: ecs_client_library_name=OneAuth-MSAL,ecs_client_app_name=OneAuth-MSAL,ecs_client_version=10.2.1  If-None-Match: "jenmK/U01F38d5eXCZzKRDK9GPhtWthXSSoEcu5f7x4="  User-Agent: OneAuth/10.2.1 (Windows)  Host: ecs.office.com     
+7987: [3]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.247 [Microsoft-Windows-WinINet]0x2469EFDD5C0,371
+7993: [3]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.248 [Microsoft-Windows-WinINet]HTTP request was sent successfully: RequestHandle=0xCC000C, SocketHandle=0xFCC, GET, CookieSent= false 
+7994: [3]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.248 [Microsoft-Windows-WinINet]0x2469EFDD5C0,1024
+7995: [3]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.248 [Microsoft-Windows-WinINet]0x2469EFDD5C0,32768
+7996: [3]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.248 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+8153: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.287 [Microsoft-Windows-WinINet]0x2469AC9E270,4044
+8154: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.287 [Microsoft-Windows-WinINet]0x2469EFDD5C0,1167
+8155: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.287 [Microsoft-Windows-WinINet]0x2469EFDD5C0,0
+8156: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.287 [Microsoft-Windows-WinINet]HTTP response (304) received: RequestHandle=0xCC000C, SocketHandle=0xFCC, GET, ContentLength=--- 
+8157: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.287 [Microsoft-Windows-WinINet]HTTP Response Headers RequestHandle=0xCC000C HTTP/1.1 304 Not Modified  Cache-Control: no-cache,max-age=3600  Content-Type: application/json  Expires: Mon, 14 Sep 2026 09:54:17 GMT  ETag: "jenmK/U01F38d5eXCZzKRDK9GPhtWthXSSoEcu5f7x4="  Retry-After: 900  Server: Microsoft-HTTPAPI/2.0  Report-To: {"group":"NelEcsUpload1","max_age":604800,"endpoints":[{"url":"https://ecs.nel.measure.office.net/api/report?TenantId=OneAuth-MSAL&DestinationEndpoint=MIRA-WW-LO4&FrontEnd=MIRA"}],"include_subdomains":true}  X-MSEdge-Ref: MIRA: 0902d1cb-ad4d-935e-cf1a-5625a3c2b059 LO4P123CA0364 2026-09-14T08:54:17.191Z  X-Frame-Options: DENY  NEL: {"report_to":"NelEcsUpload1","max_age":604800,"include_subdomains":true,"failure_fraction":1.0,"success_fraction":0.001}  X-NanoProxy: 1  Request-Id: 0902d1cb-ad4d-935e-cf1a-5625a3c2b059  X-BackEndHttpStatus: 304  X-Content-Type-Options: nosniff  X-Proxy-BackendServerStatus: 304  X-Proxy-RoutingCorrectness: 1  X-FEServer: LO4P123CA0364  X-FirstHopCafeEFZ: LHR  Alt-Svc: h3=":443";ma=2592000,h3-29=":443";ma=2592000  Strict-Transport-Security: max-age=31536000; includeSubDomains  MS-CV: y9ECCU2tXpPPGlYlo8KwWQ.1  Date: Mon, 14 Sep 2026 08:54:16 GMT     
+8164: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.287 [Microsoft-Windows-WinINet]Connection is returned to keep-alive pool: RequestHandle=0xCC000C, SocketHandle=0xFCC 
+8165: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.287 [Microsoft-Windows-WinINet]0x2469EFDD5C0
+8166: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.287 [Microsoft-Windows-WinINet]0x2469EFDD5C0
+8167: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.287 [Microsoft-Windows-WinINet]0x2469EFDD5C0,25,HTTP/1.1 304 Not Modified
+8168: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.288 [Microsoft-Windows-WinINet]Handle 0xCC000C closed successfully 
+8169: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.288 [Microsoft-Windows-WinINet]Handle 0xCC0008 closed successfully 
+8170: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.288 [Microsoft-Windows-WinINet]Handle 0xCC0004 closed successfully 
+8171: [0]2C10.0AB4::‎2026‎-‎09‎-‎14 10:54:17.288 [Microsoft-Windows-WinINet]Requested URL=https://ecs.office.com/config/v1/OneAuth-MSAL/10.2.1?OS=Windows&ApplicationID=com.microsoft.Office&OneAuthVersion=10.2.1 Verb=GET RequestHeaders=GET /config/v1/OneAuth-MSAL/10.2.1?OS=Windows&ApplicationID=com.microsoft.Office&OneAuthVersion=10.2.1 HTTP/1.1  X-ECS-Client-Last-Telemetry-Events: ecs_client_library_name=OneAuth-MSAL,ecs_client_app_name=OneAuth-MSAL,ecs_client_version=10.2.1  If-None-Match: "jenmK/U01F38d5eXCZzKRDK9GPhtWthXSSoEcu5f7x4="  User-Agent: OneAuth/10.2.1 (Windows)  Host: ecs.office.com     ResponseHeaders=HTTP/1.1 304 Not Modified  Cache-Control: no-cache,max-age=3600  Content-Type: application/json  Expires: Mon, 14 Sep 2026 09:54:17 GMT  ETag: "jenmK/U01F38d5eXCZzKRDK9GPhtWthXSSoEcu5f7x4="  Retry-After: 900  Server: Microsoft-HTTPAPI/2.0  Report-To: {"group":"NelEcsUpload1","max_age":604800,"endpoints":[{"url":"https://ecs.nel.measure.office.net/api/report?TenantId=OneAuth-MSAL&DestinationEndpoint=MIRA-WW-LO4&FrontEnd=MIRA"}],"include_subdomains":true}  X-MSEdge-Ref: MIRA: 0902d1cb-ad4d-935e-cf1a-5625a3c2b059 LO4P123CA0364 2026-09-14T08:54:17.191Z  X-Frame-Options: DENY  NEL: {"report_to":"NelEcsUpload1","max_age":604800,"include_subdomains":true,"failure_fraction":1.0,"success_fraction":0.001}  X-NanoProxy: 1  Request-Id: 0902d1cb-ad4d-935e-cf1a-5625a3c2b059  X-BackEndHttpStatus: 304  X-Content-Type-Options: nosniff  X-Proxy-BackendServerStatus: 304  X-Proxy-RoutingCor
+8300: [0]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.529 [Microsoft-Windows-WinINet]Session handle 0xCC0004 created: UserAgent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763, AccessType=PRECONFIG, ProxyList=, ProxyBypassList=, Flags=0x10000000 
+8302: [0]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.530 [Microsoft-Windows-WinINet]Handle 0xCC0008 created by InternetConnect: SessionHandle=0xCC0004, Server=login.microsoftonline.com:443, HTTP, Flags=0x800000 
+8303: [0]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.530 [Microsoft-Windows-WinINet]Request handle 0xCC000C created by HttpOpenRequest: ConnectionHandle=0xCC0008, POST, Target=/35595a02-4d6d-44ac-99e1-f9ab4cd872db/oauth2/token, Ver=HTTP/1.1, Referrer=, Media types=, Flags=0x4E00200 
+8304: [0]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.530 [Microsoft-Windows-WinINet]Request handle 0xCC000C Server Details: Server=login.microsoftonline.com Port=443 Service=https 
+8309: [2]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.537 [Microsoft-Windows-WinHttp]Queue WorkItem  Thread Action (Context: 0x1F2823C8220) 
+8310: [3]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.537 [Microsoft-Windows-WinHttp]Starting WorkItem  Thread Action (Context: 0x1F2823C8220) 
+8311: [3]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.538 [Microsoft-Windows-WinHttp]Queue Wait Callback  Thread Action (Context: 0x1F2FFF8CD10) 
+8312: [3]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.538 [Microsoft-Windows-WinHttp]Queue Wait Callback  Thread Action (Context: 0x1F2FFF8D250) 
+8313: [3]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.538 [Microsoft-Windows-WinHttp]Queue Wait Callback  Thread Action (Context: 0x1F2FFF8CC50) 
+8314: [3]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.538 [Microsoft-Windows-WinHttp]Stopping WorkItem  Thread Action (Context: 0x1F2823C8220) 
+8315: [4]0D60.2D5C::‎2026‎-‎09‎-‎14 10:54:17.541 [Microsoft-Windows-WinHttp]Searching for Proxy Information for the URL: URL=https://login.microsoftonline.com/ 
+11033: [6]0D60.2D5C::‎2026‎-‎09‎-‎14 10:54:17.783 [Microsoft-Windows-WinHttp]Client has successfully retrieved proxy data for accessing a specified resource: URL=https://login.microsoftonline.com/, ProxyString=PROXY proxybckboa.gsnet.corp:8080 
+11034: [4]0B04.0154::‎2026‎-‎09‎-‎14 10:54:17.784 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoW is called for queryName proxybckboa.gsnet.corp, serviceName 20000, flags 0, family 0, socketType 1, protocol 6 and seq 119 
+11053: [4]0B04.0154::‎2026‎-‎09‎-‎14 10:54:17.784 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is called for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp, serviceGUID {0002a803-0000-0000-c000-000000000046}, interface index 0 and control flags 3146000 
+11054: [4]0B04.0154::‎2026‎-‎09‎-‎14 10:54:17.784 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is completed for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp serviceGUID {0002a803-0000-0000-c000-000000000046}, interface index 0, control flags 3146000 and lookup handle 1867009907024 with status 0 
+11056: [4]0B04.0154::‎2026‎-‎09‎-‎14 10:54:17.784 [Microsoft-Windows-DNS-Client]DNS query is called for the name proxybckboa.gsnet.corp, type 1, query options 1073766400, Server List , isNetwork query 0, network index 0, interface index 0, is asynchronous query 0 
+11057: [4]0B04.0154::‎2026‎-‎09‎-‎14 10:54:17.784 [Microsoft-Windows-DNS-Client]DNS query is completed for the name proxybckboa.gsnet.corp, type 1, query options 1073766400 with status 87 Results  
+11061: [4]0B04.0154::‎2026‎-‎09‎-‎14 10:54:17.784 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is called for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp, serviceGUID {00090035-0000-001c-c000-000000000046}, interface index 0 and control flags 3146000 
+11062: [4]0B04.0154::‎2026‎-‎09‎-‎14 10:54:17.784 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is completed for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp serviceGUID {00090035-0000-001c-c000-000000000046}, interface index 0, control flags 3146000 and lookup handle 1867009910768 with status 0 
+11064: [4]0B04.0154::‎2026‎-‎09‎-‎14 10:54:17.784 [Microsoft-Windows-DNS-Client]DNS query is called for the name proxybckboa.gsnet.corp, type 28, query options 1073897472, Server List , isNetwork query 0, network index 0, interface index 0, is asynchronous query 0 
+11065: [1]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-DNS-Client]Network query initiated for the name proxybckboa.gsnet.corp (is parallel query 1) on network index 0 with interface count 1 with first interface name SERVICE, local addresses 180.44.17.58 and Dns Servers 180.18.200.202;180.16.200.200 
+11066: [1]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-DNS-Client]Cache lookup called for name proxybckboa.gsnet.corp, type 1, options 2251800887582720 and interface index 0 
+11067: [1]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-DNS-Client]Cache lookup for name proxybckboa.gsnet.corp, type 1 and option 2251800887582720 returned 0 with results 180.205.18.35; 
+11068: [1]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-DNS-Client]Cache lookup called for name proxybckboa.gsnet.corp, type 28, options 2251800887582720 and interface index 0 
+11069: [1]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-DNS-Client]Cache lookup for name proxybckboa.gsnet.corp, type 28 and option 2251800887582720 returned 9701 with results  
+11072: [7]0B04.0154::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-DNS-Client]DNS query is completed for the name proxybckboa.gsnet.corp, type 28, query options 2251800887582720 with status 0 Results ::ffff:180.205.18.35; 
+11087: [7]0B04.0154::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoW is completed for queryName proxybckboa.gsnet.corp with status 0 and result 180.205.18.35:20000; 
+11088: [1]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-WinHttp]Starting Wait Callback  Thread Action (Context: 0x1F2FFF8CD10) 
+11089: [1]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-WinHttp]Canceling Timer  Thread Action (Context: 0x1F2FFF8CD10) 
+11090: [1]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-WinHttp]Canceling Timer  Thread Action (Context: 0x1F2FFF8D250) 
+11091: [1]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-WinHttp]Canceling Timer  Thread Action (Context: 0x1F2FFF8CC50) 
+11092: [1]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-WinHttp]Stopping Wait Callback  Thread Action (Context: 0x1F2FFF8CD10) 
+11094: [2]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.785 [Microsoft-Windows-WinINet]0xCC000C,0,0
+11095: [1]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.786 [Microsoft-Windows-WinINet]HTTP request was received from API: RequestHandle=0xCC000C, RequestContext=0x1F2823A72F0 
+11096: [1]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.794 [Microsoft-Windows-WinINet]0x1F2823BB0C0,0x1F28234A2D0,C:\Users\x414229\AppData\Local\Packages\microsoft.aad.brokerplugin_cw5n1h2txyewy\AC\INetCache
+11097: [2]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.795 [Microsoft-Windows-WinINet]0x1F2823BB0C0,0
+11098: [2]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.795 [Microsoft-Windows-WinINet]0x1F2823BB0C0,login.microsoftonline.com:443
+11099: [1]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.795 [Microsoft-Windows-WinINet]0x1F2823BB0C0,0
+11100: [4]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.806 [Microsoft-Windows-WinINet]Server certificate validated: RequestHandle=0xCC000C, CertHash=F5D52EF2C9862D05A8D0B3E77C344446E68D38A2, WarningFlags=69888 
+11101: [4]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.806 [Microsoft-Windows-WinINet]0x1F2823B1740,https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db/oauth2/token
+11102: [1]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.811 [Microsoft-Windows-WinINet]0x1F2823C3F50,0x1F28234A2D0,C:\Users\x414229\AppData\Local\Packages\microsoft.aad.brokerplugin_cw5n1h2txyewy\AC\INetCookies\ESE\
+11103: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823C3F50,0
+11104: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823C3F50,com.microsoftonline
+11105: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823C3F50,0
+11107: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]Cookie added to the request header: Domain=login.microsoftonline.com, Path=/, Name=fpc, Value=Akc02YKjsEZGiCHYTnPaDyqgE05qAQAAAH6nOeIOAAAAAIiGcgEAAACEpzniDgAAAA 
+11109: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]A cookie header was created for the request: URL=https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db/oauth2/token 
+11110: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823B1740
+11111: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823B1740
+11112: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823B1740,4294967294
+11113: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]Handle 0xCC0010 created by InternetConnect: SessionHandle=0xCC0004, Server=login.microsoftonline.com:443, HTTP, Flags=0x0 
+11114: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]Request handle 0xCC0014 created by HttpOpenRequest: ConnectionHandle=0xCC0010, CONNECT, Target=/, Ver=HTTP/1.1, Referrer=, Media types=, Flags=0x94680000 
+11115: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]Request handle 0xCC0014 Server Details: Server=login.microsoftonline.com Port=443 Service=http 
+11116: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]HTTP request was received from API: RequestHandle=0xCC0014, RequestContext=0x0 
+11117: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823F6FC0,http://login.microsoftonline.com:443/
+11118: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823F6FC0
+11119: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823F6FC0
+11120: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823F6FC0
+11121: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823F6FC0
+11122: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823F6FC0,4294967295
+11123: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x1F2823F6FC0,proxybckboa.gsnet.corp
+11124: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]DNS query for proxybckboa.gsnet.corp hostname is sent: Handle=0xCC0014 
+11125: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.812 [Microsoft-Windows-WinINet]0x3,proxybckboa.gsnet.corp
+11144: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.813 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW info.  queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 0, error 0 and seq 307 
+11145: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.813 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW info.  queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 0, error 0 and seq 310 
+11146: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.813 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW is called for queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 1 and seq 226 
+11147: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.816 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is called for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp, serviceGUID {0002a803-0000-0000-c000-000000000046}, interface index 0 and control flags 3146000 
+11148: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.816 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is completed for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp serviceGUID {0002a803-0000-0000-c000-000000000046}, interface index 0, control flags 3146000 and lookup handle 2141078928656 with status 0 
+11149: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.816 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is called for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp, serviceGUID {00090035-0000-001c-c000-000000000046}, interface index 0 and control flags 3146000 
+11150: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.816 [Microsoft-Windows-Winsock-NameResolution]NSPLookupServiceBegin is completed for provider {22059d40-7e9e-11cf-ae5a-00aa00a7112b}, queryName proxybckboa.gsnet.corp serviceGUID {00090035-0000-001c-c000-000000000046}, interface index 0, control flags 3146000 and lookup handle 2141078925744 with status 0 
+11151: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.816 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW info.  queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 1, error 0 and seq 314 
+11154: [3]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.816 [Microsoft-Windows-DNS-Client]DNS query is called for the name proxybckboa.gsnet.corp, type 28, query options 1073897472, Server List , isNetwork query 0, network index 0, interface index 0, is asynchronous query 0 
+11155: [1]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.816 [Microsoft-Windows-DNS-Client]DNS query is called for the name proxybckboa.gsnet.corp, type 1, query options 1073766400, Server List , isNetwork query 0, network index 0, interface index 0, is asynchronous query 0 
+11156: [1]0D04.2DDC::‎2026‎-‎09‎-‎14 10:54:17.816 [Microsoft-Windows-DNS-Client]DNS query is completed for the name proxybckboa.gsnet.corp, type 1, query options 1073766400 with status 87 Results  
+11160: [3]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.818 [Microsoft-Windows-DNS-Client]Network query initiated for the name proxybckboa.gsnet.corp (is parallel query 1) on network index 0 with interface count 1 with first interface name SERVICE, local addresses 180.44.17.58 and Dns Servers 180.18.200.202;180.16.200.200 
+11161: [3]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.818 [Microsoft-Windows-DNS-Client]Cache lookup called for name proxybckboa.gsnet.corp, type 1, options 2251800887582720 and interface index 0 
+11162: [3]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.818 [Microsoft-Windows-DNS-Client]Cache lookup for name proxybckboa.gsnet.corp, type 1 and option 2251800887582720 returned 0 with results 180.205.18.35; 
+11163: [3]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.818 [Microsoft-Windows-DNS-Client]Cache lookup called for name proxybckboa.gsnet.corp, type 28, options 2251800887582720 and interface index 0 
+11164: [3]0A08.31C0::‎2026‎-‎09‎-‎14 10:54:17.818 [Microsoft-Windows-DNS-Client]Cache lookup for name proxybckboa.gsnet.corp, type 28 and option 2251800887582720 returned 9701 with results  
+11167: [1]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.818 [Microsoft-Windows-DNS-Client]DNS query is completed for the name proxybckboa.gsnet.corp, type 28, query options 2251800887582720 with status 0 Results ::ffff:180.205.18.35; 
+11182: [1]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.820 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW is completed for queryName proxybckboa.gsnet.corp with status 0 and result 180.205.18.35; 
+11183: [1]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.820 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW info.  queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 1, error 0 and seq 315 
+11184: [1]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.820 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW info.  queryName proxybckboa.gsnet.corp, serviceName NULL, nameSpace 12, nameSpace GUID {00000000-0000-0000-0000-000000000000}, flags 131074, family 0, socketType 1, protocol 6, interface index 0, timeOut 0, asyncWithCallBack 0, asyncWithOverlapped 1, error 0 and seq 324 
+11185: [1]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.820 [Microsoft-Windows-Winsock-NameResolution]GetAddrInfoExW is completed for queryName proxybckboa.gsnet.corp with status 0 and result 180.205.18.35; 
+11186: [1]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.820 [Microsoft-Windows-WinINet]0,0x3,proxybckboa.gsnet.corp
+11187: [1]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.820 [Microsoft-Windows-WinINet]DNS query for proxybckboa.gsnet.corp hostname is complete: Handle=0xCC0014, Addresses=180.205.18.35; 
+11188: [1]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.820 [Microsoft-Windows-WinINet]0x1F2823F6FC0,proxybckboa.gsnet.corp
+11202: [1]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.821 [Microsoft-Windows-WinINet]0x1F2823F6FC0,2224,55675,0
+11229: [7]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.823 [Microsoft-Windows-WinINet]0x1F2823F6FC0,2224
+11230: [7]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.823 [Microsoft-Windows-WinINet]TCP connection to server proxybckboa.gsnet.corp established: ConnectionHandle=0xCC0014, SocketHandle=0x8B0, LocalPort=55675 
+11231: [7]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.823 [Microsoft-Windows-WinINet]0x1F2823F6FC0,55675,HTTP ,16,180.44.17.58:55675,16,180.205.18.35:8080
+11232: [7]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.823 [Microsoft-Windows-WinINet]HTTP Request Headers RequestHandle=0xCC0014 CONNECT login.microsoftonline.com:443 HTTP/1.0  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17763  Content-Length: 0  Host: login.microsoftonline.com  Proxy-Connection: Keep-Alive  Pragma: no-cache     
+11233: [7]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.823 [Microsoft-Windows-WinINet]0x1F2823F6FC0,293
+11239: [7]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.823 [Microsoft-Windows-WinINet]HTTP request was sent successfully: RequestHandle=0xCC0014, SocketHandle=0x8B0, CONNECT, CookieSent= false 
+11240: [7]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.823 [Microsoft-Windows-WinINet]0x1F2823F6FC0,1024
+11241: [7]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.823 [Microsoft-Windows-WinINet]0x1F2823F6FC0,1024
+11242: [7]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.823 [Microsoft-Windows-WinINet]0x1F2FFF8FD30,2224
+11259: [5]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.848 [Microsoft-Windows-WinINet]0x1F2FFF8FD30,2224
+11260: [5]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.848 [Microsoft-Windows-WinINet]0x1F2823F6FC0,39
+11261: [5]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.848 [Microsoft-Windows-WinINet]HTTP response (200) received: RequestHandle=0xCC0014, SocketHandle=0x8B0, CONNECT, ContentLength=--- 
+11262: [5]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.848 [Microsoft-Windows-WinINet]HTTP Response Headers RequestHandle=0xCC0014 HTTP/1.0 200 Connection established     
+11263: [5]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.848 [Microsoft-Windows-WinINet]0x1F2823F6FC0
+11264: [5]0D04.0F10::‎2026‎-‎09‎-‎14 10:54:17.848 [Microsoft-Windows-WinINet]0x1F2823F6FC0
