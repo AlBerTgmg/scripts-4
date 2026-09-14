@@ -1,1 +1,4 @@
-hostname; Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet' | Format-List *
+hostname
+bitsadmin /util /getieproxy LOCALSYSTEM
+bitsadmin /util /getieproxy NETWORKSERVICE
+bitsadmin /util /getieproxy LOCALSERVICE
