@@ -15,3 +15,8 @@ if ($diagnostico) {
 else {
     Write-Host "No se encuentra vnextdiag.ps1 en las rutas habituales."
 }
+
+
+
+
+Get-ChildItem -Path "$env:ProgramFiles\Microsoft Office","${env:ProgramFiles(x86)}\Microsoft Office" -Filter vnextdiag.ps1 -Recurse -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
