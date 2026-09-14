@@ -1,0 +1,17 @@
+hostname
+
+$rutas = @(
+    "$env:ProgramFiles\Microsoft Office\Office16\vnextdiag.ps1",
+    "${env:ProgramFiles(x86)}\Microsoft Office\Office16\vnextdiag.ps1"
+)
+
+$diagnostico = $rutas |
+    Where-Object { Test-Path -LiteralPath $_ } |
+    Select-Object -First 1
+
+if ($diagnostico) {
+    & $diagnostico -action list
+}
+else {
+    Write-Host "No se encuentra vnextdiag.ps1 en las rutas habituales."
+}
