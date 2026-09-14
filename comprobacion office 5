@@ -27,3 +27,94 @@ Get-WinEvent -FilterHashtable @{
 
 Get-WinEvent -LogName 'Microsoft-Windows-AAD/Operational' -MaxEvents 10 |
     Format-List TimeCreated, Id, Message
+
+
+
+
+
+
+
+PS C:\Users\x414229>
+PS C:\Users\x414229> Get-WinEvent -LogName 'Microsoft-Windows-AAD/Operational' -MaxEvents 10 |
+>>     Format-List TimeCreated, Id, Message
+
+
+TimeCreated : 14/09/2026 10:29:56
+Id          : 1097
+Message     : Error: 0x8AA100AB Missing value in ApplicationDataContainer.
+              Logged at userpicture.cpp, line: 499, method: UserPicture::GetEtagFromContainer.
+
+              Request: authority: https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db, client: d3590ed6-52b3-4102-aeff-aad2292ab01c, redirect URI:
+              ms-appx-web://Microsoft.AAD.BrokerPlugin/d3590ed6-52b3-4102-aeff-aad2292ab01c
+
+TimeCreated : 14/09/2026 10:29:52
+Id          : 1097
+Message     : Error: 0x8AA100AB Missing value in ApplicationDataContainer.
+              Logged at userpicture.cpp, line: 499, method: UserPicture::GetEtagFromContainer.
+
+              Request: authority: https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db, client: d3590ed6-52b3-4102-aeff-aad2292ab01c, redirect URI:
+              ms-appx-web://Microsoft.AAD.BrokerPlugin/d3590ed6-52b3-4102-aeff-aad2292ab01c
+
+TimeCreated : 14/09/2026 10:29:51
+Id          : 1097
+Message     : Error: 0x8AA100AB Missing value in ApplicationDataContainer.
+              Logged at userpicture.cpp, line: 499, method: UserPicture::GetEtagFromContainer.
+
+              Request: authority: https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db, client: d3590ed6-52b3-4102-aeff-aad2292ab01c, redirect URI:
+              ms-appx-web://Microsoft.AAD.BrokerPlugin/d3590ed6-52b3-4102-aeff-aad2292ab01c
+
+TimeCreated : 14/09/2026 9:37:14
+Id          : 1097
+Message     : Error: 0x8AA100AB Missing value in ApplicationDataContainer.
+              Logged at userpicture.cpp, line: 499, method: UserPicture::GetEtagFromContainer.
+
+              Request: authority: https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db, client: d3590ed6-52b3-4102-aeff-aad2292ab01c, redirect URI:
+              ms-appx-web://Microsoft.AAD.BrokerPlugin/d3590ed6-52b3-4102-aeff-aad2292ab01c
+
+TimeCreated : 14/09/2026 9:36:55
+Id          : 1097
+Message     : Error: 0x8AA100AB Missing value in ApplicationDataContainer.
+              Logged at userpicture.cpp, line: 499, method: UserPicture::GetEtagFromContainer.
+
+              Request: authority: https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db, client: d3590ed6-52b3-4102-aeff-aad2292ab01c, redirect URI:
+              ms-appx-web://Microsoft.AAD.BrokerPlugin/d3590ed6-52b3-4102-aeff-aad2292ab01c
+
+TimeCreated : 14/09/2026 9:36:53
+Id          : 1097
+Message     : Error: 0x8AA100AB Missing value in ApplicationDataContainer.
+              Logged at userpicture.cpp, line: 499, method: UserPicture::GetEtagFromContainer.
+
+              Request: authority: https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db, client: d3590ed6-52b3-4102-aeff-aad2292ab01c, redirect URI:
+              ms-appx-web://Microsoft.AAD.BrokerPlugin/d3590ed6-52b3-4102-aeff-aad2292ab01c
+
+TimeCreated : 14/09/2026 9:36:53
+Id          : 1097
+Message     : Error: 0x8AA100AB Missing value in ApplicationDataContainer.
+              Logged at userpicture.cpp, line: 499, method: UserPicture::GetEtagFromContainer.
+
+              Request: authority: https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db, client: d3590ed6-52b3-4102-aeff-aad2292ab01c, redirect URI:
+              ms-appx-web://Microsoft.AAD.BrokerPlugin/d3590ed6-52b3-4102-aeff-aad2292ab01c
+
+TimeCreated : 14/09/2026 9:36:49
+Id          : 1097
+Message     : Error: 0x8AA100AB Missing value in ApplicationDataContainer.
+              Logged at userpicture.cpp, line: 499, method: UserPicture::GetEtagFromContainer.
+
+              Request: authority: https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db, client: d3590ed6-52b3-4102-aeff-aad2292ab01c, redirect URI:
+              ms-appx-web://Microsoft.AAD.BrokerPlugin/d3590ed6-52b3-4102-aeff-aad2292ab01c
+
+TimeCreated : 14/09/2026 9:36:49
+Id          : 1097
+Message     : Error: 0x8AA100AB Missing value in ApplicationDataContainer.
+              Logged at userpicture.cpp, line: 499, method: UserPicture::GetEtagFromContainer.
+
+              Request: authority: https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db, client: d3590ed6-52b3-4102-aeff-aad2292ab01c, redirect URI:
+              ms-appx-web://Microsoft.AAD.BrokerPlugin/d3590ed6-52b3-4102-aeff-aad2292ab01c
+
+TimeCreated : 14/09/2026 9:36:49
+Id          : 1097
+Message     : Error: 0x8AA100AB Missing value in ApplicationDataContainer.
+              Logged at userpicture.cpp, line: 499, method: UserPicture::GetEtagFromContainer.
+
+              Request: authority: https://login.microsoftonline.com/35595a02-4d6d-44ac-99e1-f9ab4cd872db, client: d3590ed6-52b3-4102-aeff-aad2292ab01c, redirect URI:
+              ms-appx-web://Microsoft.AAD.BrokerPlugin/d3590ed6-52b3-4102-aeff-aad2292ab01c
