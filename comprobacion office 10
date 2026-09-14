@@ -1,1 +1,1 @@
-Select-String -LiteralPath 'C:\Users\ADMCYA~1\AppData\Local\Temp\Office-AP59-20260914-105404.txt' -Pattern 'ols\.officeapps\.live\.com|sls\.microsoft\.com|licensing\.mp\.microsoft\.com' | Where-Object { $_.Line -notmatch 'Header|Cookie|Authorization' } | Select-Object -First 40 LineNumber, Line | Format-List
+wevtutil sl Microsoft-Windows-NCSI/Analytic /e:true /q:true
