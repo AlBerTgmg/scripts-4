@@ -1,0 +1,11 @@
+hostname
+
+Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet' |
+    Select-Object EnableActiveProbing, ActiveWebProbeHost, ActiveWebProbePath, ActiveWebProbeContent, ActiveDnsProbeHost, ActiveDnsProbeContent |
+    Format-List
+
+Get-ItemProperty 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator' -ErrorAction SilentlyContinue |
+    Format-List *
+
+Get-WinEvent -LogName 'Microsoft-Windows-NCSI/Operational' -MaxEvents 12 -ErrorAction Continue |
+    Format-List TimeCreated, Id, Message
