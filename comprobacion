@@ -1,0 +1,10 @@
+hostname
+whoami
+ipconfig /all
+route print -4
+Get-NetConnectionProfile | Format-List
+netsh winhttp show proxy
+
+Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' |
+    Select-Object ProxyEnable, ProxyServer, AutoConfigURL |
+    Format-List
