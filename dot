@@ -1,0 +1,1 @@
+Invoke-GPUpdate -Computer "NOMBRE_SERVIDOR" -Target Computer -Force -RandomDelayInMinutes 0
