@@ -45,3 +45,21 @@ Select-Object VersionToReport,ClientVersionToReport,UpdateChannel,UpdatesEnabled
 
 Get-ScheduledTask -TaskPath "\Microsoft\Office\" |
 Select-Object TaskName,State
+
+
+
+
+
+Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickT
+oRun\Updates" -ErrorAction SilentlyContinue |
+Format-List *
+
+
+Get-ScheduledTask -TaskPath "\Microsoft\Office\" |
+Select-Object TaskName,State
+
+
+Get-ChildItem "C:\Windows\Temp" -File |
+Where-Object {$_.Name -match "Office|ClickToRun|C2R"} |
+Sort-Object LastWriteTime -Descending |
+Select-Object -First 15 Name,LastWriteTime,Length
