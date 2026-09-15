@@ -19,3 +19,10 @@ Invoke-WebRequest "https://officecdn.microsoft.com" `
 -UseBasicParsing
 
 & "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe" /update user displaylevel=true forceappshutdown=true
+
+
+
+Invoke-WebRequest "http://officecdn.microsoft.com/pr/7ffbc6bf-bc32-4f92-8982-f9dd17fd3114/Office/Data/v64.cab" `
+-Proxy "http://proxy.nngg.corp:8080" `
+-ProxyUseDefaultCredentials `
+-UseBasicParsing
