@@ -63,3 +63,23 @@ Get-ChildItem "C:\Windows\Temp" -File |
 Where-Object {$_.Name -match "Office|ClickToRun|C2R"} |
 Sort-Object LastWriteTime -Descending |
 Select-Object -First 15 Name,LastWriteTime,Length
+
+
+
+
+En la nueva ventana elevada, primero quiero ver cuándo se ejecutó realmente la tarea de actualización y qué resultado dio:
+Get-ScheduledTaskInfo -TaskPath "\Microsoft\Office\" -TaskName "Office Automatic Updates 2.0" |
+Select-Object LastRunTime,LastTaskResult,NextRunTime
+Después podemos forzar la tarea oficial de actualización de Office, que para esta prueba me gusta más que seguir lanzando OfficeC2RClient.exe:
+Start-ScheduledTask -TaskPath "\Microsoft\Office\" -TaskName "Office Automatic Updates 2.0"
+Espera 1-2 minutos y consulta:
+Get-ScheduledTaskInfo -TaskPath "\Microsoft\Office\" -TaskName "Office Automatic Updates 2.0" |
+Select-Object LastRunTime,LastTaskResult,NextRunTime
+Y:
+(Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration").VersionToReport
+Después ya podremos acceder a los logs:
+Get-ChildItem "C:\Windows\Temp" -File |
+Where-Object {$_.Name -match "Office|ClickToRun|C2R"} |
+Sort-Object LastWriteTime -Descending |
+Select-Object -First 20 Name,LastWriteTime,Length
+Lo que más me interesa ahora es LastTaskResult. Si sale 0, la tarea terminó correctamente; si sale otro código, ya tenemos una pista concreta. Y además esta prueba ejecuta la actualización en el contexto que usa Office normalmente, no bajo tu sesión de administrador.
