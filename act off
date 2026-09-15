@@ -102,3 +102,6 @@ Format-List
 
 Get-ChildItem "HKLM:\SOFTWARE\Policies\Microsoft\Office\16.0\Common" -ErrorAction SilentlyContinue |
 Select-Object PSChildName
+
+
+(Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration").OfficeMgmtCOM
