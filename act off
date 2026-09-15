@@ -14,7 +14,7 @@ Select-Object *
 
 
 Invoke-WebRequest "https://officecdn.microsoft.com" `
--Proxy "http://proxy.ngg.corp:8080" `
+-Proxy "http://proxy.nngg.corp:8080" `
 -ProxyUseDefaultCredentials `
 -UseBasicParsing
 
