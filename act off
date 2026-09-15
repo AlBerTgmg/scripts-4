@@ -83,3 +83,22 @@ Where-Object {$_.Name -match "Office|ClickToRun|C2R"} |
 Sort-Object LastWriteTime -Descending |
 Select-Object -First 20 Name,LastWriteTime,Length
 Lo que más me interesa ahora es LastTaskResult. Si sale 0, la tarea terminó correctamente; si sale otro código, ya tenemos una pista concreta. Y además esta prueba ejecuta la actualización en el contexto que usa Office normalmente, no bajo tu sesión de administrador.
+
+
+
+
+
+Get-ChildItem "C:\Windows\Temp" -File |
+Where-Object {$_.Name -match "Office|ClickToRun|C2R"} |
+Sort-Object LastWriteTime -Descending |
+Select-Object -First 30 Name,LastWriteTime,Length
+
+
+Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration" |
+Select-Object ProductReleaseIds,Platform,VersionToReport,ClientVersionToReport,AudienceId,UpdateChannel,CDNBaseUrl,UpdatePath,UpdatesEnabled |
+Format-List
+
+
+
+Get-ChildItem "HKLM:\SOFTWARE\Policies\Microsoft\Office\16.0\Common" -ErrorAction SilentlyContinue |
+Select-Object PSChildName
