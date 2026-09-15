@@ -2,3 +2,12 @@
 
 
 (Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration").VersionToReport
+
+
+
+Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration" |
+Select-Object VersionToReport, ClientVersionToReport, UpdatesEnabled, UpdateChannel, CDNBaseUrl, UpdatePath
+
+
+Get-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Office\16.0\Common\OfficeUpdate" -ErrorAction SilentlyContinue |
+Select-Object *
