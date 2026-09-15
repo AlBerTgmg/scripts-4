@@ -26,3 +26,22 @@ Invoke-WebRequest "http://officecdn.microsoft.com/pr/7ffbc6bf-bc32-4f92-8982-f9d
 -Proxy "http://proxy.nngg.corp:8080" `
 -ProxyUseDefaultCredentials `
 -UseBasicParsing
+
+
+
+
+.\OfficeC2RClient.exe /update user displaylevel=true forceappshutdown=true
+
+Get-Process OfficeClickToRun,OfficeC2RClient -ErrorAction SilentlyContinue |
+Select-Object Name,Id,CPU,StartTime
+
+
+
+
+
+
+Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration" |
+Select-Object VersionToReport,ClientVersionToReport,UpdateChannel,UpdatesEnabled,UpdateToVersion
+
+Get-ScheduledTask -TaskPath "\Microsoft\Office\" |
+Select-Object TaskName,State
