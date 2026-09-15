@@ -11,3 +11,11 @@ Select-Object VersionToReport, ClientVersionToReport, UpdatesEnabled, UpdateChan
 
 Get-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Office\16.0\Common\OfficeUpdate" -ErrorAction SilentlyContinue |
 Select-Object *
+
+
+Invoke-WebRequest "https://officecdn.microsoft.com" `
+-Proxy "http://proxy.ngg.corp:8080" `
+-ProxyUseDefaultCredentials `
+-UseBasicParsing
+
+& "C:\Program Files\Common Files\Microsoft Shared\ClickToRun\OfficeC2RClient.exe" /update user displaylevel=true forceappshutdown=true
