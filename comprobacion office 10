@@ -2,3 +2,6 @@ hostname
 bitsadmin /util /getieproxy LOCALSYSTEM
 bitsadmin /util /getieproxy NETWORKSERVICE
 bitsadmin /util /getieproxy LOCALSERVICE
+
+
+(Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration").OfficeMgmtCOM
