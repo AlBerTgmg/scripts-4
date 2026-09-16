@@ -5,3 +5,21 @@ bitsadmin /util /getieproxy LOCALSERVICE
 
 
 (Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration").OfficeMgmtCOM
+
+
+
+$m = Get-ChildItem "C:\Windows\Temp\VMNGCTXTRXAP48-20260915-*" -File |
+    Select-String -Pattern "16\.0\.20326\.20140"
+
+$m | Select-Object -First 5 Path,LineNumber,Line
+$m | Select-Object -Last 5 Path,LineNumber,Line
+
+
+
+
+
+
+
+Get-ChildItem "C:\Windows\Temp\VMNGCTXTRXAP48-20260915-*" -File |
+Select-String -Pattern "419c51d8-a8b9-47a9-b567-df196a72143b" |
+Select-Object Path,LineNumber,Line
