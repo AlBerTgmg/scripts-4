@@ -1,0 +1,94 @@
+Write-Host "=== NCSI / INTERNET CHECK ===" -ForegroundColor Cyan
+
+# 1. Estado que Windows ve
+Write-Host "`n[1] Estado de conectividad Windows" -ForegroundColor Yellow
+Get-NetConnectionProfile |
+Select-Object Name,InterfaceAlias,IPv4Connectivity,IPv6Connectivity |
+Format-Table -AutoSize
+
+# 2. Configuracion NCSI
+Write-Host "`n[2] Configuracion NCSI" -ForegroundColor Yellow
+$ncsiPath = "HKLM:\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet"
+
+if (Test-Path $ncsiPath) {
+    Get-ItemProperty $ncsiPath |
+    Select-Object `
+        EnableActiveProbing,
+        ActiveWebProbeHost,
+        ActiveWebProbePath,
+        ActiveWebProbeContent,
+        ActiveDnsProbeHost,
+        ActiveDnsProbeContent,
+        ManualProxies |
+    Format-List
+}
+else {
+    Write-Host "No existe la configuracion NCSI" -ForegroundColor Red
+}
+
+# 3. Politicas NCSI
+Write-Host "`n[3] Politicas NCSI" -ForegroundColor Yellow
+$policyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator"
+
+if (Test-Path $policyPath) {
+    Get-ItemProperty $policyPath | Format-List *
+}
+else {
+    Write-Host "No hay politicas NCSI configuradas" -ForegroundColor Green
+}
+
+# 4. DNS probe
+Write-Host "`n[4] Resolucion DNS de dns.msftncsi.com" -ForegroundColor Yellow
+try {
+    Resolve-DnsName dns.msftncsi.com -ErrorAction Stop |
+    Select-Object Name,IPAddress |
+    Format-Table -AutoSize
+}
+catch {
+    Write-Host "FALLO DNS: $($_.Exception.Message)" -ForegroundColor Red
+}
+
+# 5. Proxy efectivo para msftconnecttest
+Write-Host "`n[5] Proxy efectivo para msftconnecttest" -ForegroundColor Yellow
+try {
+    $uri = [Uri]"http://www.msftconnecttest.com/connecttest.txt"
+    $proxy = [System.Net.WebRequest]::GetSystemWebProxy().GetProxy($uri)
+
+    Write-Host "Proxy: $($proxy.AbsoluteUri)"
+
+    if ($proxy.Host -and $proxy.Host -ne "www.msftconnecttest.com") {
+        $tcp = Test-NetConnection $proxy.Host -Port $proxy.Port -WarningAction SilentlyContinue
+        Write-Host "TCP hacia proxy: $($tcp.TcpTestSucceeded)"
+    }
+    else {
+        Write-Host "Salida DIRECTA para msftconnecttest" -ForegroundColor Yellow
+    }
+}
+catch {
+    Write-Host "No se pudo obtener el proxy: $($_.Exception.Message)" -ForegroundColor Red
+}
+
+# 6. Probe HTTP real
+Write-Host "`n[6] Prueba HTTP msftconnecttest" -ForegroundColor Yellow
+try {
+    $r = Invoke-WebRequest `
+        "http://www.msftconnecttest.com/connecttest.txt" `
+        -UseBasicParsing `
+        -TimeoutSec 30
+
+    Write-Host "HTTP: $($r.StatusCode)" -ForegroundColor Green
+    Write-Host "Contenido: $($r.Content)"
+
+    if ($r.StatusCode -eq 200 -and $r.Content -match "Microsoft Connect Test") {
+        Write-Host "NCSI WEB PROBE: OK" -ForegroundColor Green
+    }
+    else {
+        Write-Host "NCSI WEB PROBE: RESPUESTA INESPERADA" -ForegroundColor Yellow
+    }
+}
+catch {
+    Write-Host "NCSI WEB PROBE: FALLO" -ForegroundColor Red
+    Write-Host $_.Exception.Message -ForegroundColor Red
+}
+
+Write-Host "`n=== FIN ===" -ForegroundColor Cyan
