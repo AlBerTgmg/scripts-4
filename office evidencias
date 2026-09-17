@@ -1,3 +1,67 @@
+$proxy = [System.Net.WebRequest]::GetSystemWebProxy()
+$proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
+
+$urls = @(
+    "https://login.microsoftonline.com/",
+    "https://activation.sls.microsoft.com/",
+    "https://officeclient.microsoft.com/",
+    "https://office15client.microsoft.com/",
+    "https://officecdn.microsoft.com/",
+    "https://cdn.odc.officeapps.live.com/",
+    "https://officeredir.microsoft.com/",
+    "https://r.office.microsoft.com/"
+)
+
+foreach ($url in $urls) {
+
+    $uri = [Uri]$url
+    $p = $proxy.GetProxy($uri)
+    $bypass = $proxy.IsBypassed($uri)
+
+    [PSCustomObject]@{
+        URL      = $url
+        Proxy    = $p.AbsoluteUri
+        Bypassed = $bypass
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $proxy = [System.Net.WebRequest]::DefaultWebProxy
 
 $urls = @(
