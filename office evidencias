@@ -1,0 +1,85 @@
+Resolve-DnsName ols.officeapps.live.com
+
+Test-NetConnection ols.officeapps.live.com -Port 443 -InformationLevel Detailed
+
+curl.exe -v https://ols.officeapps.live.com/ -o NUL
+
+
+Test-NetConnection ols.officeapps.live.com -TraceRoute
+
+
+
+
+
+
+
+$targets = @(
+    @{Host="ols.officeapps.live.com";       Port=443}
+    @{Host="activation.sls.microsoft.com"; Port=443}
+    @{Host="officeclient.microsoft.com";   Port=443}
+    @{Host="office15client.microsoft.com"; Port=443}
+    @{Host="officeapps.live.com";          Port=443}
+    @{Host="officecdn.microsoft.com";      Port=443}
+    @{Host="cdn.odc.officeapps.live.com";  Port=443}
+    @{Host="officeredir.microsoft.com";    Port=443}
+    @{Host="r.office.microsoft.com";       Port=443}
+    @{Host="crl.microsoft.com";            Port=80}
+    @{Host="crl.microsoft.com";            Port=443}
+)
+
+foreach ($t in $targets) {
+
+    Write-Host "`n==================================================" -ForegroundColor Cyan
+    Write-Host "$($t.Host):$($t.Port)" -ForegroundColor Yellow
+    Write-Host "==================================================" -ForegroundColor Cyan
+
+    Test-NetConnection `
+        -ComputerName $t.Host `
+        -Port $t.Port `
+        -InformationLevel Detailed
+}
+
+
+
+
+
+
+$targets = @(
+    @{Host="ols.officeapps.live.com";       Port=443}
+    @{Host="activation.sls.microsoft.com"; Port=443}
+    @{Host="officeclient.microsoft.com";   Port=443}
+    @{Host="office15client.microsoft.com"; Port=443}
+    @{Host="officeapps.live.com";          Port=443}
+    @{Host="officecdn.microsoft.com";      Port=443}
+    @{Host="cdn.odc.officeapps.live.com";  Port=443}
+    @{Host="officeredir.microsoft.com";    Port=443}
+    @{Host="r.office.microsoft.com";       Port=443}
+    @{Host="crl.microsoft.com";            Port=80}
+    @{Host="crl.microsoft.com";            Port=443}
+)
+
+$resultados = foreach ($t in $targets) {
+
+    $test = Test-NetConnection `
+        -ComputerName $t.Host `
+        -Port $t.Port `
+        -InformationLevel Detailed `
+        -WarningAction SilentlyContinue
+
+    [PSCustomObject]@{
+        Fecha             = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+        Servidor          = $env:COMPUTERNAME
+        FQDN              = $t.Host
+        IPDestino         = $test.RemoteAddress
+        Puerto            = $t.Port
+        TcpTestSucceeded  = $test.TcpTestSucceeded
+        SourceAddress     = $test.SourceAddress
+        InterfaceAlias    = $test.InterfaceAlias
+    }
+}
+
+$resultados | Format-Table -AutoSize
+
+$resultados | Export-Csv "C:\Temp\Test_Office365_Network.csv" `
+    -NoTypeInformation `
+    -Encoding UTF8
