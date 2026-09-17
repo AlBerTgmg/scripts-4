@@ -1,3 +1,33 @@
+$paths = @(
+    "HKCU:\Software\Policies\Microsoft\Office\16.0\Common\Internet",
+    "HKCU:\Software\Policies\Microsoft\Office\16.0\Common\Privacy",
+    "HKLM:\Software\Policies\Microsoft\Office\16.0\Common\Internet",
+    "HKLM:\Software\Policies\Microsoft\Office\16.0\Common\Privacy"
+)
+
+foreach ($path in $paths) {
+    Write-Host "`n=== $path ===" -ForegroundColor Cyan
+
+    if (Test-Path $path) {
+        Get-ItemProperty $path | Format-List *
+    }
+    else {
+        Write-Host "NO EXISTE" -ForegroundColor Yellow
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 $uri = [Uri]"https://login.microsoftonline.com"
 $p = [System.Net.WebRequest]::GetSystemWebProxy().GetProxy($uri)
 
