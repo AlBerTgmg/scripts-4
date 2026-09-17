@@ -1,3 +1,10 @@
+$uri = [Uri]"https://login.microsoftonline.com"
+$p = [System.Net.WebRequest]::GetSystemWebProxy().GetProxy($uri)
+$p
+
+
+
+
 Test-NetConnection login.microsoftonline.com -Port 443 -InformationLevel Detailed
 Test-NetConnection activation.sls.microsoft.com -Port 443 -InformationLevel Detailed
 Test-NetConnection officecdn.microsoft.com -Port 443 -InformationLevel Detailed
