@@ -1,3 +1,34 @@
+Get-NetConnectionProfile |
+Select-Object Name,InterfaceAlias,IPv4Connectivity,IPv6Connectivity
+
+
+Invoke-WebRequest "http://www.msftconnecttest.com/connecttest.txt" -UseBasicParsing -TimeoutSec 30 |
+Select-Object StatusCode,Content
+
+
+Get-ItemProperty "HKCU:\Software\Microsoft\Office\16.0\Common\Identity" -ErrorAction SilentlyContinue |
+Format-List *
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $paths = @(
     "HKCU:\Software\Policies\Microsoft\Office\16.0\Common\Internet",
     "HKCU:\Software\Policies\Microsoft\Office\16.0\Common\Privacy",
