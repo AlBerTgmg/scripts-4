@@ -1,3 +1,16 @@
+$uri = [Uri]"https://login.microsoftonline.com"
+$p = [System.Net.WebRequest]::GetSystemWebProxy().GetProxy($uri)
+
+Test-NetConnection $p.Host -Port $p.Port -InformationLevel Detailed
+
+Invoke-WebRequest "https://login.microsoftonline.com/" -UseBasicParsing -TimeoutSec 30
+
+
+
+
+
+
+
 $uri = [Uri]"https://activation.sls.microsoft.com"
 $p = [System.Net.WebRequest]::GetSystemWebProxy().GetProxy($uri)
 $p
