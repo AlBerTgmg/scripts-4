@@ -1,4 +1,23 @@
-Invoke-WebRequest "https://login.microsoftonline.com/" -TimeoutSec 30
-Invoke-WebRequest "https://activation.sls.microsoft.com/" -TimeoutSec 30
-Invoke-WebRequest "https://officecdn.microsoft.com/" -TimeoutSec 30
-Invoke-WebRequest "https://officeclient.microsoft.com/" -TimeoutSec 30
+$urls = @(
+    "https://login.microsoftonline.com/",
+    "https://activation.sls.microsoft.com/",
+    "https://officecdn.microsoft.com/",
+    "https://officeclient.microsoft.com/"
+)
+
+foreach ($url in $urls) {
+    Write-Host "`n$url" -ForegroundColor Cyan
+
+    try {
+        $r = Invoke-WebRequest $url -UseBasicParsing -TimeoutSec 30
+        Write-Host "OK - HTTP $($r.StatusCode)" -ForegroundColor Green
+    }
+    catch {
+        if ($_.Exception.Response) {
+            Write-Host "CONECTIVIDAD OK - HTTP $([int]$_.Exception.Response.StatusCode)" -ForegroundColor Yellow
+        }
+        else {
+            Write-Host "FALLO DE CONECTIVIDAD: $($_.Exception.Message)" -ForegroundColor Red
+        }
+    }
+}
