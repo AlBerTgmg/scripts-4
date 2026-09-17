@@ -1,2 +1,4 @@
-Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" |
-fl ProxyEnable,ProxyServer,AutoConfigURL,AutoDetect
+Invoke-WebRequest "https://login.microsoftonline.com/" -TimeoutSec 30
+Invoke-WebRequest "https://activation.sls.microsoft.com/" -TimeoutSec 30
+Invoke-WebRequest "https://officecdn.microsoft.com/" -TimeoutSec 30
+Invoke-WebRequest "https://officeclient.microsoft.com/" -TimeoutSec 30
