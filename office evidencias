@@ -1,3 +1,33 @@
+Restart-Service NlaSvc -Force
+Start-Sleep -Seconds 10
+
+Get-NetConnectionProfile |
+Select Name,InterfaceAlias,IPv4Connectivity,IPv6Connectivity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Get-NetConnectionProfile |
 Select-Object Name,InterfaceAlias,IPv4Connectivity,IPv6Connectivity
 
