@@ -1,3 +1,11 @@
+Test-NetConnection login.microsoftonline.com -Port 443 -InformationLevel Detailed
+Test-NetConnection activation.sls.microsoft.com -Port 443 -InformationLevel Detailed
+Test-NetConnection officecdn.microsoft.com -Port 443 -InformationLevel Detailed
+Test-NetConnection officeclient.microsoft.com -Port 443 -InformationLevel Detailed
+
+
+
+
 $urls = @(
     "https://login.microsoftonline.com/",
     "https://activation.sls.microsoft.com/",
