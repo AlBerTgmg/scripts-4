@@ -21,3 +21,28 @@ foreach ($url in $urls) {
         }
     }
 }
+
+
+
+
+$urls = @(
+    "https://login.windows.net/",
+    "https://aadcdn.msauth.net/",
+    "https://aadcdn.msftauth.net/",
+    "https://device.login.microsoftonline.com/"
+)
+
+foreach ($url in $urls) {
+    Write-Host "`n$url" -ForegroundColor Cyan
+    try {
+        $r = Invoke-WebRequest $url -UseBasicParsing -TimeoutSec 30
+        Write-Host "OK - HTTP $($r.StatusCode)" -ForegroundColor Green
+    }
+    catch {
+        if ($_.Exception.Response) {
+            Write-Host "CONECTIVIDAD OK - HTTP $([int]$_.Exception.Response.StatusCode)" -ForegroundColor Yellow
+        } else {
+            Write-Host "FALLO: $($_.Exception.Message)" -ForegroundColor Red
+        }
+    }
+}
