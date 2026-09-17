@@ -1,3 +1,33 @@
+$proxy = [System.Net.WebRequest]::DefaultWebProxy
+
+$urls = @(
+    "https://login.microsoftonline.com",
+    "https://activation.sls.microsoft.com",
+    "https://officecdn.microsoft.com",
+    "https://officeclient.microsoft.com"
+)
+
+foreach ($url in $urls) {
+    $uri = [Uri]$url
+
+    [PSCustomObject]@{
+        URL       = $url
+        Proxy     = $proxy.GetProxy($uri).AbsoluteUri
+        Bypassed  = $proxy.IsBypassed($uri)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 Resolve-DnsName ols.officeapps.live.com
 
 Test-NetConnection ols.officeapps.live.com -Port 443 -InformationLevel Detailed
