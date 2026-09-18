@@ -1,0 +1,12 @@
+Buenos días,
+La actividad indicada corresponde a las tareas de diagnóstico realizadas sobre el servidor vmngctxtxap59.NGL.CORP para resolver una incidencia relacionada con la activación/licenciamiento de Microsoft Office 365.
+Durante las pruebas se estaba analizando un problema por el cual las aplicaciones de Office 365 no detectaban correctamente la conectividad necesaria para realizar la validación de licencias a través del proxy corporativo.
+En concreto, el comando que aparece en la alerta:
+wevtutil sl Microsoft-Windows-NCSI/Analytic /e:true /q:true
+se utilizó para habilitar el canal de eventos analítico de NCSI (Network Connectivity Status Indicator) y poder obtener información adicional durante el diagnóstico de la conectividad de Windows.
+No se realizó esta acción con la finalidad de eliminar registros o evidencias. El comando wevtutil sl modifica la configuración del canal de eventos y, en este caso, /e:true habilita dicho canal para diagnóstico.
+Estas pruebas formaban parte de la investigación que estábamos realizando debido a que el servidor identificaba su conectividad como LocalNetwork en lugar de Internet, provocando problemas en la detección de conectividad/proxy por parte de Office 365.
+Finalmente se identificó que el problema estaba relacionado con el servicio Network Location Awareness (NlaSvc). Tras reiniciar dicho servicio, Windows volvió a evaluar correctamente el estado de red, pasando la conectividad a Internet y permitiendo que Office 365 realizase correctamente la validación de licencias.
+Antes de realizar las pruebas sobre el servidor se creó un snapshot como medida de respaldo ante cualquier posible incidencia.
+Toda esta actividad se realizó dentro de las tareas de diagnóstico asociadas a la actualización y migración de la plataforma de Office 2013 a Office 365.
+Un saludo.
